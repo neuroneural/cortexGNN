@@ -15,12 +15,18 @@ import time
 
 from csv import writer
 
-def write_time2csv(model_name, t_sec):
+def write_time2csv(model_name, t_sec, loading = False):
+    filename = ''
+    if loading is False:
+        filename='/data/users2/washbee/speedrun/bm.events.csv'
+    else:
+        filename='/data/users2/washbee/speedrun/bm.loading.csv' 
     List = [model_name, t_sec]
-    with open('/data/users2/washbee/speedrun/bm.events.csv', 'a') as f_object:
+    with open(filename, 'a') as f_object:
         writer_object = writer(f_object)
         writer_object.writerow(List)
         f_object.close()
+
 
 nvidia_smi.nvmlInit()
 deviceCount = nvidia_smi.nvmlDeviceGetCount()
@@ -52,7 +58,10 @@ def printSpaceUsage():
     return msgs
 
 if __name__ == '__main__':
+    a = datetime.datetime.now()
+
     # log for GPU utilization
+    
     GPU_msgs = []
 
     ### Set Stage
@@ -132,6 +141,13 @@ if __name__ == '__main__':
     """evaluation"""
     print("Start evaluation ...")
     print(printSpaceUsage())
+    
+    b = datetime.datetime.now()
+    t_sec = (b-a).total_seconds()
+    
+    write_time2csv('PialNN', t_sec,loading = True)
+    
+    
     with torch.no_grad():
         CD = []
         AD = []
