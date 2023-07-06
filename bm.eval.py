@@ -14,22 +14,65 @@ import nvidia_smi
 import time
 
 from csv import writer
-
-def write_time2csv(model_name, t_sec, loading = False):
-    filename = ''
-    if loading is False:
-        filename='/data/users2/washbee/speedrun/bm.events.csv'
-    else:
-        filename='/data/users2/washbee/speedrun/bm.loading.csv' 
-    List = [model_name, t_sec]
-    with open(filename, 'a') as f_object:
-        writer_object = writer(f_object)
-        writer_object.writerow(List)
-        f_object.close()
-
+import socket
+import os
 
 nvidia_smi.nvmlInit()
 deviceCount = nvidia_smi.nvmlDeviceGetCount()
+
+hostname = socket.gethostname()
+
+def write_time2csv(model_name, t_sec=None, subj=None, loading=False, memory=False, percentUsed=None, total=None, free=None, used=None):
+    base_path = '/data/users2/washbee/speedrun/'
+
+    # Consolidate filename determination
+    if loading:
+        filename = 'bm.loading'
+    else:
+        filename = 'bm.events'
+        
+    if memory:
+        filename += '.memory'
+
+    filename += '.csv'
+    filename = base_path + filename
+
+    # Define initial list
+    List = [model_name, t_sec, hostname, subj]
+    
+    # If memory flag is true, append memory related info
+    if memory:
+        List = [model_name, percentUsed, total, free, used, hostname, subj]
+
+    if not os.path.exists(filename):
+        # Create the file
+        with open(filename, 'w') as file:
+            # Perform any initial operations on the file, if needed
+            print("File created.")
+
+    with open(filename, 'a') as f_object:
+        writer_object = writer(f_object)
+        writer_object.writerow(List)
+
+def printSpaceUsage(info_flag = False):
+    msgs = ""
+    for i in range(deviceCount):
+        nvidia_smi.nvmlInit()
+        handle = nvidia_smi.nvmlDeviceGetHandleByIndex(i)
+        info = nvidia_smi.nvmlDeviceGetMemoryInfo(handle)
+        if info_flag:
+            return (100*info.free/info.total), info.total, info.free, info.used
+        
+        msgs += '\n'
+        msgs += "Device {}: {}, Memory : ({:.2f}% free): {}(total), {} (free), {} (used)".format(i, nvidia_smi.nvmlDeviceGetName(handle), 100*info.free/info.total, info.total, info.free, info.used)
+        nvidia_smi.nvmlShutdown()
+
+    msgs+="\nMax Memory occupied by tensors: "+ str(torch.cuda.max_memory_allocated(device=None))
+    msgs+="\nMax Memory Cached: "+ str(torch.cuda.max_memory_cached(device=None))
+    msgs+="\nCurrent Memory occupied by tensors: "+ str(torch.cuda.memory_allocated(device=None))
+    msgs+="\nCurrent Memory cached occupied by tensors: "+str(torch.cuda.memory_cached(device=None))
+    msgs+="\n"
+    return str(msgs)
 
 # Helper Function
 def printModelSize(model):
@@ -45,17 +88,6 @@ def printModelSize(model):
     print('model size: {:.3f}MB'.format(size_all_mb))
     print('\n\n\n\n')
 
-def printSpaceUsage():
-    nvidia_smi.nvmlInit()
-    msgs = ""
-    for i in range(deviceCount):
-        handle = nvidia_smi.nvmlDeviceGetHandleByIndex(i)
-        info = nvidia_smi.nvmlDeviceGetMemoryInfo(handle)
-        #print("Device {}: {}, Memory : ({:.2f}% free): {}(total), {} (free), {} (used)".format(i, nvidia_smi.nvmlDeviceGetName(handle), 100*info.free/info.total, info.total, info.free, info.used))
-        msgs += '\n'
-        msgs += "Device {}: {}, Memory : ({:.2f}% free): {}(total), {} (free), {} (used)".format(i, nvidia_smi.nvmlDeviceGetName(handle), 100*info.free/info.total, info.total, info.free, info.used)
-    nvidia_smi.nvmlShutdown()
-    return msgs
 
 if __name__ == '__main__':
     a = datetime.datetime.now()
@@ -143,10 +175,9 @@ if __name__ == '__main__':
     print(printSpaceUsage())
     
     b = datetime.datetime.now()
-    t_sec = (b-a).total_seconds()
-    
-    write_time2csv('PialNN', t_sec,loading = True)
-    
+    write_time2csv('PialNN', t_sec = (b-a).total_seconds(), loading=True)
+    percentUsed,total,free,used = printSpaceUsage(info_flag=True)
+    write_time2csv('PialNN',percentUsed=percentUsed, total=total, free=free, used=used,loading=True,memory=True)    
     
     with torch.no_grad():
         CD = []
@@ -197,9 +228,11 @@ if __name__ == '__main__':
                 #save_mesh_obj(v_gt_eval, f_gt_eval, n_pred_eval, path_save_mesh)
 
             b = datetime.datetime.now()
-            t_sec = (b-a).total_seconds()
-            write_time2csv('PialNN', t_sec)
-            print('total seconds for one batch is {}'.format(t_sec))
+            write_time2csv('PialNN', t_sec = (b-a).total_seconds())
+            percentUsed,total,free,used = printSpaceUsage(info_flag=True)
+            write_time2csv('PialNN',memory=True, percentUsed=percentUsed,total=total,free=free,used=used)
+            
+            
             ### Set Stage
             stage = '0 - END'
             msgs = printSpaceUsage()
