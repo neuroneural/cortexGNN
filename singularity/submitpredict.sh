@@ -21,7 +21,7 @@ source /usr/share/lmod/lmod/init/bash
 module use /application/ubuntumodules/localmodules
 module load singularity/3.10.2
 echo "bb"
-singularity exec --nv --bind /data,/data/users2/washbee/speedrun/hcp-plis-subj-pialnn-rp:/data-pialnn/,/data/users2/washbee/speedrun/PialNN_fork:/pialnn,/data/users2/washbee/speedrun/hcp-plis-subj-pialnn-rp:/subj/ /data/users2/washbee/containers/speedrun/pialnn_bm_sandbox/ /pialnn/singularity/predict.sh &
+singularity exec --nv --bind /data,/data/users2/washbee/speedrun/hcp-plis-subj-pialnn-rp:/data-pialnn/,/data/users2/washbee/speedrun/PialNN_fork:/pialnn,/data/users2/washbee/speedrun/hcp-plis-subj-pialnn-rp:/subj/ /data/users2/washbee/containers/harsha/pialnn_harsha.sif /pialnn/singularity/predict.sh &
 echo "CC"
 wait
 

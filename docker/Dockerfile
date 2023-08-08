@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.6.1-cudnn8-devel-ubuntu20.04 
+FROM nvidia/cuda:11.7.1-cudnn8-devel-ubuntu20.04 
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 ENV PATH=/opt/miniconda3/bin:$PATH
@@ -25,8 +25,7 @@ git \
 wget \
 cmake \
 gfortran \
-libspatialindex-dev && \
-apt-get install -y --no-install-recommends llvm-10 lldb-10 llvm-10-dev libllvm10 llvm-10-runtime
+libspatialindex-dev 
 RUN rm -rf /var/lib/apt/lists/*
 ENV PYTHON_VERSION=3.7
 ENV CONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-py37_4.10.3-Linux-x86_64.sh
@@ -35,6 +34,7 @@ chmod +x ~/miniconda.sh && \
 ~/miniconda.sh -b -p /opt/miniconda3 
 
 WORKDIR /app
+COPY pialnn.requirements.txt .
 COPY environment.yml .
 RUN conda env create -f environment.yml
 SHELL ["conda", "run", "-n", "pialnn", "/bin/bash", "-c"]
@@ -45,6 +45,7 @@ RUN pip install torch-cluster==latest+cu102 -f https://pytorch-geometric.com/whl
 RUN pip install torch-spline-conv==latest+cu102 -f https://pytorch-geometric.com/whl/torch-1.7.0.html
 RUN pip install torch-geometric
 RUN pip install rtree
+RUN pip install -r pialnn.requirements.txt
 RUN conda install -c conda-forge libspatialindex=1.9.3
 RUN conda clean -a
 ENTRYPOINT ["/bin/bash"]
