@@ -31,12 +31,19 @@ class DeformBlock(nn.Module):
         self.nc = nc
         self.K = K
 
-    def forward(self, v, f, volume):
-        
+    def forward(self, v, f, volume,start,end):
+        print('start',start)
+        print('end',end)
+        print('spread',end-start)
+        print('v',v.shape)
+        print('f',v.shape)
         coord = v.clone()
         normal = compute_normal(v, f)    # compute normal
-        
+        normal = normal[:,start:end,:]
         # point feature
+        v = v[:,start:end,:]
+        print('v',v.shape)
+        print('normal',normal.shape)
         x = torch.cat([v, normal], 2)
         x = F.leaky_relu(self.fc1(x), 0.15)
         
@@ -51,9 +58,9 @@ class DeformBlock(nn.Module):
         x = F.leaky_relu(self.fc2(x), 0.15)
         x = F.leaky_relu(self.fc3(x), 0.15)
         x = torch.tanh(self.fc4(x)) * 0.1    # threshold the displacement
-
-        return coord + x    # v=v+dv
-
+        coord[:,start:end,:] = coord[:,start:end,:] + x
+        return coord    # v=v+dv
+    
     def initialize(self, L, W, H, device=None):
         """initialize necessary constants"""
         
@@ -117,11 +124,11 @@ class PialNN(nn.Module):
         self.block3 = DeformBlock(nc, K, n_scale)
         self.smooth = LaplacianSmooth(3, 3, aggr='mean')
 
-    def forward(self, v, f, volume, n_smooth=1, lambd=1.0):
+    def forward(self, v, f, volume, n_smooth=1, lambd=1.0,start = None, end = None):
 
-        x = self.block1(v, f, volume)
-        x = self.block2(x, f, volume)
-        x = self.block3(x, f, volume)
+        x = self.block1(v, f, volume,start,end)
+        x = self.block2(x, f, volume,start,end)
+        x = self.block3(x, f, volume,start,end)
         edge_list = torch.cat([f[0,:,[0,1]],
                                f[0,:,[1,2]],
                                f[0,:,[2,0]]], dim=0).transpose(1,0)

@@ -60,55 +60,103 @@ if __name__ == '__main__':
     model.initialize(L, W, H, device)
     print("Finish loading model")
     print("----------------------------")
-
+    
+    allocated = []
+    allocated.append(torch.cuda.memory_allocated())
     
     """training"""
     print("Start training {} epochs ...".format(config.n_epoch))    
+    n = 4
+            
     for epoch in tqdm(range(config.n_epoch+1)):
         avg_loss = []
-        for idx, data in enumerate(trainloader):
-            volume_in, v_gt, f_gt, v_in, f_in = data
-            volume_in = volume_in.to(device)
-            v_gt = v_gt.to(device)
-            f_gt = f_gt.to(device)
-            v_in = v_in.to(device)
-            f_in = f_in.to(device)
-            optimizer.zero_grad()
+        allocated.append(torch.cuda.memory_allocated())
 
-            v_out = model(v=v_in, f=f_in, volume=volume_in,
-                          n_smooth=config.n_smooth, lambd=config.lambd)
+        for idx, data in enumerate(trainloader):
+            allocated.append(torch.cuda.memory_allocated())
+            ##
+
             
-            loss  = nn.MSELoss()(v_out, v_gt) * 1e+3
-            avg_loss.append(loss.item())
-            loss.backward()
-            optimizer.step()
+            # Choose n (e.g., n = 4 for a quarter)
+            # Iterate over the segment
+            for i in range(n):
+                print('i',i)
+                ##
+                volume_in, v_gt, f_gt, v_in, f_in,_subj = data
+                allocated.append(torch.cuda.memory_allocated())
+                # Calculate the size of each segment
+                segment_size = v_in.shape[1] // n
+            
+                # Choose the segment you want to iterate over (e.g., the first quarter)
+                segment_start = i * segment_size
+                segment_end = segment_start + segment_size
+
+                volume_in = volume_in.to(device)
+                allocated.append(torch.cuda.memory_allocated())
+                v_gt = v_gt[:,segment_start:segment_end,:].to(device)
+                v_in = v_in.to(device)
+                f_in = f_in.to(device)
+                
+                allocated.append(torch.cuda.memory_allocated())
+
+                optimizer.zero_grad()
+                
+                print('vin tr',v_in.shape)
+                print('fin tr',f_in.shape)
+                v_out = model(v=v_in, f=f_in, volume=volume_in,
+                            n_smooth=config.n_smooth, lambd=config.lambd,
+                            start = segment_start,end = segment_end)
+
+                allocated.append(torch.cuda.memory_allocated())
+
+                loss  = nn.MSELoss()(v_out[:,segment_start:segment_end,:], v_gt) * 1e+3
+                avg_loss.append(loss.item())
+                loss.backward()
+                optimizer.step()
+                allocated.append(torch.cuda.memory_allocated())
+
 
         if config.report_training_loss:
             print("Epoch:{}, training loss:{}".format(epoch, np.mean(avg_loss)))
 
+        
         if epoch % config.ckpts_interval == 0:
             print("----------------------------")
             print("Start validation ...")
             with torch.no_grad():
                 error = []
                 for idx, data in enumerate(validloader):
-                    volume_in, v_gt, f_gt, v_in, f_in = data
-                    volume_in = volume_in.to(device)
-                    v_gt = v_gt.to(device)
-                    f_gt = f_gt.to(device)
-                    v_in = v_in.to(device)
-                    f_in = f_in.to(device)
+                    for i in range(n):
+                        ##
+                        volume_in, v_gt, f_gt, v_in, f_in,_subj = data
+                        allocated.append(torch.cuda.memory_allocated())
+                        # Calculate the size of each segment
+                        segment_size = v_in.shape[1] // n
 
-                    v_out = model(v=v_in, f=f_in, volume=volume_in,
-                                  n_smooth=config.n_smooth, lambd=config.lambd)
-                    error.append(nn.MSELoss()(v_out, v_gt) * 1e+3)
+                        # Choose the segment you want to iterate over (e.g., the first quarter)
+                        segment_start = i * segment_size
+                        segment_end = segment_start + segment_size
+                        volume_in = volume_in.to(device)
+                        v_gt = v_gt[:,segment_start:segment_end,:].to(device)
+                        v_in = v_in.to(device)
+                        f_in = f_in.to(device)
 
-            print("Validation error:{}".format(np.mean(avg_loss)))
+                        v_out = model(v=v_in, f=f_in, volume=volume_in,
+                                    n_smooth=config.n_smooth, 
+                                    lambd=config.lambd,
+                                    start = segment_start,
+                                    end = segment_end)
+                        error.append(nn.MSELoss()(v_out[:,segment_start:segment_end,:], v_gt).item() * 1e+3)
+                
+                print("Validation error:{}".format(np.mean(error)))
+                allocated.append(torch.cuda.memory_allocated())
 
             if config.save_model:
                 print('Save model checkpoints ... ')
                 path_save_model = "./ckpts/model/pialnn_model_"+config.hemisphere+"_"+str(epoch)+"epochs.pt"
                 torch.save(model.state_dict(), path_save_model)
+
+            allocated.append(torch.cuda.memory_allocated())
 
             if config.save_mesh_train:
                 print('Save pial surface mesh ... ')
@@ -120,6 +168,14 @@ if __name__ == '__main__':
                 n_gm = normal[0].cpu().numpy()
 
                 save_mesh_obj(v_gm, f_gm, n_gm, path_save_mesh)
+
+
+            allocated.append(torch.cuda.memory_allocated())
+            max_memory_usage = max(allocated)
+
+            # Print the maximum allocated GPU memory in GiB
+            max_memory_usage_gib = max_memory_usage / (1024 ** 3)
+            print(f"Maximum allocated GPU memory: {max_memory_usage_gib:.2f} GiB")
 
             print("Finish validation.")
             print("----------------------------")

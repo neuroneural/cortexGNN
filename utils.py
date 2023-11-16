@@ -4,10 +4,51 @@ from pytorch3d.structures import Meshes
 import trimesh
 from trimesh.exchange.obj import export_obj
 from scipy.spatial import cKDTree
+import torch
 
+
+import torch
+from pytorch3d.structures import Meshes
+
+def getSubMesh(v, f, vertex_indices):
+    # Ensure v and f are lists of tensors
+    mesh = Meshes(verts=v, faces=f)
+
+    # Determine the device from the input tensor
+    device = v[0].device
+
+    # Convert vertex_indices to a set for faster lookup
+    vertex_indices_set = set(vertex_indices)
+
+    # Get the faces of the original mesh
+    faces = mesh.faces_list()[0]
+
+    # Find faces where all three vertices are in the subset
+    mask = [all(vertex.item() in vertex_indices_set for vertex in face) for face in faces]
+    submesh_faces = faces[mask]
+
+    # Create a mapping from old vertex indices to new ones
+    new_vertex_indices = {old_idx: new_idx for new_idx, old_idx in enumerate(vertex_indices)}
+
+    # Re-map vertex indices for the new faces and ensure it's on the same device
+    remapped_faces = torch.tensor([[new_vertex_indices[vertex.item()] for vertex in face] for face in submesh_faces], device=device)
+
+    # Extract the vertex positions for the submesh
+    submesh_verts = v[0][vertex_indices]
+
+    # Adjust dimensions to match the original mesh's structure
+    sub_verts = submesh_verts.unsqueeze(0)  # shape: [1, num_verts, 3]
+    sub_faces = remapped_faces.unsqueeze(0)  # shape: [1, num_faces, 3]
+
+    return sub_verts, sub_faces
+
+    # Example usage:
+    # v and f are the vertices and faces of your original mesh as lists of tensors.
+    # vertex_indices is a 1D tensor or list of indices for the vertices you want to include in the submesh.
 
 def compute_normal(v, f):
     """v, f: Tensors"""
+    
     normal = Meshes(verts=list(v),
                     faces=list(f)).verts_normals_list()[0]
     return normal.unsqueeze(0)

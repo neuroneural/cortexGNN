@@ -4,5 +4,5 @@ echo "A"
 echo "B"
 cd /pialnn
 echo "C"
-python train.py --data_path=/subj/test/ --hemisphere=lh
+python train.py --data_path=/subj/ --hemisphere=lh
 echo "D"
