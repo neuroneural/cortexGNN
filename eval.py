@@ -23,7 +23,6 @@ if __name__ == '__main__':
     """load configuration"""
     config = load_config()
 
-
     """load dataset"""
     print("----------------------------")
     print("Start loading dataset ...")
@@ -42,7 +41,7 @@ if __name__ == '__main__':
     """load model"""
     print("Start loading model ...")
     model = PialNN(config.nc, config.K, config.n_scale).to(device)
-    model.load_state_dict(torch.load("./ckpts/model/pialnn_pretrained_"+config.hemisphere+".pt",
+    model.load_state_dict(torch.load("./ckpts/model/pialnn_model_lh_200epochs.pt",
                                      map_location=device))
     model.initialize(L, W, H, device)
     print("Finish loading model")
@@ -52,11 +51,11 @@ if __name__ == '__main__':
     """evaluation"""
     print("Start evaluation ...")
     with torch.no_grad():
-        CD = []
-        AD = []
-        HD = []
+        #CD = []
+        #AD = []
+        #HD = []
         for idx, data in tqdm(enumerate(testloader)):
-            volume_in, v_gt, f_gt, v_in, f_in = data
+            volume_in, v_gt, f_gt, v_in, f_in, sub_id = data
 
             volume_in = volume_in.to(device)
             v_gt = v_gt.to(device)
@@ -74,23 +73,31 @@ if __name__ == '__main__':
             f_gt_eval = f_gt[0].cpu().numpy()
 
             # compute distance-based metrics
-            cd, assd, hd = compute_distance(v_pred_eval, v_gt_eval,
-                                            f_pred_eval, f_gt_eval, config.n_test_pts)
-            CD.append(cd)
-            AD.append(assd)
-            HD.append(hd)
-
+            #cd, assd, hd = compute_distance(v_pred_eval, v_gt_eval,
+            #                                f_pred_eval, f_gt_eval, config.n_test_pts)
+            
+            #CD.append(cd)
+            #AD.append(assd)
+            #HD.append(hd)
+            print('sub_id',sub_id)
             if config.save_mesh_eval:
-                path_save_mesh = "./ckpts/eval/pialnn_mesh_eval_"\
-                        +config.hemisphere+"_subject"+str(idx)+".obj"
+                path_save_mesh = "./ckpts/eval_subj_id/pialnn_mesh_eval_"\
+                        +config.hemisphere+"_subject_"+str(sub_id.item())+".obj"
 
                 normal = compute_normal(v_pred, f_in)
                 n_pred_eval = normal[0].cpu().numpy()
                 save_mesh_obj(v_pred_eval, f_pred_eval, n_pred_eval, path_save_mesh)
+                
+                ################
+                path_save_mesh = "./ckpts/eval_subj_id/pialnn_mesh_eval_"\
+                        +config.hemisphere+"_subject_"+str(sub_id.item())+"_gt.obj"
 
-    print("CD: Mean={}, Std={}".format(np.mean(CD), np.std(CD)))
-    print("AD: Mean={}, Std={}".format(np.mean(AD), np.std(AD)))
-    print("HD: Mean={}, Std={}".format(np.mean(HD), np.std(HD)))
+                normal = compute_normal(v_gt, f_gt)
+                n_gt_eval = normal[0].cpu().numpy()
+                save_mesh_obj(v_gt_eval, f_gt_eval, n_gt_eval, path_save_mesh)
+
+    # print("CD: Mean={}, Std={}".format(np.mean(CD), np.std(CD)))
+    # print("AD: Mean={}, Std={}".format(np.mean(AD), np.std(AD)))
+    # print("HD: Mean={}, Std={}".format(np.mean(HD), np.std(HD)))
     print("Finish evaluation.")
     print("----------------------------")
-

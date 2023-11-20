@@ -20,8 +20,8 @@ module load singularity/3.10.2
 echo "bb"
 #/data/users2/washbee/speedrun/pialnn_trainval
 #/data/users2/washbee/websurf/pialnn_web_trsmall/
-singularity exec --nv --bind /data:/data/,/data/users2/washbee/websurf/PialNN_fork:/pialnn,/data/users2/washbee/websurf/pialnn_web_trsmall/:/subj /data/users2/washbee/containers/speedrun/pialnn_sr.sif /pialnn/singularity/trainlh.sh
-#singularity exec --nv --bind /data:/data/,/data/users2/washbee/websurf/PialNN_fork:/pialnn,/data/users2/washbee/speedrun/pialnn_trainval/:/subj /data/users2/washbee/containers/speedrun/pialnn_sr.sif /pialnn/singularity/trainlh.sh
+#singularity exec --nv --bind /data:/data/,/data/users2/washbee/websurf/cortexGNN:/pialnn,/data/users2/washbee/websurf/pialnn_web_trsmall/:/subj /data/users2/washbee/containers/speedrun/pialnn_sr.sif /pialnn/singularity/trainlh.sh
+singularity exec --nv --bind /data:/data/,/data/users2/washbee/websurf/cortexGNN:/pialnn,/data/users2/washbee/speedrun/pialnn_trainval/:/subj /data/users2/washbee/containers/speedrun/pialnn_sr.sif /pialnn/singularity/trainlh.sh
 echo "CC"
 
 sleep 5s

@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader
 
 from config import load_config
 from data.dataload import load_data, BrainDataset
-from model.pialnn import PialNN
+from model.cortexGNN import CortexGNN
 from utils import compute_normal, save_mesh_obj
 
 
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     
     """load model"""
     print("Start loading model ...")
-    model = PialNN(config.nc, config.K, config.n_scale).to(device)
+    model = CortexGNN(config.nc, config.K, config.n_scale).to(device)
     optimizer = optim.Adam(model.parameters(), lr=config.lr)
     model.initialize(L, W, H, device)
     print("Finish loading model")
@@ -66,7 +66,7 @@ if __name__ == '__main__':
     
     """training"""
     print("Start training {} epochs ...".format(config.n_epoch))    
-    n = 4
+    n = 1
             
     for epoch in tqdm(range(config.n_epoch+1)):
         avg_loss = []
@@ -80,7 +80,6 @@ if __name__ == '__main__':
             # Choose n (e.g., n = 4 for a quarter)
             # Iterate over the segment
             for i in range(n):
-                print('i',i)
                 ##
                 volume_in, v_gt, f_gt, v_in, f_in,_subj = data
                 allocated.append(torch.cuda.memory_allocated())
@@ -101,8 +100,6 @@ if __name__ == '__main__':
 
                 optimizer.zero_grad()
                 
-                print('vin tr',v_in.shape)
-                print('fin tr',f_in.shape)
                 v_out = model(v=v_in, f=f_in, volume=volume_in,
                             n_smooth=config.n_smooth, lambd=config.lambd,
                             start = segment_start,end = segment_end)

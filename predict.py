@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader
 
 from config import load_config
 from data.dataload import load_data, BrainDataset
-from model.pialnn import PialNN
+from model.cortexGNN import CortexGNN
 from utils import compute_normal, save_mesh_obj, compute_distance
 
 
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     
     """load model"""
     print("Start loading model ...")
-    model = PialNN(config.nc, config.K, config.n_scale).to(device)
+    model = CortexGNN(config.nc, config.K, config.n_scale).to(device)
     model.load_state_dict(torch.load("./ckpts/model/pialnn_model_lh_200epochs.pt",
                                      map_location=device))
     model.initialize(L, W, H, device)
@@ -81,7 +81,7 @@ if __name__ == '__main__':
             #HD.append(hd)
             print('sub_id',sub_id)
             if config.save_mesh_eval:
-                path_save_mesh = "./ckpts/eval_subj_id/pialnn_mesh_eval_"\
+                path_save_mesh = "./ckpts/cortexGNN/pialnn_mesh_eval_"\
                         +config.hemisphere+"_subject_"+str(sub_id.item())+".obj"
 
                 normal = compute_normal(v_pred, f_in)
@@ -89,7 +89,7 @@ if __name__ == '__main__':
                 save_mesh_obj(v_pred_eval, f_pred_eval, n_pred_eval, path_save_mesh)
                 
                 ################
-                path_save_mesh = "./ckpts/eval_subj_id/pialnn_mesh_eval_"\
+                path_save_mesh = "./ckpts/cortexGNN/pialnn_mesh_eval_"\
                         +config.hemisphere+"_subject_"+str(sub_id.item())+"_gt.obj"
 
                 normal = compute_normal(v_gt, f_gt)
