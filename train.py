@@ -179,7 +179,7 @@ if __name__ == '__main__':
                             # you might want to adjust the scaling factor (here it's left as is)
                             loss = chamfer_dist * 1e+3
                             if bl == (num_blocks-1):
-                                error.append(loss.item() * 1e+3)
+                                error.append(loss.item() )
                             
                 
                 print("Validation error:{}".format(np.mean(error)))
