@@ -9,7 +9,6 @@ from torch_geometric.utils import add_self_loops
 
 from torch_geometric.nn import GATConv
 
-
 #Two layer GCN using pyg
 class TwoLayerGCN(nn.Module):
     def __init__(self, in_features, hidden_features, out_features):
@@ -177,7 +176,8 @@ class CortexGNN(nn.Module):
     def __init__(self, nc=128, K=5, n_scale=3, num_blocks=3):
         super(CortexGNN, self).__init__()
         
-        self.blocks = nn.ModuleList([DeformBlockGCN(nc, K, n_scale) for i in range(num_blocks)])
+        # self.blocks = nn.ModuleList([DeformBlockGCN(nc, K, n_scale) for i in range(num_blocks)])
+        self.blocks = DeformBlockGCN(nc, K, n_scale)
 
         self.smooth = LaplacianSmooth(3, 3, aggr='mean')
 
@@ -188,7 +188,8 @@ class CortexGNN(nn.Module):
         edge_index_with_loops = add_self_loops(edge_list)[0]
 
         
-        x = self.blocks[block](v, f, volume,start,end,edge_index_with_loops)
+        # x = self.blocks[block](v, f, volume,start,end,edge_index_with_loops)
+        x = self.blocks(v, f, volume,start,end,edge_index_with_loops)
         
         for i in range(n_smooth):
             x = self.smooth(x, edge_list, lambd=lambd)
@@ -196,9 +197,9 @@ class CortexGNN(nn.Module):
         return x
     
     def initialize(self, L=256, W=256, H=256, device=None):
-        for i in range(len(self.blocks)):
-            self.blocks[i].initialize(L,W,H,device)
-
+        # for i in range(len(self.blocks)):
+        #     self.blocks[i].initialize(L,W,H,device)
+        self.blocks.initialize(L,W,H,device)
 
 
 """

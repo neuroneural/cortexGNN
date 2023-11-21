@@ -12,6 +12,9 @@ from data.dataload import load_data, BrainDataset
 from model.cortexGNN import CortexGNN
 from utils import compute_normal, save_mesh_obj
 
+from pytorch3d.loss import chamfer_distance
+
+
 
 if __name__ == '__main__':
     
@@ -50,6 +53,8 @@ if __name__ == '__main__':
     validloader = DataLoader(valid_set, batch_size=1, shuffle=False)
     
     print("Finish loading dataset. There are total {} subjects.".format(n_data))
+    print("Training data length",len(train_data))
+    print("Validation data length",len(valid_data))
     print("----------------------------")
     
     
@@ -106,7 +111,19 @@ if __name__ == '__main__':
 
                     allocated.append(torch.cuda.memory_allocated())
 
-                    loss  = nn.MSELoss()(v_out[:,segment_start:segment_end,:], v_gt) * 1e+3
+                    # Assuming v_out and v_gt are your vertex sets in R^3
+                    # And they are PyTorch tensors of shape [N, 3] where N is the number of vertices
+
+                    # Slicing the segment of interest from v_out
+                    v_out_segment = v_out[:, segment_start:segment_end, :]
+
+                    # Compute the Chamfer Distance
+                    chamfer_dist, _ = chamfer_distance(v_out_segment, v_gt)
+
+                    # Since Chamfer Distance can be on a different scale compared to MSE,
+                    # you might want to adjust the scaling factor (here it's left as is)
+                    loss = chamfer_dist * 1e+3
+
                     if bl == (num_blocks-1):
                         avg_loss.append(loss.item())
                     
@@ -125,7 +142,7 @@ if __name__ == '__main__':
             with torch.no_grad():
                 error = []
                 for idx, data in enumerate(validloader):
-                    for bl in range(7):
+                    for bl in range(num_blocks):
                         for i in range(n):
                             ##
                             volume_in, v_gt, f_gt, v_in, f_in,_subj = data
@@ -149,23 +166,35 @@ if __name__ == '__main__':
                                         start = segment_start,
                                         end = segment_end,
                                         block = bl)
+                            # Assuming v_out and v_gt are your vertex sets in R^3
+                            # And they are PyTorch tensors of shape [N, 3] where N is the number of vertices
+
+                            # Slicing the segment of interest from v_out
+                            v_out_segment = v_out[:, segment_start:segment_end, :]
+
+                            # Compute the Chamfer Distance
+                            chamfer_dist, _ = chamfer_distance(v_out_segment, v_gt)
+
+                            # Since Chamfer Distance can be on a different scale compared to MSE,
+                            # you might want to adjust the scaling factor (here it's left as is)
+                            loss = chamfer_dist * 1e+3
                             if bl == (num_blocks-1):
-                                avg_loss.append(loss.item())                    
-                            error.append(nn.MSELoss()(v_out[:,segment_start:segment_end,:], v_gt).item() * 1e+3)
+                                error.append(loss.item() * 1e+3)
+                            
                 
                 print("Validation error:{}".format(np.mean(error)))
                 allocated.append(torch.cuda.memory_allocated())
 
             if config.save_model:
                 print('Save model checkpoints ... ')
-                path_save_model = "./ckpts/model/cortexGAT_model_"+config.hemisphere+"_"+str(epoch)+"epochs.pt"
+                path_save_model = "./ckpts/model/cortexGAT_chamfer_fulldata_model_"+config.hemisphere+"_"+str(epoch)+"epochs.pt"
                 torch.save(model.state_dict(), path_save_model)
 
             allocated.append(torch.cuda.memory_allocated())
 
             if config.save_mesh_train:
                 print('Save pial surface mesh ... ')
-                path_save_mesh = "./ckpts/mesh/cortexGAT_mesh_"+config.hemisphere+"_"+str(epoch)+"epochs.obj"
+                path_save_mesh = "./ckpts/mesh/cortexGAT_chamfer_fulldata_mesh_"+config.hemisphere+"_"+str(epoch)+"epochs.obj"
 
                 normal = compute_normal(v_out, f_in)
                 v_gm = v_out[0].cpu().numpy() * LWHmax/2  + [L/2,W/2,H/2]
