@@ -144,23 +144,21 @@ PialNN with 3 deformation blocks + 1 Laplacian smoothing layer
 """
 
 class CortexGNN(nn.Module):
-    def __init__(self, nc=128, K=5, n_scale=3):
+    def __init__(self, nc=128, K=5, n_scale=3, num_blocks=3):
         super(CortexGNN, self).__init__()
-        self.block1 = DeformBlockGCN(nc, K, n_scale)
-        self.block2 = DeformBlockGCN(nc, K, n_scale)
-        self.block3 = DeformBlockGCN(nc, K, n_scale)
+        
+        self.blocks = nn.ModuleList([DeformBlockGCN(nc, K, n_scale) for i in range(num_blocks)])
+
         self.smooth = LaplacianSmooth(3, 3, aggr='mean')
 
-    def forward(self, v, f, volume, n_smooth=1, lambd=1.0,start = None, end = None):
+    def forward(self, v, f, volume, n_smooth=1, lambd=1.0,start = None, end = None,block=0):
         edge_list = torch.cat([f[0,:,[0,1]],
                                f[0,:,[1,2]],
                                f[0,:,[2,0]]], dim=0).transpose(1,0)#moved from after x
         edge_index_with_loops = add_self_loops(edge_list)[0]
 
-        x = self.block1(v, f, volume,start,end,edge_index_with_loops)
-        x = self.block2(x, f, volume,start,end,edge_index_with_loops)
-        x = self.block3(x, f, volume,start,end,edge_index_with_loops)
-        #edge_list used to be here. hopefully this doesn't introduce errors. 
+        
+        x = self.blocks[block](v, f, volume,start,end,edge_index_with_loops)
         
         for i in range(n_smooth):
             x = self.smooth(x, edge_list, lambd=lambd)
@@ -168,9 +166,8 @@ class CortexGNN(nn.Module):
         return x
     
     def initialize(self, L=256, W=256, H=256, device=None):
-        self.block1.initialize(L,W,H,device)
-        self.block2.initialize(L,W,H,device)
-        self.block3.initialize(L,W,H,device)
+        for i in range(len(self.blocks)):
+            self.blocks[i].initialize(L,W,H,device)
 
 
 

@@ -55,7 +55,7 @@ if __name__ == '__main__':
     
     """load model"""
     print("Start loading model ...")
-    model = CortexGNN(config.nc, config.K, config.n_scale).to(device)
+    model = CortexGNN(config.nc, config.K, config.n_scale,7).to(device)
     optimizer = optim.Adam(model.parameters(), lr=config.lr)
     model.initialize(L, W, H, device)
     print("Finish loading model")
@@ -67,7 +67,7 @@ if __name__ == '__main__':
     """training"""
     print("Start training {} epochs ...".format(config.n_epoch))    
     n = 1
-            
+    num_blocks = 7        
     for epoch in tqdm(range(config.n_epoch+1)):
         avg_loss = []
         allocated.append(torch.cuda.memory_allocated())
@@ -76,41 +76,43 @@ if __name__ == '__main__':
             allocated.append(torch.cuda.memory_allocated())
             ##
 
-            
-            # Choose n (e.g., n = 4 for a quarter)
-            # Iterate over the segment
-            for i in range(n):
-                ##
-                volume_in, v_gt, f_gt, v_in, f_in,_subj = data
-                allocated.append(torch.cuda.memory_allocated())
-                # Calculate the size of each segment
-                segment_size = v_in.shape[1] // n
-            
-                # Choose the segment you want to iterate over (e.g., the first quarter)
-                segment_start = i * segment_size
-                segment_end = segment_start + segment_size
-
-                volume_in = volume_in.to(device)
-                allocated.append(torch.cuda.memory_allocated())
-                v_gt = v_gt[:,segment_start:segment_end,:].to(device)
-                v_in = v_in.to(device)
-                f_in = f_in.to(device)
+            for bl in range(num_blocks):
+                # Choose n (e.g., n = 4 for a quarter)
+                # Iterate over the segment
+                for i in range(n):
+                    ##
+                    volume_in, v_gt, f_gt, v_in, f_in,_subj = data
+                    allocated.append(torch.cuda.memory_allocated())
+                    # Calculate the size of each segment
+                    segment_size = v_in.shape[1] // n
                 
-                allocated.append(torch.cuda.memory_allocated())
+                    # Choose the segment you want to iterate over (e.g., the first quarter)
+                    segment_start = i * segment_size
+                    segment_end = segment_start + segment_size
 
-                optimizer.zero_grad()
-                
-                v_out = model(v=v_in, f=f_in, volume=volume_in,
-                            n_smooth=config.n_smooth, lambd=config.lambd,
-                            start = segment_start,end = segment_end)
+                    volume_in = volume_in.to(device)
+                    allocated.append(torch.cuda.memory_allocated())
+                    v_gt = v_gt[:,segment_start:segment_end,:].to(device)
+                    v_in = v_in.to(device)
+                    f_in = f_in.to(device)
+                    
+                    allocated.append(torch.cuda.memory_allocated())
 
-                allocated.append(torch.cuda.memory_allocated())
+                    optimizer.zero_grad()
+                    
+                    v_out = model(v=v_in, f=f_in, volume=volume_in,
+                                n_smooth=config.n_smooth, lambd=config.lambd,
+                                start = segment_start,end = segment_end,block=bl)
 
-                loss  = nn.MSELoss()(v_out[:,segment_start:segment_end,:], v_gt) * 1e+3
-                avg_loss.append(loss.item())
-                loss.backward()
-                optimizer.step()
-                allocated.append(torch.cuda.memory_allocated())
+                    allocated.append(torch.cuda.memory_allocated())
+
+                    loss  = nn.MSELoss()(v_out[:,segment_start:segment_end,:], v_gt) * 1e+3
+                    if bl == (num_blocks-1):
+                        avg_loss.append(loss.item())
+                    
+                    loss.backward()
+                    optimizer.step()
+                    allocated.append(torch.cuda.memory_allocated())
 
 
         if config.report_training_loss:
@@ -123,27 +125,33 @@ if __name__ == '__main__':
             with torch.no_grad():
                 error = []
                 for idx, data in enumerate(validloader):
-                    for i in range(n):
-                        ##
-                        volume_in, v_gt, f_gt, v_in, f_in,_subj = data
-                        allocated.append(torch.cuda.memory_allocated())
-                        # Calculate the size of each segment
-                        segment_size = v_in.shape[1] // n
+                    for bl in range(7):
+                        for i in range(n):
+                            ##
+                            volume_in, v_gt, f_gt, v_in, f_in,_subj = data
+                            allocated.append(torch.cuda.memory_allocated())
+                            # Calculate the size of each segment
+                            segment_size = v_in.shape[1] // n
 
-                        # Choose the segment you want to iterate over (e.g., the first quarter)
-                        segment_start = i * segment_size
-                        segment_end = segment_start + segment_size
-                        volume_in = volume_in.to(device)
-                        v_gt = v_gt[:,segment_start:segment_end,:].to(device)
-                        v_in = v_in.to(device)
-                        f_in = f_in.to(device)
+                            # Choose the segment you want to iterate over (e.g., the first quarter)
+                            segment_start = i * segment_size
+                            segment_end = segment_start + segment_size
+                            volume_in = volume_in.to(device)
+                            v_gt = v_gt[:,segment_start:segment_end,:].to(device)
+                            v_in = v_in.to(device)
+                            f_in = f_in.to(device)
 
-                        v_out = model(v=v_in, f=f_in, volume=volume_in,
-                                    n_smooth=config.n_smooth, 
-                                    lambd=config.lambd,
-                                    start = segment_start,
-                                    end = segment_end)
-                        error.append(nn.MSELoss()(v_out[:,segment_start:segment_end,:], v_gt).item() * 1e+3)
+                            v_out = model(v = v_in,
+                                          f = f_in,
+                                          volume=volume_in,
+                                          n_smooth = config.n_smooth, 
+                                        lambd = config.lambd,
+                                        start = segment_start,
+                                        end = segment_end,
+                                        block = bl)
+                            if bl == (num_blocks-1):
+                                avg_loss.append(loss.item())                    
+                            error.append(nn.MSELoss()(v_out[:,segment_start:segment_end,:], v_gt).item() * 1e+3)
                 
                 print("Validation error:{}".format(np.mean(error)))
                 allocated.append(torch.cuda.memory_allocated())
