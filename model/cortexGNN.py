@@ -7,6 +7,8 @@ from utils import compute_normal
 import torch_geometric.nn as pyg_nn
 from torch_geometric.utils import add_self_loops
 
+from torch_geometric.nn import GATConv
+
 
 #Two layer GCN using pyg
 class TwoLayerGCN(nn.Module):
@@ -19,6 +21,34 @@ class TwoLayerGCN(nn.Module):
         x = F.relu(self.gcn1(x, edge_index))
         x = torch.tanh(self.gcn2(x, edge_index))
         return x
+
+class FourLayerGAT(nn.Module):
+    def __init__(self, in_features, hidden_features, out_features):
+        super(FourLayerGAT, self).__init__()
+        # Initialize the GAT layers
+        self.gat1 = GATConv(in_features, hidden_features)
+        self.gat2 = GATConv(hidden_features, hidden_features)
+        self.gat3 = GATConv(hidden_features, hidden_features)
+        self.gat4 = GATConv(hidden_features, out_features)
+
+    def forward(self, x, edge_index):
+        # Apply the first GAT layer and a ReLU activation function
+        x = x.squeeze()#Todo: implement batching in other places. GAT doesn't support batch dimension, so you just overload the node dimension with concatination.
+        assert x.dim() == 2, f"Input should be 2D, but got shape {x.shape}"
+
+        x = F.relu(self.gat1(x, edge_index))
+
+        # Apply the second GAT layer and a ReLU activation function
+        x = F.relu(self.gat2(x, edge_index))
+
+        # Apply the third GAT layer and a ReLU activation function
+        x = F.relu(self.gat3(x, edge_index))
+
+        # Apply the fourth GAT layer
+        x = torch.tanh(self.gat4(x, edge_index))
+
+        return x
+
 
 """
 Extract node features for two layer gcn
@@ -120,7 +150,7 @@ class DeformBlockGCN(nn.Module):
         self.n_scale = n_scale
         self.nc = nc
         self.K = K
-        self.gcn = TwoLayerGCN(nc*2, nc, 3)  # Adjust dimensions as needed
+        self.gcn = FourLayerGAT(nc*2, nc, 3)  # Adjust dimensions as needed
 
     def forward(self, v, f, volume,start,end,edge_list):
         coord = v.clone()

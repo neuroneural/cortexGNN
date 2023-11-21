@@ -158,14 +158,14 @@ if __name__ == '__main__':
 
             if config.save_model:
                 print('Save model checkpoints ... ')
-                path_save_model = "./ckpts/model/pialnn_model_"+config.hemisphere+"_"+str(epoch)+"epochs.pt"
+                path_save_model = "./ckpts/model/cortexGAT_model_"+config.hemisphere+"_"+str(epoch)+"epochs.pt"
                 torch.save(model.state_dict(), path_save_model)
 
             allocated.append(torch.cuda.memory_allocated())
 
             if config.save_mesh_train:
                 print('Save pial surface mesh ... ')
-                path_save_mesh = "./ckpts/mesh/pialnn_mesh_"+config.hemisphere+"_"+str(epoch)+"epochs.obj"
+                path_save_mesh = "./ckpts/mesh/cortexGAT_mesh_"+config.hemisphere+"_"+str(epoch)+"epochs.obj"
 
                 normal = compute_normal(v_out, f_in)
                 v_gm = v_out[0].cpu().numpy() * LWHmax/2  + [L/2,W/2,H/2]
