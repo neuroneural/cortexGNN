@@ -45,6 +45,7 @@ class FourLayerGAT(nn.Module):
 
         # Apply the fourth GAT layer
         x = torch.tanh(self.gat4(x, edge_index))
+        #x = self.gat4(x, edge_index)
 
         return x
 
@@ -149,17 +150,16 @@ class DeformBlockGCN(nn.Module):
         self.n_scale = n_scale
         self.nc = nc
         self.K = K
-        self.gcn = FourLayerGAT(nc*2, nc, 3)  # Adjust dimensions as needed
+        self.gcn = FourLayerGAT(nc*2, nc*2, 3)  # Adjust dimensions as needed
 
     def forward(self, v, f, volume,start,end,edge_list):
         coord = v.clone()
         x = self.nodeFeatureNet(v,f,volume,start,end)
-        #print('x nodefeatures',x.shape)
         #removed old comments
         x = self.gcn(x, edge_list)*.1 #threshold the deformation like before
 
         coord[:,start:end,:] = coord[:,start:end,:] + x
-                
+
         return coord    # v=v+dvreturn    # node features
     
     def initialize(self, L, W, H, device=None):
@@ -178,10 +178,13 @@ class CortexGNN(nn.Module):
         
         # self.blocks = nn.ModuleList([DeformBlockGCN(nc, K, n_scale) for i in range(num_blocks)])
         self.blocks = DeformBlockGCN(nc, K, n_scale)
-
         self.smooth = LaplacianSmooth(3, 3, aggr='mean')
 
     def forward(self, v, f, volume, n_smooth=1, lambd=1.0,start = None, end = None,block=0):
+        assert v.shape[0] == 1
+        assert f.shape[0] == 1
+        assert v.shape[1] != 1
+        assert f.shape[1] != 1
         edge_list = torch.cat([f[0,:,[0,1]],
                                f[0,:,[1,2]],
                                f[0,:,[2,0]]], dim=0).transpose(1,0)#moved from after x
