@@ -21,31 +21,35 @@ class TwoLayerGCN(nn.Module):
         x = torch.tanh(self.gcn2(x, edge_index))
         return x
 
-class FourLayerGAT(nn.Module):
-    def __init__(self, in_features, hidden_features, out_features):
-        super(FourLayerGAT, self).__init__()
+
+class NLayerGAT(nn.Module):
+    def __init__(self, in_features, hidden_features, out_features, num_layers):
+        super(NLayerGAT, self).__init__()
+        assert num_layers > 1, "Number of layers should be greater than 1"
+
         # Initialize the GAT layers
-        self.gat1 = GATConv(in_features, hidden_features)
-        self.gat2 = GATConv(hidden_features, hidden_features)
-        self.gat3 = GATConv(hidden_features, hidden_features)
-        self.gat4 = GATConv(hidden_features, out_features)
+        self.layers = nn.ModuleList()
+        
+        # First layer
+        self.layers.append(GATConv(in_features, hidden_features))
+
+        # Hidden layers
+        for _ in range(num_layers - 2):
+            self.layers.append(GATConv(hidden_features, hidden_features))
+
+        # Output layer
+        self.layers.append(GATConv(hidden_features, out_features))
 
     def forward(self, x, edge_index):
-        # Apply the first GAT layer and a ReLU activation function
-        x = x.squeeze()#Todo: implement batching in other places. GAT doesn't support batch dimension, so you just overload the node dimension with concatination.
+        x = x.squeeze()
         assert x.dim() == 2, f"Input should be 2D, but got shape {x.shape}"
 
-        x = F.relu(self.gat1(x, edge_index))
+        # Apply all but the last GAT layer with ReLU activation
+        for layer in self.layers[:-1]:
+            x = F.relu(layer(x, edge_index))
 
-        # Apply the second GAT layer and a ReLU activation function
-        x = F.relu(self.gat2(x, edge_index))
-
-        # Apply the third GAT layer and a ReLU activation function
-        x = F.relu(self.gat3(x, edge_index))
-
-        # Apply the fourth GAT layer
-        x = torch.tanh(self.gat4(x, edge_index))
-        #x = self.gat4(x, edge_index)
+        # Apply the last GAT layer with tanh activation
+        x = torch.tanh(self.layers[-1](x, edge_index))
 
         return x
 
@@ -143,20 +147,20 @@ n_scale: num of layers of image pyramid
 """
 
 class DeformBlockGCN(nn.Module):
-    def __init__(self, nc=128, K=5, n_scale=3):
+    def __init__(self, nc=128, K=5, n_scale=3,sf=.1):
         super(DeformBlockGCN, self).__init__()
         self.nodeFeatureNet = NodeFeatureNet(nc=nc,K=K,n_scale=n_scale)
         #chatgpt,declare a custom 2 layer gcn here that takes features from nodeFeatureNet to predict node features, use a tanh nonlinearity at the end instead of softmax. 
         self.n_scale = n_scale
         self.nc = nc
         self.K = K
-        self.gcn = FourLayerGAT(nc*2, nc*2, 3)  # Adjust dimensions as needed
+        self.sf = sf
+        self.gcn = NLayerGAT(nc*2, nc, 3,2)  # Adjust dimensions as needed
 
     def forward(self, v, f, volume,start,end,edge_list):
         coord = v.clone()
         x = self.nodeFeatureNet(v,f,volume,start,end)
-        #removed old comments
-        x = self.gcn(x, edge_list)*.1 #threshold the deformation like before
+        x = self.gcn(x, edge_list)*self.sf #threshold the deformation like before
 
         coord[:,start:end,:] = coord[:,start:end,:] + x
 
@@ -173,11 +177,11 @@ PialNN with 3 deformation blocks + 1 Laplacian smoothing layer
 """
 
 class CortexGNN(nn.Module):
-    def __init__(self, nc=128, K=5, n_scale=3, num_blocks=3):
+    def __init__(self, nc=128, K=5, n_scale=3, num_blocks=3,sf=.1):
         super(CortexGNN, self).__init__()
         
         # self.blocks = nn.ModuleList([DeformBlockGCN(nc, K, n_scale) for i in range(num_blocks)])
-        self.blocks = DeformBlockGCN(nc, K, n_scale)
+        self.blocks = DeformBlockGCN(nc, K, n_scale,sf)
         self.smooth = LaplacianSmooth(3, 3, aggr='mean')
 
     def forward(self, v, f, volume, n_smooth=1, lambd=1.0,start = None, end = None,block=0):
