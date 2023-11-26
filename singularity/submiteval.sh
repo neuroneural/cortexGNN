@@ -2,17 +2,16 @@
 #SBATCH -n 1
 #SBATCH -c 4
 #SBATCH --mem=30g
-#SBATCH -p qTRDGPUH
-#SBATCH --gres=gpu:V100:1
+#SBATCH -p qTRDGPU
+#SBATCH --gres=gpu:RTX:1
 #SBATCH -t 1-00:00
-#SBATCH -J pialnnl
-#SBATCH -e jobs/error%A.err
-#SBATCH -o jobs/out%A.out
+#SBATCH -J pgnevlh
+#SBATCH -e jobs/error%A_%a.err
+#SBATCH -o jobs/out%A_%a.out
 #SBATCH -A psy53c17
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=washbee1@student.gsu.edu
 #SBATCH --oversubscribe
-#SBATCH --exclude=arctrdgn002,arctrddgx001
 
 
 sleep 5s
@@ -21,9 +20,27 @@ source /usr/share/lmod/lmod/init/bash
 module use /application/ubuntumodules/localmodules
 module load singularity/3.10.2
 echo "bb"
-singularity exec --nv --bind /data,/data/users2/washbee/speedrun/hcp-plis-subj-pialnn-rp:/data-pialnn/,/data/users2/washbee/speedrun/PialNN_fork:/pialnn,/data/users2/washbee/speedrun/hcp-plis-subj-pialnn-rp:/subj/ /data/users2/washbee/containers/speedrun/pialnn_bm_sandbox/ /pialnn/singularity/eval.sh &
+
+gnn=(0 1)
+layers=(2 3 4)
+
+# Compute the combination from the SLURM_ARRAY_TASK_ID
+index1=$(($SLURM_ARRAY_TASK_ID / 3))
+index2=$(($SLURM_ARRAY_TASK_ID % 3))
+
+# Fetch the actual values from the arrays
+gnn=${gnn[$index1]}
+layers=${layers[$index2]}
+
+# Now use value1 and value2 as needed
+echo "Combination: $gnn, $layers"
+# Add your code here that uses value1 and value2
+
+model_location="/data/users2/washbee/websurf/cortexGNN/ckpts/model/lh/cortexGCN_GNNlayers2_mse_whitein_full_model_lh_200epochs.pt"
+#/data/users2/washbee/websurf/pialnn_web_trsmall/
+singularity exec --nv --bind /data,/data/users2/washbee/websurf/pialnn_web_trsmall:/data-pialnn/,/data/users2/washbee/websurf/cortexGNN:/pialnn, /data/users2/washbee/containers/speedrun/pialnn_sr.sif /pialnn/singularity/eval.sh $gnn $layers $model_location
+#singularity exec --nv --bind /data,/data/users2/washbee/speedrun/hcp-plis-subj-pialnn-rp:/data-pialnn/,/data/users2/washbee/websurf/cortexGNN:/pialnn, /data/users2/washbee/containers/speedrun/pialnn_sr.sif /pialnn/singularity/eval.sh $gnn $layers $model_location
 echo "CC"
-wait
 
 sleep 10s
 

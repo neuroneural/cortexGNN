@@ -1,5 +1,9 @@
 import numpy as np
 from tqdm import tqdm
+import os
+import csv
+
+
 
 import torch
 from torch.utils.data import DataLoader
@@ -7,6 +11,8 @@ from torch.utils.data import DataLoader
 from config import load_config
 from data.dataload import load_data, BrainDataset
 from model.pialnn import PialNN
+from model.cortexGNN import CortexGNN
+
 from utils import compute_normal, save_mesh_obj, compute_distance
 
 
@@ -36,12 +42,29 @@ if __name__ == '__main__':
     testloader = DataLoader(test_set, batch_size=1, shuffle=True)
     print("Finish loading dataset. There are total {} subjects.".format(n_data))
     print("----------------------------")
-
     
     """load model"""
     print("Start loading model ...")
-    model = PialNN(config.nc, config.K, config.n_scale).to(device)
-    model.load_state_dict(torch.load("./ckpts/model/pialnn_model_lh_200epochs.pt",
+    
+    model = None
+    num_blocks = None
+    sf = .1
+    model_name = 'your_model_name'
+    if config.cortexGNN:
+        num_blocks = 3
+        print("Model is CortexGNN")
+        model = CortexGNN(config.nc, config.K, config.n_scale,num_blocks,sf,config.gnn_layers,config.gnnVersion).to(device)#todo:revise num_blocks
+        if config.gnnVersion==0:
+            model_name = "PialGCN"
+        elif config.gnnVersion==1:
+            model_name = "PialGAT"
+    else:
+        num_blocks = 1    
+        print("Model is PialNN")
+        model_name ='PialNN'
+        model = PialNN(config.nc, config.K, config.n_scale).to(device)#todo:revise 7
+    
+    model.load_state_dict(torch.load(f"{config.model_location}",
                                      map_location=device))
     model.initialize(L, W, H, device)
     print("Finish loading model")
@@ -51,9 +74,9 @@ if __name__ == '__main__':
     """evaluation"""
     print("Start evaluation ...")
     with torch.no_grad():
-        #CD = []
-        #AD = []
-        #HD = []
+        CD = []
+        AD = []
+        HD = []
         for idx, data in tqdm(enumerate(testloader)):
             volume_in, v_gt, f_gt, v_in, f_in, sub_id = data
 
@@ -73,15 +96,15 @@ if __name__ == '__main__':
             f_gt_eval = f_gt[0].cpu().numpy()
 
             # compute distance-based metrics
-            #cd, assd, hd = compute_distance(v_pred_eval, v_gt_eval,
-            #                                f_pred_eval, f_gt_eval, config.n_test_pts)
+            cd, assd, hd = compute_distance(v_pred_eval, v_gt_eval,
+                                            f_pred_eval, f_gt_eval, config.n_test_pts)
             
-            #CD.append(cd)
-            #AD.append(assd)
-            #HD.append(hd)
+            CD.append(cd)
+            AD.append(assd)
+            HD.append(hd)
             print('sub_id',sub_id)
             if config.save_mesh_eval:
-                path_save_mesh = "./ckpts/eval_subj_id/pialnn_mesh_eval_"\
+                path_save_mesh = f"{config.save_mesh_dir}"\
                         +config.hemisphere+"_subject_"+str(sub_id.item())+".obj"
 
                 normal = compute_normal(v_pred, f_in)
@@ -89,15 +112,42 @@ if __name__ == '__main__':
                 save_mesh_obj(v_pred_eval, f_pred_eval, n_pred_eval, path_save_mesh)
                 
                 ################
-                path_save_mesh = "./ckpts/eval_subj_id/pialnn_mesh_eval_"\
+                path_save_mesh = f"{config.save_mesh_dir}"\
                         +config.hemisphere+"_subject_"+str(sub_id.item())+"_gt.obj"
 
                 normal = compute_normal(v_gt, f_gt)
                 n_gt_eval = normal[0].cpu().numpy()
                 save_mesh_obj(v_gt_eval, f_gt_eval, n_gt_eval, path_save_mesh)
 
+    CD_mean = np.mean(CD)
+    CD_std = np.std(CD)
+    AD_mean = np.mean(AD)
+    AD_std = np.std(AD)
+    HD_mean = np.mean(HD)
+    HD_std = np.std(HD)
     # print("CD: Mean={}, Std={}".format(np.mean(CD), np.std(CD)))
     # print("AD: Mean={}, Std={}".format(np.mean(AD), np.std(AD)))
     # print("HD: Mean={}, Std={}".format(np.mean(HD), np.std(HD)))
+    print("CD: Mean={}, Std={}".format(CD_mean, CD_std))
+    print("AD: Mean={}, Std={}".format(AD_mean, AD_std))
+    print("HD: Mean={}, Std={}".format(HD_mean, HD_std))
+    
+    data = [model_name, config.gnn_layers, CD_mean, CD_std, AD_mean, AD_std, HD_mean, HD_std]
+
+    # File path for the CSV
+    csv_file_path = '/pialnn/evaluation_stats.csv'
+
+    # Check if file exists, if not create, if yes append
+    if not os.path.isfile(csv_file_path):
+        # Writing headers and data to CSV
+        with open(csv_file_path, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(['Model', 'Layers', 'CD_Mean', 'CD_Std', 'AD_Mean', 'AD_Std', 'HD_Mean', 'HD_Std'])
+            writer.writerow(data)
+    else:
+        # Appending data to CSV without header
+        with open(csv_file_path, mode='a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(data)
     print("Finish evaluation.")
     print("----------------------------")
