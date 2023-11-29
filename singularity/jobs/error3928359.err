@@ -1,0 +1,9 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:02<00:08,  2.94s/it] 50%|█████     | 2/4 [00:03<00:03,  1.83s/it] 75%|███████▌  | 3/4 [00:04<00:01,  1.39s/it]100%|██████████| 4/4 [00:05<00:00,  1.19s/it]100%|██████████| 4/4 [00:05<00:00,  1.44s/it]
+Traceback (most recent call last):
+  File "train.py", line 58, in <module>
+    model = PialNN(config.nc, config.K, config.n_scale).to(device)
+  File "/pialnn/model/pialnn.py", line 127, in __init__
+    self.block1 = DeformBlock(nc, K, n_scale)
+  File "/pialnn/model/pialnn.py", line 28, in __init__
+    self.layer1 = nn.linear(6+nc,(6+nc)//2)
+AttributeError: module 'torch.nn' has no attribute 'linear'

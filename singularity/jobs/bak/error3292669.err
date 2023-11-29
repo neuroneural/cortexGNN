@@ -1,0 +1,18 @@
+  0%|          | 0/107 [00:00<?, ?it/s]  0%|          | 0/107 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/users/washbee1/.local/lib/python3.7/site-packages/nibabel/loadsave.py", line 42, in load
+    stat_result = os.stat(filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/data-pialnn/2/mri/orig.mgz'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "eval.py", line 30, in <module>
+    hemisphere = config.hemisphere)
+  File "/pialnn/data/dataload.py", line 90, in load_data
+    volume = load_mri(data_path + subid + '/mri/orig.mgz')
+  File "/pialnn/data/dataload.py", line 41, in load_mri
+    brain = nib.load(path)
+  File "/home/users/washbee1/.local/lib/python3.7/site-packages/nibabel/loadsave.py", line 44, in load
+    raise FileNotFoundError(f"No such file or no access: '{filename}'")
+FileNotFoundError: No such file or no access: '/data-pialnn/2/mri/orig.mgz'

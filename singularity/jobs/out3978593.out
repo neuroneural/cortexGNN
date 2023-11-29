@@ -1,0 +1,38 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+Training data length 3
+Validation data length 1
+scaling factor  1.0
+----------------------------
+Start loading model ...
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+Epoch:0, training loss:3.78848926226298
+----------------------------
+Start validation ...
+Validation error:4.783863544464111
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 4.67 GiB
+Finish validation.
+----------------------------
+Epoch:1, training loss:3.410001198450724
+Epoch:2, training loss:2.5931655963261924
+Epoch:3, training loss:2.095945874849955
+Epoch:4, training loss:2.3203752835591636
+Epoch:5, training loss:1.9467732508977253
+Epoch:6, training loss:1.7817785342534382
+Epoch:7, training loss:1.6280324856440227
+Epoch:8, training loss:1.5576298634211223
+Epoch:9, training loss:1.5373212099075317

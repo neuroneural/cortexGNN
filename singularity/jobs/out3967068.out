@@ -1,0 +1,27 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+Training data length 3
+Validation data length 1
+----------------------------
+Start loading model ...
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+Epoch:0, training loss:5936239.166666667
+----------------------------
+Start validation ...
+Validation error:5930403.0
+Save model checkpoints ... 
+Save pial surface mesh ... 
+D
+CC

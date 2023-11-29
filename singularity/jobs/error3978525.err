@@ -1,0 +1,12 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.02it/s] 50%|█████     | 2/4 [00:00<00:00,  3.04it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.04it/s]100%|██████████| 4/4 [00:01<00:00,  3.06it/s]100%|██████████| 4/4 [00:01<00:00,  3.05it/s]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:12<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 208, in <module>
+    normal = compute_normal(v_out, f_in.unsqueeze(0))#Todo:remove unsqueeze.
+  File "/pialnn/utils.py", line 118, in compute_normal
+    faces=list(f)).verts_normals_list()[0]
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/structures/meshes.py", line 345, in __init__
+    f[f.gt(-1).all(1)].to(torch.int64) if len(f) > 0 else f for f in faces
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/structures/meshes.py", line 345, in <listcomp>
+    f[f.gt(-1).all(1)].to(torch.int64) if len(f) > 0 else f for f in faces
+IndexError: The shape of the mask [1, 3] at index 1 does not match the shape of the indexed tensor [1, 303596, 3] at index 1

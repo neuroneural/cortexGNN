@@ -1,0 +1,42 @@
+  0%|          | 0/4 [00:00<?, ?it/s]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/io/obj_io.py:530: UserWarning: No mtl file provided
+  warnings.warn("No mtl file provided")
+ 25%|██▌       | 1/4 [00:01<00:05,  1.82s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+ 50%|█████     | 2/4 [00:03<00:03,  1.73s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+ 75%|███████▌  | 3/4 [00:05<00:01,  1.73s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+100%|██████████| 4/4 [00:06<00:00,  1.71s/it]100%|██████████| 4/4 [00:06<00:00,  1.72s/it]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 160, in <module>
+    start = segment_start,end = segment_end,block=bl)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/cortexGNN.py", line 194, in forward
+    edge_index_with_loops = add_self_loops(edge_list)[0]
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch_geometric/utils/loop.py", line 145, in add_self_loops
+    edge_index = torch.cat([edge_index, loop_index], dim=1)
+RuntimeError: Tensors must have same number of dimensions: got 2 and 3

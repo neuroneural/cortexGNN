@@ -13,7 +13,7 @@ from data.dataload import load_data, BrainDataset
 from model.pialnn import PialNN
 from model.cortexGNN import CortexGNN
 
-from utils import compute_normal, save_mesh_obj, compute_distance
+from utils import compute_normal, save_mesh_obj, compute_distance, compute_hausdorff
 
 
 if __name__ == '__main__':
@@ -50,20 +50,21 @@ if __name__ == '__main__':
     num_blocks = None
     sf = .1
     model_name = 'your_model_name'
-    if config.cortexGNN:
-        num_blocks = 3
-        print("Model is CortexGNN")
+    if config.cortexGNN and config.gnn_layers>1:
+        num_blocks = 1
         model = CortexGNN(config.nc, config.K, config.n_scale,num_blocks,sf,config.gnn_layers,config.gnnVersion).to(device)#todo:revise num_blocks
         if config.gnnVersion==0:
             model_name = "PialGCN"
         elif config.gnnVersion==1:
             model_name = "PialGAT"
+        
     else:
         num_blocks = 1    
-        print("Model is PialNN")
         model_name ='PialNN'
         model = PialNN(config.nc, config.K, config.n_scale).to(device)#todo:revise 7
-    
+
+    print("Model is ", model_name)
+    print('config.model_location',config.model_location)
     model.load_state_dict(torch.load(f"{config.model_location}",
                                      map_location=device))
     model.initialize(L, W, H, device)
@@ -96,15 +97,17 @@ if __name__ == '__main__':
             f_gt_eval = f_gt[0].cpu().numpy()
 
             # compute distance-based metrics
-            cd, assd, hd = compute_distance(v_pred_eval, v_gt_eval,
-                                            f_pred_eval, f_gt_eval, config.n_test_pts)
+            # cd, assd, hd = compute_distance(v_pred_eval, v_gt_eval,
+            #                                 f_pred_eval, f_gt_eval, config.n_test_pts)
+            hd = compute_hausdorff(v_pred_eval, v_gt_eval,
+                                            f_pred_eval, f_gt_eval, config.n_test_pts)#saving compute
             
-            CD.append(cd)
-            AD.append(assd)
+            # CD.append(cd)
+            # AD.append(assd)
             HD.append(hd)
             print('sub_id',sub_id)
             if config.save_mesh_eval:
-                path_save_mesh = f"{config.save_mesh_dir}"\
+                path_save_mesh = f"/pialnn/ckpts/mesh/test/{model_name}_layer{config.gnn_layers}_"\
                         +config.hemisphere+"_subject_"+str(sub_id.item())+".obj"
 
                 normal = compute_normal(v_pred, f_in)
@@ -112,28 +115,29 @@ if __name__ == '__main__':
                 save_mesh_obj(v_pred_eval, f_pred_eval, n_pred_eval, path_save_mesh)
                 
                 ################
-                path_save_mesh = f"{config.save_mesh_dir}"\
+                path_save_mesh = f"/pialnn/ckpts/mesh/test/{model_name}_layer{config.gnn_layers}_"\
                         +config.hemisphere+"_subject_"+str(sub_id.item())+"_gt.obj"
 
                 normal = compute_normal(v_gt, f_gt)
                 n_gt_eval = normal[0].cpu().numpy()
                 save_mesh_obj(v_gt_eval, f_gt_eval, n_gt_eval, path_save_mesh)
 
-    CD_mean = np.mean(CD)
-    CD_std = np.std(CD)
-    AD_mean = np.mean(AD)
-    AD_std = np.std(AD)
+    # CD_mean = np.mean(CD)
+    # CD_std = np.std(CD)
+    # AD_mean = np.mean(AD)
+    # AD_std = np.std(AD)
     HD_mean = np.mean(HD)
     HD_std = np.std(HD)
     # print("CD: Mean={}, Std={}".format(np.mean(CD), np.std(CD)))
     # print("AD: Mean={}, Std={}".format(np.mean(AD), np.std(AD)))
     # print("HD: Mean={}, Std={}".format(np.mean(HD), np.std(HD)))
-    print("CD: Mean={}, Std={}".format(CD_mean, CD_std))
-    print("AD: Mean={}, Std={}".format(AD_mean, AD_std))
+    # print("CD: Mean={}, Std={}".format(CD_mean, CD_std))
+    # print("AD: Mean={}, Std={}".format(AD_mean, AD_std))
     print("HD: Mean={}, Std={}".format(HD_mean, HD_std))
     
-    data = [model_name, config.gnn_layers, CD_mean, CD_std, AD_mean, AD_std, HD_mean, HD_std]
-
+    #data = [model_name, config.gnn_layers, CD_mean, CD_std, AD_mean, AD_std, HD_mean, HD_std]
+    data = [model_name, config.gnn_layers, HD_mean, HD_std]
+    
     # File path for the CSV
     csv_file_path = '/pialnn/evaluation_stats.csv'
 
@@ -142,7 +146,8 @@ if __name__ == '__main__':
         # Writing headers and data to CSV
         with open(csv_file_path, mode='w', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(['Model', 'Layers', 'CD_Mean', 'CD_Std', 'AD_Mean', 'AD_Std', 'HD_Mean', 'HD_Std'])
+            #writer.writerow(['Model', 'Layers', 'CD_Mean', 'CD_Std', 'AD_Mean', 'AD_Std', 'HD_Mean', 'HD_Std'])
+            writer.writerow(['Model', 'Layers', 'HD_Mean', 'HD_Std'])
             writer.writerow(data)
     else:
         # Appending data to CSV without header

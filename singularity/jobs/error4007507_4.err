@@ -1,0 +1,10 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.10it/s] 50%|█████     | 2/4 [00:00<00:00,  3.25it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.30it/s]100%|██████████| 4/4 [00:01<00:00,  3.33it/s]100%|██████████| 4/4 [00:01<00:00,  3.29it/s]
+  0%|          | 0/601 [00:00<?, ?it/s]  0%|          | 0/601 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 174, in <module>
+    loss.backward()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/tensor.py", line 221, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/autograd/__init__.py", line 132, in backward
+    allow_unreachable=True)  # allow_unreachable flag
+RuntimeError: CUDA out of memory. Tried to allocate 1006.00 MiB (GPU 0; 10.75 GiB total capacity; 8.53 GiB already allocated; 940.75 MiB free; 8.93 GiB reserved in total by PyTorch)

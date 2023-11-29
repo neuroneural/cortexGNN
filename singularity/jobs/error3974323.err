@@ -1,0 +1,4 @@
+  File "train.py", line 101
+    path_save_mesh = "./ckpts/mesh/template"+config.hemisphere.obj"
+                                                                  ^
+SyntaxError: EOL while scanning string literal

@@ -5,7 +5,7 @@ import math
 
 # Data
 data = {
-    "Model": ["PialNN", "CortexGCN", "CortexGCN", "CortexGCN", "CortexGAT", "CortexGAT", "CortexGAT"],
+    "Model": ["PialNN", "PialGCN", "PialGCN", "PialGCN", "PialGAT", "PialGAT", "PialGAT"],
     "Memory (GiB)": [5.4, 0.92, 1.13, 1.33, 1.69, 2.62, 3.55],
     "GNN Layers": [0, 2, 3, 4, 2, 3, 4]
 }
@@ -44,4 +44,5 @@ plt.xticks(fontsize=12)  # Change font size for x-axis tick labels
 plt.yticks(fontsize=12)  # Change font size for y-axis tick labels
 
 plt.savefig("train_memory.png", format='png')
+plt.savefig("train_memory.svg", format='svg')
 plt.close()

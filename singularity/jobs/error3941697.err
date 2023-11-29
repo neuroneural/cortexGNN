@@ -1,0 +1,14 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  1.81it/s] 50%|█████     | 2/4 [00:02<00:02,  1.13s/it] 75%|███████▌  | 3/4 [00:02<00:00,  1.12it/s]100%|██████████| 4/4 [00:04<00:00,  1.28s/it]100%|██████████| 4/4 [00:04<00:00,  1.14s/it]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 106, in <module>
+    start = segment_start,end = segment_end)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/pialnn.py", line 128, in forward
+    x = self.block1(v, f, volume,start,end)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/pialnn.py", line 46, in forward
+    x = torch.cat([v, normal], 2)
+RuntimeError: Sizes of tensors must match except in dimension 1. Got 146978 and 36744 (The offending index is 0)

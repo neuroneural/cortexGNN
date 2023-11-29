@@ -1,0 +1,28 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.13it/s] 50%|█████     | 2/4 [00:00<00:00,  3.29it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.32it/s]100%|██████████| 4/4 [00:01<00:00,  3.36it/s]100%|██████████| 4/4 [00:01<00:00,  3.33it/s]
+  0%|          | 0/601 [00:00<?, ?it/s]  0%|          | 0/601 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 147, in <module>
+    start = segment_start,end = segment_end)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/cortexGNN.py", line 219, in forward
+    x = self.block2(x, f, volume,start,end,edge_index_with_loops)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/cortexGNN.py", line 186, in forward
+    x = self.gcn(x, edge_list)*self.sf #threshold the deformation like before
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/cortexGNN.py", line 67, in forward
+    x = F.relu(layer(x, edge_index))
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch_geometric/nn/conv/gat_conv.py", line 246, in forward
+    out = self.propagate(edge_index, x=x, alpha=alpha, size=size)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch_geometric/nn/conv/message_passing.py", line 367, in propagate
+    size, kwargs)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch_geometric/nn/conv/message_passing.py", line 260, in __collect__
+    data = self.__lift__(data, edge_index, dim)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch_geometric/nn/conv/message_passing.py", line 230, in __lift__
+    return src.index_select(self.node_dim, index)
+RuntimeError: CUDA out of memory. Tried to allocate 1.11 GiB (GPU 0; 10.75 GiB total capacity; 8.00 GiB already allocated; 869.62 MiB free; 9.01 GiB reserved in total by PyTorch)

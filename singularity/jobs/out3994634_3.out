@@ -1,0 +1,1186 @@
+aa
+bb
+Combination: 1, 2
+A
+B
+C
+rh training
+gnn: 1
+layers: 2
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+numbers 101006
+numbers 101107
+numbers 101309
+numbers 101410
+numbers 101915
+numbers 102008
+numbers 102311
+numbers 102513
+numbers 102816
+numbers 103111
+numbers 103414
+numbers 103515
+numbers 103818
+numbers 104012
+numbers 104416
+numbers 104820
+numbers 105014
+numbers 105115
+numbers 105216
+numbers 105620
+numbers 105923
+numbers 106016
+numbers 106319
+numbers 106521
+numbers 107018
+numbers 107220
+numbers 107321
+numbers 107422
+numbers 107725
+numbers 108121
+numbers 108222
+numbers 108323
+numbers 108525
+numbers 108828
+numbers 109123
+numbers 109325
+numbers 109830
+numbers 110007
+numbers 110411
+numbers 110613
+numbers 111009
+numbers 111312
+numbers 111413
+numbers 111514
+numbers 111716
+numbers 112112
+numbers 112314
+numbers 112516
+numbers 112819
+numbers 112920
+numbers 113215
+numbers 113619
+numbers 113821
+numbers 113922
+numbers 114217
+numbers 114318
+numbers 114419
+numbers 114621
+numbers 114823
+numbers 114924
+numbers 115017
+numbers 115219
+numbers 115320
+numbers 115825
+numbers 116120
+numbers 116221
+numbers 116524
+numbers 116726
+numbers 117122
+numbers 117324
+numbers 117930
+numbers 118023
+numbers 118124
+numbers 118225
+numbers 118528
+numbers 118730
+numbers 118932
+numbers 119126
+numbers 119732
+numbers 119833
+numbers 120111
+numbers 120212
+numbers 120515
+numbers 120717
+numbers 121315
+numbers 121416
+numbers 121618
+numbers 121820
+numbers 121921
+numbers 122317
+numbers 122620
+numbers 122822
+numbers 123117
+numbers 123420
+numbers 123521
+numbers 123824
+numbers 123925
+numbers 124220
+numbers 124422
+numbers 124624
+numbers 124826
+numbers 125525
+numbers 126325
+numbers 126628
+numbers 126931
+numbers 127327
+numbers 127630
+numbers 127933
+numbers 128026
+numbers 128127
+numbers 128329
+numbers 128632
+numbers 128935
+numbers 129028
+numbers 129129
+numbers 129331
+numbers 129432
+numbers 129533
+numbers 129634
+numbers 129937
+numbers 130013
+numbers 130316
+numbers 130417
+numbers 130619
+numbers 130821
+numbers 130922
+numbers 131217
+numbers 131419
+numbers 131621
+numbers 131722
+numbers 131823
+numbers 131924
+numbers 132017
+numbers 132118
+numbers 133019
+numbers 133625
+numbers 133827
+numbers 133928
+numbers 134021
+numbers 134223
+numbers 134324
+numbers 134425
+numbers 134728
+numbers 134829
+numbers 135225
+numbers 135528
+numbers 135730
+numbers 135932
+numbers 136227
+numbers 136732
+numbers 136833
+numbers 137027
+numbers 137128
+numbers 137229
+numbers 137633
+numbers 137936
+numbers 138231
+numbers 138534
+numbers 138837
+numbers 139233
+numbers 139637
+numbers 139839
+numbers 140117
+numbers 140319
+numbers 140420
+numbers 140824
+numbers 140925
+numbers 141119
+numbers 141422
+numbers 141826
+numbers 142424
+numbers 142828
+numbers 143325
+numbers 143426
+numbers 143527
+numbers 144125
+numbers 144226
+numbers 144428
+numbers 144731
+numbers 144832
+numbers 145127
+numbers 145531
+numbers 145834
+numbers 146129
+numbers 146331
+numbers 146432
+numbers 146533
+numbers 146634
+numbers 146937
+numbers 147030
+numbers 147737
+numbers 148032
+numbers 148133
+numbers 148335
+numbers 148436
+numbers 148840
+numbers 148941
+numbers 149236
+numbers 149337
+numbers 149539
+numbers 149741
+numbers 149842
+numbers 150019
+numbers 150423
+numbers 150524
+numbers 150625
+numbers 150726
+numbers 150928
+numbers 151223
+numbers 151425
+numbers 151526
+numbers 151627
+numbers 151728
+numbers 151829
+numbers 152831
+numbers 153025
+numbers 153227
+numbers 153429
+numbers 153631
+numbers 153732
+numbers 153833
+numbers 154229
+numbers 154431
+numbers 154532
+numbers 154734
+numbers 154835
+numbers 154936
+numbers 155231
+numbers 155635
+numbers 155938
+numbers 156031
+numbers 156233
+numbers 156334
+numbers 156435
+numbers 156536
+numbers 156637
+numbers 157336
+numbers 157437
+numbers 157942
+numbers 158035
+numbers 158136
+numbers 158338
+numbers 158540
+numbers 158843
+numbers 159138
+numbers 159239
+numbers 159340
+numbers 159441
+numbers 159744
+numbers 159845
+numbers 159946
+numbers 160123
+numbers 160729
+numbers 160830
+numbers 160931
+numbers 161327
+numbers 161630
+numbers 161731
+numbers 162026
+numbers 162228
+numbers 162329
+numbers 162733
+numbers 162935
+numbers 163129
+numbers 163331
+numbers 163432
+numbers 163836
+numbers 164030
+numbers 164131
+numbers 164636
+numbers 164939
+numbers 165032
+numbers 165234
+numbers 165638
+numbers 165840
+numbers 166438
+numbers 166640
+numbers 167036
+numbers 167238
+numbers 167743
+numbers 168038
+numbers 168139
+numbers 168240
+numbers 168341
+numbers 168745
+numbers 169141
+numbers 169343
+numbers 169444
+numbers 169747
+numbers 169949
+numbers 170631
+numbers 170934
+numbers 171330
+numbers 171431
+numbers 171532
+numbers 171633
+numbers 172029
+numbers 172130
+numbers 172332
+numbers 172433
+numbers 172534
+numbers 172938
+numbers 173132
+numbers 173233
+numbers 173334
+numbers 173435
+numbers 173536
+numbers 173637
+numbers 173738
+numbers 173839
+numbers 173940
+numbers 174437
+numbers 174841
+numbers 175035
+numbers 175237
+numbers 175338
+numbers 175439
+numbers 175540
+numbers 175742
+numbers 176037
+numbers 176239
+numbers 176441
+numbers 176542
+numbers 176744
+numbers 177241
+numbers 177342
+numbers 177645
+numbers 177746
+numbers 178142
+numbers 178243
+numbers 178647
+numbers 178748
+numbers 178849
+numbers 178950
+numbers 179245
+numbers 179346
+numbers 179548
+numbers 179952
+numbers 180129
+numbers 180432
+numbers 180735
+numbers 180836
+numbers 180937
+numbers 181131
+numbers 181232
+numbers 181636
+numbers 182032
+numbers 182436
+numbers 182739
+numbers 182840
+numbers 183034
+numbers 183337
+numbers 185139
+numbers 185341
+numbers 185442
+numbers 185846
+numbers 185947
+numbers 186141
+numbers 186444
+numbers 187143
+numbers 187345
+numbers 187547
+numbers 187850
+numbers 188347
+numbers 188448
+numbers 188549
+numbers 188751
+numbers 189349
+numbers 189450
+numbers 190031
+numbers 190132
+numbers 191033
+numbers 191336
+numbers 191437
+numbers 191841
+numbers 191942
+numbers 192035
+numbers 192136
+numbers 192439
+numbers 192540
+numbers 192641
+numbers 192843
+numbers 193239
+numbers 193441
+numbers 194140
+numbers 194645
+numbers 194746
+numbers 194847
+numbers 195041
+numbers 195445
+numbers 195647
+numbers 195849
+numbers 195950
+numbers 196144
+numbers 196346
+numbers 196750
+numbers 197348
+numbers 197449
+numbers 197550
+numbers 197651
+numbers 198249
+numbers 198350
+numbers 198451
+numbers 198653
+numbers 198855
+numbers 199150
+numbers 199251
+numbers 199453
+numbers 199655
+numbers 199958
+numbers 300618
+numbers 303119
+numbers 303624
+numbers 304020
+numbers 304727
+numbers 305830
+numbers 307127
+numbers 308129
+numbers 308331
+numbers 309636
+numbers 310621
+numbers 311320
+numbers 316633
+numbers 316835
+numbers 317332
+numbers 318637
+numbers 320826
+numbers 321323
+numbers 322224
+numbers 329440
+numbers 330324
+numbers 333330
+numbers 334635
+numbers 336841
+numbers 339847
+numbers 341834
+numbers 346137
+numbers 346945
+numbers 348545
+numbers 351938
+numbers 352132
+numbers 352738
+numbers 353740
+numbers 355239
+numbers 355542
+numbers 356948
+numbers 358144
+numbers 361234
+numbers 361941
+numbers 365343
+numbers 366042
+numbers 366446
+numbers 371843
+numbers 377451
+numbers 378857
+numbers 379657
+numbers 380036
+numbers 381038
+numbers 381543
+numbers 382242
+numbers 385450
+numbers 386250
+numbers 387959
+numbers 389357
+numbers 390645
+numbers 391748
+numbers 393247
+numbers 393550
+numbers 395251
+numbers 395756
+numbers 395958
+numbers 397154
+numbers 397760
+numbers 397861
+numbers 406432
+numbers 406836
+numbers 412528
+numbers 414229
+numbers 415837
+numbers 422632
+numbers 424939
+numbers 429040
+numbers 432332
+numbers 433839
+numbers 436239
+numbers 436845
+numbers 441939
+numbers 445543
+numbers 448347
+numbers 449753
+numbers 453441
+numbers 456346
+numbers 459453
+numbers 465852
+numbers 467351
+numbers 473952
+numbers 475855
+numbers 479762
+numbers 480141
+numbers 481951
+numbers 485757
+numbers 486759
+numbers 492754
+numbers 495255
+numbers 497865
+numbers 499566
+numbers 500222
+numbers 506234
+numbers 510326
+numbers 512835
+numbers 513736
+numbers 517239
+numbers 519950
+numbers 520228
+numbers 521331
+numbers 522434
+numbers 523032
+numbers 524135
+numbers 525541
+numbers 529549
+numbers 529953
+numbers 530635
+numbers 531536
+numbers 536647
+numbers 540436
+numbers 541943
+numbers 545345
+numbers 547046
+numbers 548250
+numbers 549757
+numbers 552544
+numbers 553344
+numbers 555348
+numbers 555651
+numbers 557857
+numbers 559053
+numbers 561242
+numbers 561444
+numbers 562345
+numbers 562446
+numbers 565452
+numbers 566454
+numbers 567052
+numbers 567961
+numbers 568963
+numbers 570243
+numbers 571144
+numbers 571548
+numbers 572045
+numbers 573249
+numbers 573451
+numbers 576255
+numbers 579665
+numbers 579867
+numbers 580044
+numbers 580347
+numbers 580650
+numbers 580751
+numbers 581349
+numbers 581450
+numbers 583858
+numbers 584355
+numbers 585256
+numbers 585862
+numbers 586460
+numbers 587664
+numbers 588565
+numbers 592455
+numbers 594156
+numbers 597869
+numbers 598568
+numbers 599065
+numbers 599469
+numbers 599671
+numbers 601127
+numbers 604537
+numbers 609143
+numbers 611231
+numbers 611938
+numbers 613235
+numbers 613538
+numbers 614439
+numbers 615744
+numbers 616645
+numbers 617748
+numbers 618952
+numbers 620434
+numbers 622236
+numbers 623844
+numbers 626648
+numbers 627549
+numbers 627852
+numbers 628248
+numbers 633847
+numbers 638049
+numbers 644044
+numbers 645450
+numbers 645551
+numbers 647858
+numbers 650746
+numbers 654350
+numbers 654754
+numbers 656253
+numbers 656657
+numbers 657659
+numbers 660951
+numbers 662551
+numbers 663755
+numbers 664757
+numbers 665254
+numbers 667056
+numbers 668361
+numbers 671855
+numbers 672756
+numbers 673455
+numbers 677766
+numbers 677968
+numbers 679568
+numbers 679770
+numbers 680250
+numbers 680957
+numbers 683256
+numbers 685058
+numbers 686969
+numbers 687163
+numbers 690152
+numbers 693461
+numbers 693764
+numbers 695768
+numbers 700634
+numbers 702133
+numbers 704238
+numbers 705341
+numbers 706040
+numbers 707749
+numbers 709551
+numbers 713239
+numbers 715041
+numbers 715647
+numbers 715950
+numbers 720337
+numbers 724446
+numbers 725751
+numbers 727553
+numbers 727654
+numbers 729254
+numbers 729557
+numbers 731140
+numbers 732243
+numbers 733548
+numbers 734045
+numbers 734247
+numbers 735148
+numbers 737960
+numbers 742549
+numbers 744553
+numbers 745555
+numbers 748258
+numbers 748662
+numbers 749058
+numbers 749361
+numbers 751348
+numbers 751550
+numbers 753150
+numbers 753251
+numbers 756055
+numbers 759869
+numbers 761957
+numbers 765056
+numbers 766563
+numbers 767464
+numbers 769064
+numbers 770352
+numbers 771354
+numbers 773257
+numbers 779370
+numbers 782157
+numbers 782561
+numbers 783462
+numbers 784565
+numbers 786569
+numbers 788876
+numbers 789373
+numbers 792564
+numbers 792766
+numbers 792867
+numbers 793465
+numbers 800941
+numbers 802844
+numbers 803240
+numbers 810439
+numbers 810843
+numbers 812746
+numbers 814649
+numbers 816653
+numbers 818859
+numbers 820745
+numbers 825048
+numbers 826353
+numbers 826454
+numbers 833148
+numbers 833249
+numbers 835657
+numbers 837560
+numbers 837964
+numbers 841349
+numbers 843151
+numbers 844961
+numbers 845458
+numbers 849264
+numbers 849971
+numbers 852455
+numbers 856463
+numbers 856766
+numbers 856968
+numbers 857263
+numbers 859671
+numbers 861456
+numbers 865363
+numbers 867468
+numbers 870861
+numbers 871762
+numbers 871964
+numbers 872158
+numbers 872562
+numbers 872764
+numbers 873968
+numbers 877168
+numbers 877269
+numbers 878776
+numbers 880157
+numbers 882161
+numbers 885975
+numbers 887373
+numbers 889579
+numbers 891667
+numbers 894067
+numbers 894673
+numbers 894774
+numbers 896778
+numbers 896879
+numbers 898176
+numbers 899885
+numbers 901038
+numbers 901139
+numbers 901442
+numbers 904044
+numbers 907656
+numbers 910241
+numbers 910443
+numbers 912447
+numbers 917255
+numbers 917558
+numbers 919966
+numbers 922854
+numbers 923755
+numbers 926862
+numbers 927359
+numbers 930449
+numbers 932554
+numbers 937160
+numbers 942658
+numbers 947668
+numbers 951457
+numbers 952863
+numbers 953764
+numbers 955465
+numbers 957974
+numbers 958976
+numbers 959574
+numbers 965367
+numbers 965771
+numbers 966975
+numbers 972566
+numbers 978578
+numbers 979984
+numbers 983773
+numbers 984472
+numbers 987983
+numbers 990366
+numbers 991267
+numbers 992673
+numbers 992774
+numbers 993675
+numbers 994273
+numbers 996782
+MSE
+Finish loading dataset. There are total 790 subjects.
+Training data length 632
+Validation data length 158
+scaling factor  0.1
+----------------------------
+Start loading model ...
+Model is CortexGNN
+NLayerGAT 2
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+Epoch:0, training loss:0.06179062712088793
+----------------------------
+Start validation ...
+Validation error:0.05165825541355187
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.68 GiB
+Finish validation.
+----------------------------
+Epoch:1, training loss:0.04893957221102488
+Epoch:2, training loss:0.045653081357573407
+Epoch:3, training loss:0.043557755024278465
+Epoch:4, training loss:0.04221957444531631
+Epoch:5, training loss:0.04111989907613849
+Epoch:6, training loss:0.040234569124170116
+Epoch:7, training loss:0.039680342431639946
+Epoch:8, training loss:0.03909051195494359
+Epoch:9, training loss:0.038648887566892026
+Epoch:10, training loss:0.038357572783303415
+----------------------------
+Start validation ...
+Validation error:0.03856755554958989
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:11, training loss:0.03799331362972248
+Epoch:12, training loss:0.03775626425395567
+Epoch:13, training loss:0.03746379119685934
+Epoch:14, training loss:0.037246742167899125
+Epoch:15, training loss:0.037012723922918114
+Epoch:16, training loss:0.0367929119221819
+Epoch:17, training loss:0.03663535307963155
+Epoch:18, training loss:0.036416100131795755
+Epoch:19, training loss:0.036253359484120826
+Epoch:20, training loss:0.03607010188264937
+----------------------------
+Start validation ...
+Validation error:0.03671972506644228
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:21, training loss:0.035899150992826194
+Epoch:22, training loss:0.03576078931683132
+Epoch:23, training loss:0.03562331797342889
+Epoch:24, training loss:0.03549577685992552
+Epoch:25, training loss:0.03539278044341768
+Epoch:26, training loss:0.03527679537493689
+Epoch:27, training loss:0.03516152507000709
+Epoch:28, training loss:0.03506430662296052
+Epoch:29, training loss:0.03495546150657855
+Epoch:30, training loss:0.03489458851539825
+----------------------------
+Start validation ...
+Validation error:0.03544424924575075
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:31, training loss:0.03481007630854279
+Epoch:32, training loss:0.034739577638786996
+Epoch:33, training loss:0.03462861660467107
+Epoch:34, training loss:0.03460266853423341
+Epoch:35, training loss:0.03450496795092108
+Epoch:36, training loss:0.03445631634927343
+Epoch:37, training loss:0.03435965356876767
+Epoch:38, training loss:0.0343124285853126
+Epoch:39, training loss:0.034248892919313684
+Epoch:40, training loss:0.034180089734093866
+----------------------------
+Start validation ...
+Validation error:0.03519521892966726
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:41, training loss:0.034118655326340015
+Epoch:42, training loss:0.03408734763889939
+Epoch:43, training loss:0.034029736015592005
+Epoch:44, training loss:0.03399017066812685
+Epoch:45, training loss:0.033938386162177106
+Epoch:46, training loss:0.03387126345423203
+Epoch:47, training loss:0.03385325091525535
+Epoch:48, training loss:0.03379811640074359
+Epoch:49, training loss:0.03372381477251272
+Epoch:50, training loss:0.03368726970415704
+----------------------------
+Start validation ...
+Validation error:0.03555143305065134
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:51, training loss:0.03363578354857296
+Epoch:52, training loss:0.03364555818571037
+Epoch:53, training loss:0.033582127564645646
+Epoch:54, training loss:0.033534799342904285
+Epoch:55, training loss:0.03351623837576731
+Epoch:56, training loss:0.033492542661820786
+Epoch:57, training loss:0.033439002161892724
+Epoch:58, training loss:0.0334131689801152
+Epoch:59, training loss:0.033330019489755926
+Epoch:60, training loss:0.03336281995760584
+----------------------------
+Start validation ...
+Validation error:0.0337740691449446
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:61, training loss:0.033269000504920376
+Epoch:62, training loss:0.03330581828574591
+Epoch:63, training loss:0.033204274915182325
+Epoch:64, training loss:0.033195986910546316
+Epoch:65, training loss:0.03315117433844016
+Epoch:66, training loss:0.03313041427997943
+Epoch:67, training loss:0.03310371182646744
+Epoch:68, training loss:0.03308864083152877
+Epoch:69, training loss:0.033067224827253175
+Epoch:70, training loss:0.03301574323397083
+----------------------------
+Start validation ...
+Validation error:0.03400087026478369
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:71, training loss:0.03297919176424606
+Epoch:72, training loss:0.03297657532841439
+Epoch:73, training loss:0.03292269649608886
+Epoch:74, training loss:0.03289622306540797
+Epoch:75, training loss:0.03287470725341405
+Epoch:76, training loss:0.032879790311820714
+Epoch:77, training loss:0.03281697984843786
+Epoch:78, training loss:0.03280309346634187
+Epoch:79, training loss:0.03277728317270079
+Epoch:80, training loss:0.03278562155717253
+----------------------------
+Start validation ...
+Validation error:0.033898657588641856
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:81, training loss:0.032702950633991555
+Epoch:82, training loss:0.032695559846661705
+Epoch:83, training loss:0.03266406223425477
+Epoch:84, training loss:0.03264085240249487
+Epoch:85, training loss:0.0325961021140595
+Epoch:86, training loss:0.03258535466628456
+Epoch:87, training loss:0.03255477183074042
+Epoch:88, training loss:0.032546248820409934
+Epoch:89, training loss:0.032520959489754864
+Epoch:90, training loss:0.03251478600881617
+----------------------------
+Start validation ...
+Validation error:0.03321555186110207
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:91, training loss:0.032499989432789665
+Epoch:92, training loss:0.03246066245674804
+Epoch:93, training loss:0.032495324476327324
+Epoch:94, training loss:0.03242365620099008
+Epoch:95, training loss:0.03236700322985932
+Epoch:96, training loss:0.032406159597036396
+Epoch:97, training loss:0.03237913185848466
+Epoch:98, training loss:0.03234175570851451
+Epoch:99, training loss:0.03232387228739224
+Epoch:100, training loss:0.03227827331063019
+----------------------------
+Start validation ...
+Validation error:0.03287328813885209
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:101, training loss:0.0322695135351129
+Epoch:102, training loss:0.03226835561821921
+Epoch:103, training loss:0.032248389376681064
+Epoch:104, training loss:0.032250923458251014
+Epoch:105, training loss:0.032231641223041126
+Epoch:106, training loss:0.032216600457772235
+Epoch:107, training loss:0.03217362846200696
+Epoch:108, training loss:0.03218003003740141
+Epoch:109, training loss:0.03219668199072439
+Epoch:110, training loss:0.032130320541725696
+----------------------------
+Start validation ...
+Validation error:0.03265203254981131
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:111, training loss:0.03211926612295682
+Epoch:112, training loss:0.03210316719840976
+Epoch:113, training loss:0.03208575569552994
+Epoch:114, training loss:0.032048042409735016
+Epoch:115, training loss:0.03206202665143469
+Epoch:116, training loss:0.03206855392295726
+Epoch:117, training loss:0.03200898030654916
+Epoch:118, training loss:0.031987734999554825
+Epoch:119, training loss:0.03200417031722638
+Epoch:120, training loss:0.03192350176705307
+----------------------------
+Start validation ...
+Validation error:0.03252506978762678
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:121, training loss:0.03198575443305264
+Epoch:122, training loss:0.03191978674193349
+Epoch:123, training loss:0.031948985257834385
+Epoch:124, training loss:0.03188493808943637
+Epoch:125, training loss:0.031875326050610484
+Epoch:126, training loss:0.03190554146171559
+Epoch:127, training loss:0.03188745602906411
+Epoch:128, training loss:0.03185456836761176
+Epoch:129, training loss:0.031876048756928385
+Epoch:130, training loss:0.0318116216059727
+----------------------------
+Start validation ...
+Validation error:0.032158163187530224
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:131, training loss:0.03180905958767273
+Epoch:132, training loss:0.03180514019619249
+Epoch:133, training loss:0.03178567402477411
+Epoch:134, training loss:0.031742193058274595
+Epoch:135, training loss:0.03173594898249529
+Epoch:136, training loss:0.03174420817212874
+Epoch:137, training loss:0.031775195334295306
+Epoch:138, training loss:0.031707784402643956
+Epoch:139, training loss:0.03170124052351789
+Epoch:140, training loss:0.03169760964751904
+----------------------------
+Start validation ...
+Validation error:0.03245080883697241
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:141, training loss:0.03168734435074597
+Epoch:142, training loss:0.03168546843130283
+Epoch:143, training loss:0.03167107694228239
+Epoch:144, training loss:0.03162469306100113
+Epoch:145, training loss:0.03164114891492491
+Epoch:146, training loss:0.03160746895436999
+Epoch:147, training loss:0.03162523715674311
+Epoch:148, training loss:0.03157579889108392
+Epoch:149, training loss:0.03157057721002758
+Epoch:150, training loss:0.03158329933869971
+----------------------------
+Start validation ...
+Validation error:0.03255997808013536
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:151, training loss:0.03155332574432221
+Epoch:152, training loss:0.031561078144166664
+Epoch:153, training loss:0.031531378523670606
+Epoch:154, training loss:0.03149741308327434
+Epoch:155, training loss:0.03151285388400849
+Epoch:156, training loss:0.03152685040973504
+Epoch:157, training loss:0.031488219028503836
+Epoch:158, training loss:0.03146506725409646
+Epoch:159, training loss:0.03144846241803297
+Epoch:160, training loss:0.03149515473507816
+----------------------------
+Start validation ...
+Validation error:0.031843971119179755
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:161, training loss:0.031459368880295865
+Epoch:162, training loss:0.03147288140121706
+Epoch:163, training loss:0.03144076329219756
+Epoch:164, training loss:0.031476638268066355
+Epoch:165, training loss:0.03141164049930588
+Epoch:166, training loss:0.031442577706036874
+Epoch:167, training loss:0.031390128279977204
+Epoch:168, training loss:0.03136807945674828
+Epoch:169, training loss:0.03134930671393117
+Epoch:170, training loss:0.03135456916982237
+----------------------------
+Start validation ...
+Validation error:0.031716159992863105
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:171, training loss:0.031342928904945715
+Epoch:172, training loss:0.03134219605723231
+Epoch:173, training loss:0.03131914910377015
+Epoch:174, training loss:0.031305782517559735
+Epoch:175, training loss:0.0312779057989062
+Epoch:176, training loss:0.031319250134586155
+Epoch:177, training loss:0.031290882334844033
+Epoch:178, training loss:0.03125814100597761
+Epoch:179, training loss:0.031273715872954154
+Epoch:180, training loss:0.03127481844394079
+----------------------------
+Start validation ...
+Validation error:0.03174207260525679
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:181, training loss:0.03126615965503115
+Epoch:182, training loss:0.031236152978071682
+Epoch:183, training loss:0.031252427860693655
+Epoch:184, training loss:0.031225960563184527
+Epoch:185, training loss:0.031224157354688344
+Epoch:186, training loss:0.03117010045112877
+Epoch:187, training loss:0.031207524399167
+Epoch:188, training loss:0.03116456174315248
+Epoch:189, training loss:0.031166745553123234
+Epoch:190, training loss:0.03117571354407487
+----------------------------
+Start validation ...
+Validation error:0.0316402968137136
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Epoch:191, training loss:0.031158109944125142
+Epoch:192, training loss:0.03116013867709833
+Epoch:193, training loss:0.031175089622788792
+Epoch:194, training loss:0.031126950510860056
+Epoch:195, training loss:0.03112314577520931
+Epoch:196, training loss:0.03109194048904354
+Epoch:197, training loss:0.03114036747395898
+Epoch:198, training loss:0.03112666882409514
+Epoch:199, training loss:0.031114918088446124
+Epoch:200, training loss:0.031083168438341045
+----------------------------
+Start validation ...
+Validation error:0.031662188623619233
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 1.69 GiB
+Finish validation.
+----------------------------
+Finish training.
+----------------------------
+D
+CC

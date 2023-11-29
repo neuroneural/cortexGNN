@@ -1,0 +1,94 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+Training data length 3
+Validation data length 1
+----------------------------
+Start loading model ...
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+Save template surface mesh ... 
+v_in template a torch.Size([1, 40002, 3])
+f_in template a torch.Size([1, 80000, 3])
+v_gt a torch.Size([1, 146978, 3])
+f_gt a torch.Size([1, 293952, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+template normal torch.Size([1, 40002, 3])
+v_gm (40002, 3)
+f_gm (80000, 3)
+n_gm (40002, 3)
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+Epoch:0, training loss:47455228.0
+----------------------------
+Start validation ...
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+v.shape torch.Size([1, 40002, 3])
+f.shape torch.Size([1, 80000, 3])
+Validation error:47461920.0
+Save model checkpoints ... 
+Save pial surface mesh ... 
+D
+CC

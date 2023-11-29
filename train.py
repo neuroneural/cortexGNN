@@ -10,6 +10,7 @@ from torch.utils.data import DataLoader
 from config import load_config
 from data.dataload import load_data, BrainDataset
 from model.cortexGNN import CortexGNN
+from model.pialnn import PialNN
 from utils import compute_normal, save_mesh_obj
 
 from pytorch3d.loss import chamfer_distance
@@ -35,10 +36,7 @@ if __name__ == '__main__':
     """load data"""
     print("----------------------------")
     print("Start loading dataset ...")
-    # all_data = load_data(data_path=config.data_path,
-    #                      hemisphere=config.hemisphere,fsWIn=False)
     mse=True
-
     all_data = load_data(data_path=config.data_path,
                           hemisphere=config.hemisphere,fsWIn=mse)
 
@@ -54,10 +52,13 @@ if __name__ == '__main__':
     train_set = BrainDataset(train_data)
     valid_set = BrainDataset(valid_data)
 
+    best_val_error = float('inf')  # Initialize the best validation error
+
     # batch size can only be 1
     trainloader = DataLoader(train_set, batch_size=1, shuffle=True)
     validloader = DataLoader(valid_set, batch_size=1, shuffle=False)
     sf = .1
+    
     if mse:
         print('MSE')
     else:
@@ -67,16 +68,24 @@ if __name__ == '__main__':
     print("Validation data length",len(valid_data))
     print('scaling factor ',sf)
     print("----------------------------")
-    
-
-
-    
+        
     # vertices_clone and faces_clone are now tensors that can be used with PyTorch3D
-
     
     """load model"""
     print("Start loading model ...")
-    model = CortexGNN(config.nc, config.K, config.n_scale,7,sf).to(device)#todo:revise 7
+    
+    model = None
+    num_blocks = None        
+    if config.cortexGNN:
+        num_blocks = 1
+        print("Model is CortexGNN")
+        model = CortexGNN(config.nc, config.K, config.n_scale,num_blocks,sf,config.gnn_layers,config.gnnVersion).to(device)#todo:revise num_blocks
+    else:
+        num_blocks = 1    
+        print("Model is PialNN")
+        model = PialNN(config.nc, config.K, config.n_scale).to(device)#todo:revise 7
+    
+    
     optimizer = optim.Adam(model.parameters(), lr=config.lr)
     model.initialize(L, W, H, device)
     print("Finish loading model")
@@ -88,7 +97,6 @@ if __name__ == '__main__':
     """training"""
     print("Start training {} epochs ...".format(config.n_epoch))    
     n = 1
-    num_blocks = 7    
     for epoch in tqdm(range(config.n_epoch+1)):
         avg_loss = []
         allocated.append(torch.cuda.memory_allocated())
@@ -96,13 +104,24 @@ if __name__ == '__main__':
         for idx, data in enumerate(trainloader):
             allocated.append(torch.cuda.memory_allocated())
             ##
-
+            v_out = None#Todo: check support for submesh training.
+                    
             for bl in range(num_blocks):
                 # Choose n (e.g., n = 4 for a quarter)
                 # Iterate over the segment
                 for i in range(n):
                     ##
-                    volume_in, v_gt, f_gt, v_in, f_in,_subj = data
+                    volume_in = None
+                    v_gt = None
+                    f_gt = None
+                    v_in = None
+                    f_in = None
+                    _subj= None
+                    if bl == 0:
+                        volume_in, v_gt, f_gt, v_in, f_in,_subj = data
+                    else:
+                        volume_in, v_gt, f_gt, _, f_in,_subj = data
+                        v_in = v_out.detach()    
                     allocated.append(torch.cuda.memory_allocated())
                     # Calculate the size of each segment
                     segment_size = v_in.shape[1] // n
@@ -121,11 +140,15 @@ if __name__ == '__main__':
                     allocated.append(torch.cuda.memory_allocated())
 
                     optimizer.zero_grad()
+                    v_out = None
+                    if config.cortexGNN:
+                        v_out = model(v=v_in, f=f_in, volume=volume_in,
+                                    n_smooth=config.n_smooth, lambd=config.lambd,
+                                    start = segment_start,end = segment_end)
+                    else:
+                        v_out = model(v=v_in, f=f_in, volume=volume_in,
+                                    n_smooth=config.n_smooth, lambd=config.lambd)
                     
-                    v_out = model(v=v_in, f=f_in, volume=volume_in,
-                                n_smooth=config.n_smooth, lambd=config.lambd,
-                                start = segment_start,end = segment_end,block=bl)
-
                     allocated.append(torch.cuda.memory_allocated())
 
                     # Assuming v_out and v_gt are your vertex sets in R^3
@@ -150,6 +173,7 @@ if __name__ == '__main__':
                     
                     loss.backward()
                     optimizer.step()
+                    v_out = v_out.detach()
                     allocated.append(torch.cuda.memory_allocated())
 
 
@@ -163,10 +187,22 @@ if __name__ == '__main__':
             with torch.no_grad():
                 error = []
                 for idx, data in enumerate(validloader):
+                    v_out = None#Todo: check support for submesh training.
                     for bl in range(num_blocks):
                         for i in range(n):
                             ##
-                            volume_in, v_gt, f_gt, v_in, f_in,_subj = data
+                            volume_in = None
+                            v_gt = None
+                            f_gt = None
+                            v_in = None
+                            f_in = None
+                            _subj= None
+                            if bl == 0:
+                                volume_in, v_gt, f_gt, v_in, f_in,_subj = data
+                            else:
+                                volume_in, v_gt, f_gt, _, f_in,_subj = data
+                                v_in = v_out.detach()    
+
                             allocated.append(torch.cuda.memory_allocated())
                             # Calculate the size of each segment
                             segment_size = v_in.shape[1] // n
@@ -180,14 +216,13 @@ if __name__ == '__main__':
                             f_in = f_in.to(device)
 
 
-                            v_out = model(v = v_in,
-                                          f = f_in,
-                                          volume=volume_in,
-                                          n_smooth = config.n_smooth, 
-                                        lambd = config.lambd,
-                                        start = segment_start,
-                                        end = segment_end,
-                                        block = bl)
+                            if config.cortexGNN:
+                                v_out = model(v=v_in, f=f_in, volume=volume_in,
+                                            n_smooth=config.n_smooth, lambd=config.lambd,
+                                            start = segment_start,end = segment_end)
+                            else:
+                                v_out = model(v=v_in, f=f_in, volume=volume_in,
+                                            n_smooth=config.n_smooth, lambd=config.lambd)
                             # Assuming v_out and v_gt are your vertex sets in R^3
                             # And they are PyTorch tensors of shape [N, 3] where N is the number of vertices
 
@@ -204,24 +239,53 @@ if __name__ == '__main__':
                                 # Compute the Chamfer Distance
                                 chamfer_dist, _ = chamfer_distance(v_out_segment, v_gt)
                                 loss = chamfer_dist * 1e+3
-
+                            
                             if bl == (num_blocks-1):
                                 error.append(loss.item() )
+        
+                            v_out = v_out.detach()
                             
                 
                 print("Validation error:{}".format(np.mean(error)))
                 allocated.append(torch.cuda.memory_allocated())
 
+            gnnVersion = "pialnn"
+            layers = "NA"
+            if config.gnnVersion==0 and config.cortexGNN:
+                gnnVersion="PialGCN"
+            elif config.gnnVersion==1 and config.cortexGNN:
+                gnnVersion="PialGAT" 
+            elif not config.cortexGNN:
+                gnnVersion="PialNN"
+            else:
+                assert False,'unsupported'
+            
+            if config.cortexGNN:
+                layers = config.gnn_layers
+                
+            current_val_error = np.mean(error)
+            print("Validation error:{}".format(current_val_error))
+
+            # Check if the current validation error is less than the best validation error
+            if current_val_error < best_val_error:
+                best_model_path = f"./ckpts/model/{gnnVersion}_GNNlayers{config.gnn_layers}_mse_whitein_full_model_"+config.hemisphere+"_best.pt"
+            
+                best_val_error = current_val_error  # Update the best validation error
+                # Save the model as the new best model
+                torch.save(model.state_dict(), best_model_path)
+                print(f"New best model saved at epoch {epoch} with validation error {best_val_error}")
+
+            
             if config.save_model:
                 print('Save model checkpoints ... ')
-                path_save_model = f"./ckpts/model/cortexGAT_mse_white_debug{sf}_model_"+config.hemisphere+"_"+str(epoch)+"epochs.pt"
+                path_save_model = f"./ckpts/model/{gnnVersion}_GNNlayers{config.gnn_layers}_mse_whitein_full_model_"+config.hemisphere+"_"+str(epoch)+"epochs.pt"
                 torch.save(model.state_dict(), path_save_model)
 
             allocated.append(torch.cuda.memory_allocated())
 
             if config.save_mesh_train:
                 print('Save pial surface mesh ... ')
-                path_save_mesh = f"./ckpts/mesh/cortexGAT_mse_white_debug{sf}_mesh_"+config.hemisphere+"_"+str(epoch)+"epochs.obj"
+                path_save_mesh = f"./ckpts/mesh/{gnnVersion}_GNNlayers{config.gnn_layers}_mse_whitein_full_mesh_"+config.hemisphere+"_"+str(epoch)+"epochs.obj"
                 normal = compute_normal(v_out, f_in)#Todo:remove unsqueeze.
                 v_gm = v_out[0].cpu().numpy() * LWHmax/2  + [L/2,W/2,H/2]
                 f_gm = f_in[0].cpu().numpy()

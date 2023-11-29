@@ -1,0 +1,6 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.09it/s] 50%|█████     | 2/4 [00:00<00:00,  3.41it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.55it/s]100%|██████████| 4/4 [00:01<00:00,  3.61it/s]100%|██████████| 4/4 [00:01<00:00,  3.53it/s]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:08<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 105, in <module>
+    print("v_in device:", v.device)
+NameError: name 'v' is not defined

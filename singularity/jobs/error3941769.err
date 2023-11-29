@@ -1,0 +1,50 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:01<00:04,  1.36s/it] 50%|█████     | 2/4 [00:01<00:01,  1.23it/s] 75%|███████▌  | 3/4 [00:02<00:00,  1.14it/s]100%|██████████| 4/4 [00:03<00:00,  1.41it/s]100%|██████████| 4/4 [00:03<00:00,  1.25it/s]
+  0%|          | 0/201 [00:00<?, ?it/s]/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [0,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [1,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [2,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [3,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [4,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [5,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [6,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [7,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [8,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [9,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [10,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [11,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [12,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [13,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [14,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [15,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [16,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [17,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [18,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [19,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [20,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [21,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [22,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [23,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [24,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [25,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [26,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [27,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [28,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [29,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [30,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1603729138878/work/aten/src/ATen/native/cuda/IndexKernel.cu:84: operator(): block: [1373,0,0], thread: [31,0,0] Assertion `index >= -sizes[i] && index < sizes[i] && "index out of bounds"` failed.
+  0%|          | 0/201 [00:05<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 106, in <module>
+    start = segment_start,end = segment_end)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/pialnn.py", line 129, in forward
+    x = self.block2(x, f, volume,start,end)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/pialnn.py", line 39, in forward
+    normal = compute_normal(v, f)    # compute normal
+  File "/pialnn/utils.py", line 53, in compute_normal
+    faces=list(f)).verts_normals_list()[0]
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/structures/meshes.py", line 772, in verts_normals_list
+    split_size = self.num_verts_per_mesh().tolist()
+RuntimeError: CUDA error: device-side assert triggered

@@ -1,0 +1,394 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+----------------------------
+Start loading model ...
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+i 0
+vin tr torch.Size([1, 166737, 3])
+fin tr torch.Size([1, 333470, 3])
+start 0
+end 41684
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+start 0
+end 41684
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+start 0
+end 41684
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+i 1
+vin tr torch.Size([1, 166737, 3])
+fin tr torch.Size([1, 333470, 3])
+start 41684
+end 83368
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+start 41684
+end 83368
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+start 41684
+end 83368
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+i 2
+vin tr torch.Size([1, 166737, 3])
+fin tr torch.Size([1, 333470, 3])
+start 83368
+end 125052
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+start 83368
+end 125052
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+start 83368
+end 125052
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+i 3
+vin tr torch.Size([1, 166737, 3])
+fin tr torch.Size([1, 333470, 3])
+start 125052
+end 166736
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+start 125052
+end 166736
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+start 125052
+end 166736
+spread 41684
+v torch.Size([1, 166737, 3])
+f torch.Size([1, 166737, 3])
+v torch.Size([1, 41684, 3])
+normal torch.Size([1, 41684, 3])
+i 0
+vin tr torch.Size([1, 130879, 3])
+fin tr torch.Size([1, 261754, 3])
+start 0
+end 32719
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+start 0
+end 32719
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+start 0
+end 32719
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+i 1
+vin tr torch.Size([1, 130879, 3])
+fin tr torch.Size([1, 261754, 3])
+start 32719
+end 65438
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+start 32719
+end 65438
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+start 32719
+end 65438
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+i 2
+vin tr torch.Size([1, 130879, 3])
+fin tr torch.Size([1, 261754, 3])
+start 65438
+end 98157
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+start 65438
+end 98157
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+start 65438
+end 98157
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+i 3
+vin tr torch.Size([1, 130879, 3])
+fin tr torch.Size([1, 261754, 3])
+start 98157
+end 130876
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+start 98157
+end 130876
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+start 98157
+end 130876
+spread 32719
+v torch.Size([1, 130879, 3])
+f torch.Size([1, 130879, 3])
+v torch.Size([1, 32719, 3])
+normal torch.Size([1, 32719, 3])
+i 0
+vin tr torch.Size([1, 146978, 3])
+fin tr torch.Size([1, 293952, 3])
+start 0
+end 36744
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+start 0
+end 36744
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+start 0
+end 36744
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+i 1
+vin tr torch.Size([1, 146978, 3])
+fin tr torch.Size([1, 293952, 3])
+start 36744
+end 73488
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+start 36744
+end 73488
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+start 36744
+end 73488
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+i 2
+vin tr torch.Size([1, 146978, 3])
+fin tr torch.Size([1, 293952, 3])
+start 73488
+end 110232
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+start 73488
+end 110232
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+start 73488
+end 110232
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+i 3
+vin tr torch.Size([1, 146978, 3])
+fin tr torch.Size([1, 293952, 3])
+start 110232
+end 146976
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+start 110232
+end 146976
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+start 110232
+end 146976
+spread 36744
+v torch.Size([1, 146978, 3])
+f torch.Size([1, 146978, 3])
+v torch.Size([1, 36744, 3])
+normal torch.Size([1, 36744, 3])
+Epoch:0, training loss:0.16764258469144502
+----------------------------
+Start validation ...
+start 0
+end 37950
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 0
+end 37950
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 0
+end 37950
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 37950
+end 75900
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 37950
+end 75900
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 37950
+end 75900
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 75900
+end 113850
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 75900
+end 113850
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 75900
+end 113850
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 113850
+end 151800
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 113850
+end 151800
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+start 113850
+end 151800
+spread 37950
+v torch.Size([1, 151800, 3])
+f torch.Size([1, 151800, 3])
+v torch.Size([1, 37950, 3])
+normal torch.Size([1, 37950, 3])
+D
+CC

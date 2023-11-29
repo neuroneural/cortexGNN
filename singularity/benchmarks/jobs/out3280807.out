@@ -1,0 +1,270 @@
+aa
+bb
+CC
+----------------------------------------
+Start loading dataset ...
+Finish loading dataset. There are total 1 subjects.
+----------------------------
+Start loading model ...
+
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+ng model
+
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.26% free): 11811160064(total), 10660675584 (free), 1150484480 (used)
+----------------------------
+pial model
+
+
+
+
+
+model size: 3.768MB
+
+
+
+
+
+0 - set device
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.75% free): 11811160064(total), 11545673728 (free), 265486336 (used)
+
+
+
+0 - load configuration
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.75% free): 11811160064(total), 11545673728 (free), 265486336 (used)
+
+
+
+0 - load dataset
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.75% free): 11811160064(total), 11545673728 (free), 265486336 (used)
+
+
+
+0 - load model
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.75% free): 11811160064(total), 11545673728 (free), 265486336 (used)
+
+
+
+0 - evaluation
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.26% free): 11811160064(total), 10660675584 (free), 1150484480 (used)
+
+
+
+Start evaluation ...
+
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.26% free): 11811160064(total), 10660675584 (free), 1150484480 (used)
+before v_pred = model(...)
+ 
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (89.83% free): 11811160064(total), 10610343936 (free), 1200816128 (used)
+after v_pred = model(...)
+ 
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (80.28% free): 11811160064(total), 9482076160 (free), 2329083904 (used)
+total seconds for one batch is 1.94222
+0 - set device
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.75% free): 11811160064(total), 11545673728 (free), 265486336 (used)
+
+
+
+0 - load configuration
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.75% free): 11811160064(total), 11545673728 (free), 265486336 (used)
+
+
+
+0 - load dataset
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.75% free): 11811160064(total), 11545673728 (free), 265486336 (used)
+
+
+
+0 - load model
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.75% free): 11811160064(total), 11545673728 (free), 265486336 (used)
+
+
+
+0 - evaluation
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.26% free): 11811160064(total), 10660675584 (free), 1150484480 (used)
+
+
+
+0 - END
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (80.28% free): 11811160064(total), 9482076160 (free), 2329083904 (used)
+
+
+
+aa
+bb
+CC
+----------------------------
+Start loading dataset ...
+Finish loading dataset. There are total 1 subjects.
+----------------------------
+Start loading model ...
+
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+Finish loading model
+
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.30% free): 11811160064(total), 10665787392 (free), 1145372672 (used)
+----------------------------
+pial model
+
+
+
+
+
+model size: 3.768MB
+
+
+
+
+
+0 - set device
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load configuration
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load dataset
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load model
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - evaluation
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.30% free): 11811160064(total), 10665787392 (free), 1145372672 (used)
+
+
+
+Start evaluation ...
+
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.30% free): 11811160064(total), 10665787392 (free), 1145372672 (used)
+before v_pred = model(...)
+ 
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (89.88% free): 11811160064(total), 10615455744 (free), 1195704320 (used)
+after v_pred = model(...)
+ 
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (80.32% free): 11811160064(total), 9487187968 (free), 2323972096 (used)
+total seconds for one batch is 1.926206
+0 - set device
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load configuration
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load dataset
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load model
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - evaluation
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.30% free): 11811160064(total), 10665787392 (free), 1145372672 (used)
+
+
+
+0 - END
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (80.32% free): 11811160064(total), 9487187968 (free), 2323972096 (used)
+
+
+
+----------------------------
+Start loading dataset ...
+Finish loading dataset. There are total 1 subjects.
+----------------------------
+Start loading model ...
+
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+Finish loading model
+
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.30% free): 11811160064(total), 10665787392 (free), 1145372672 (used)
+----------------------------
+pial model
+
+
+
+
+
+model size: 3.768MB
+
+
+
+
+
+0 - set device
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load configuration
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load dataset
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load model
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - evaluation
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.30% free): 11811160064(total), 10665787392 (free), 1145372672 (used)
+
+
+
+Start evaluation ...
+
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.30% free): 11811160064(total), 10665787392 (free), 1145372672 (used)
+before v_pred = model(...)
+ 
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (89.88% free): 11811160064(total), 10615455744 (free), 1195704320 (used)
+after v_pred = model(...)
+ 
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (80.32% free): 11811160064(total), 9487187968 (free), 2323972096 (used)
+total seconds for one batch is 3.220406
+0 - set device
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load configuration
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load dataset
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - load model
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (97.80% free): 11811160064(total), 11550785536 (free), 260374528 (used)
+
+
+
+0 - evaluation
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (90.30% free): 11811160064(total), 10665787392 (free), 1145372672 (used)
+
+
+
+0 - END
+Device 0: b'NVIDIA GeForce RTX 2080 Ti', Memory : (80.32% free): 11811160064(total), 9487187968 (free), 2323972096 (used)
+
+
+

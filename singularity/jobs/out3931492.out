@@ -1,0 +1,1515 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+----------------------------
+Start loading model ...
+number of channels 128
+K value 5
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:0, training loss:0.22768921901782355
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:1, training loss:0.1475826303164164
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:2, training loss:0.14202217602481446
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:3, training loss:0.13686189148575068
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:4, training loss:0.13465036638081074
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:5, training loss:0.1325355259080728
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:6, training loss:0.1314460833867391
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:7, training loss:0.1313824967170755
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:8, training loss:0.13122996625800928
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:9, training loss:0.1311616161838174
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:10, training loss:0.12928793858736753
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 146978, 3])
+v start end 0 36744
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 72752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 146978, 3])
+v start end 36744 73488
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71878, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 146978, 3])
+v start end 73488 110232
+sub mesh extracted torch.Size([1, 36744, 3]) torch.Size([1, 71592, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 146978, 3])
+v start end 110232 146978
+sub mesh extracted torch.Size([1, 36746, 3]) torch.Size([1, 72217, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 130879, 3])
+v start end 0 32719
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 64752, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 130879, 3])
+v start end 32719 65438
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63883, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 130879, 3])
+v start end 65438 98157
+sub mesh extracted torch.Size([1, 32719, 3]) torch.Size([1, 63631, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 130879, 3])
+v start end 98157 130879
+sub mesh extracted torch.Size([1, 32722, 3]) torch.Size([1, 64330, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 2
+v gt shape torch.Size([1, 166737, 3])
+v start end 83368 125052
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81582, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 3
+v gt shape torch.Size([1, 166737, 3])
+v start end 125052 166737
+sub mesh extracted torch.Size([1, 41685, 3]) torch.Size([1, 81953, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+Epoch:11, training loss:0.1286316060771545
+Finish validation.
+----------------------------
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 82410, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+i progress 1
+v gt shape torch.Size([1, 166737, 3])
+v start end 41684 83368
+sub mesh extracted torch.Size([1, 41684, 3]) torch.Size([1, 81453, 3])
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0
+v device: cuda:0
+f device: cuda:0

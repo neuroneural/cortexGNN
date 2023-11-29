@@ -1,0 +1,56 @@
+aa
+bb
+A
+B
+C
+lh training
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+MSE
+Finish loading dataset. There are total 4 subjects.
+Training data length 3
+Validation data length 1
+scaling factor  0.1
+----------------------------
+Start loading model ...
+Model is CortexGNN
+NLayerGCN 2
+Finish loading model
+----------------------------
+Start training 11 epochs ...
+Epoch:0, training loss:0.44169209400812787
+----------------------------
+Start validation ...
+Validation error:0.31242725253105164
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 0.82 GiB
+Finish validation.
+----------------------------
+Epoch:1, training loss:0.24212642510732016
+Epoch:2, training loss:0.16103061040242514
+Epoch:3, training loss:0.12336913247903188
+Epoch:4, training loss:0.10513876378536224
+Epoch:5, training loss:0.0946379154920578
+Epoch:6, training loss:0.08875866731007893
+Epoch:7, training loss:0.08437223980824153
+Epoch:8, training loss:0.08137205491463344
+Epoch:9, training loss:0.07892123609781265
+Epoch:10, training loss:0.07611484825611115
+----------------------------
+Start validation ...
+Validation error:0.0720503106713295
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 0.83 GiB
+Finish validation.
+----------------------------
+Epoch:11, training loss:0.07459213336308797
+Finish training.
+----------------------------
+D
+CC

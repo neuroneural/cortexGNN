@@ -1,0 +1,18 @@
+  0%|          | 0/4 [00:00<?, ?it/s]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/io/obj_io.py:530: UserWarning: No mtl file provided
+  warnings.warn("No mtl file provided")
+  0%|          | 0/4 [00:49<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 40, in <module>
+    hemisphere=config.hemisphere,fsWIn=fsWIn)#Todo: make configurable
+  File "/pialnn/data/dataload.py", line 124, in load_data
+    v_in=v_in, f_in=f_in, subject_id=numbers,fsWIn=fsWIn)#Todo: make configurable
+  File "/pialnn/data/dataload.py", line 22, in __init__
+    self.v_in = torch.Tensor(v_in)
+TypeError: expected CPU (got CUDA)

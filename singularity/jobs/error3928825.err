@@ -1,0 +1,14 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.27it/s] 50%|█████     | 2/4 [00:00<00:00,  3.58it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.68it/s]100%|██████████| 4/4 [00:01<00:00,  3.75it/s]100%|██████████| 4/4 [00:01<00:00,  3.67it/s]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 100, in <module>
+    n_smooth=config.n_smooth, lambd=config.lambd)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/pialnn.py", line 124, in forward
+    x = self.block1(v, f, volume)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/pialnn.py", line 44, in forward
+    x = torch.nn.ReLU(self.localconv(cubes).view(1, v.shape[1], self.nc)) + x
+TypeError: unsupported operand type(s) for +: 'ReLU' and 'ReLU'

@@ -1,0 +1,8 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  2.76it/s] 50%|█████     | 2/4 [00:00<00:00,  3.15it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.25it/s]100%|██████████| 4/4 [00:01<00:00,  3.30it/s]100%|██████████| 4/4 [00:01<00:00,  3.23it/s]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:06<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 95, in <module>
+    v_in,f_in = getSubMesh(v_in,f_in,list(range(v_start_idx,v_end_idx)))
+  File "/pialnn/utils.py", line 31, in getSubMesh
+    new_vertex_indices = {old_idx: new_idx for new_idx, old_idx in enumerate(vertex_indices.tolist())}
+AttributeError: 'list' object has no attribute 'tolist'

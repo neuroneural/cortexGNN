@@ -1,0 +1,6 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  2.30it/s] 50%|█████     | 2/4 [00:00<00:00,  2.57it/s] 75%|███████▌  | 3/4 [00:01<00:00,  2.68it/s]100%|██████████| 4/4 [00:01<00:00,  2.77it/s]100%|██████████| 4/4 [00:01<00:00,  2.69it/s]
+0it [00:00, ?it/s]0it [00:01, ?it/s]
+Traceback (most recent call last):
+  File "eval.py", line 101, in <module>
+    hd = compute_hausdorff(v_pred_eval, v_gt_eval,
+NameError: name 'compute_hausdorff' is not defined

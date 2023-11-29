@@ -1,0 +1,30 @@
+  0%|          | 0/4 [00:00<?, ?it/s]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+ 25%|██▌       | 1/4 [00:03<00:10,  3.53s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+ 50%|█████     | 2/4 [00:06<00:06,  3.40s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+ 75%|███████▌  | 3/4 [00:10<00:03,  3.36s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+100%|██████████| 4/4 [00:13<00:00,  3.35s/it]100%|██████████| 4/4 [00:13<00:00,  3.37s/it]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 1/201 [00:17<57:47, 17.34s/it]  1%|          | 2/201 [00:25<39:31, 11.92s/it]  1%|▏         | 3/201 [00:33<33:47, 10.24s/it]  2%|▏         | 4/201 [00:41<31:02,  9.45s/it]  2%|▏         | 5/201 [00:50<29:28,  9.02s/it]  3%|▎         | 6/201 [00:58<28:29,  8.77s/it]  3%|▎         | 7/201 [01:06<27:50,  8.61s/it]  4%|▍         | 8/201 [01:15<27:23,  8.51s/it]  4%|▍         | 9/201 [01:23<27:02,  8.45s/it]  5%|▍         | 10/201 [01:31<26:46,  8.41s/it]slurmstepd: error: *** JOB 3978593 ON arctrdagn008 CANCELLED AT 2023-11-23T01:52:40 ***

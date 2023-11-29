@@ -1,0 +1,102 @@
+aa
+bb
+CC
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+----------------------------
+Start loading dataset ...
+Finish loading dataset. There are total 1 subjects.
+----------------------------
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+Start loading model ...
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+Finish loading model
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (96.00% free): 34359738368(total), 32986038272 (free), 1373700096 (used)
+
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (96.00% free): 34359738368(total), 32986038272 (free), 1373700096 (used)
+----------------------------
+pial model
+
+
+
+
+
+model size: 3.768MB
+
+
+
+
+
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (96.00% free): 34359738368(total), 32986038272 (free), 1373700096 (used)
+0 - set device
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+
+
+
+0 - load configuration
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+
+
+
+0 - load dataset
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+
+
+
+0 - load model
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+
+
+
+0 - evaluation
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (96.00% free): 34359738368(total), 32986038272 (free), 1373700096 (used)
+
+
+
+Start evaluation ...
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (96.00% free): 34359738368(total), 32986038272 (free), 1373700096 (used)
+
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (96.00% free): 34359738368(total), 32986038272 (free), 1373700096 (used)
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (95.84% free): 34359738368(total), 32931512320 (free), 1428226048 (used)
+before v_pred = model(...)
+ 
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (95.84% free): 34359738368(total), 32931512320 (free), 1428226048 (used)
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (92.58% free): 34359738368(total), 31809536000 (free), 2550202368 (used)
+after v_pred = model(...)
+ 
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (92.58% free): 34359738368(total), 31809536000 (free), 2550202368 (used)
+total seconds for one batch is 6.401064
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (92.58% free): 34359738368(total), 31809536000 (free), 2550202368 (used)
+0 - set device
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+
+
+
+0 - load configuration
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+
+
+
+0 - load dataset
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+
+
+
+0 - load model
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (99.20% free): 34359738368(total), 34085994496 (free), 273743872 (used)
+
+
+
+0 - evaluation
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (96.00% free): 34359738368(total), 32986038272 (free), 1373700096 (used)
+
+
+
+0 - END
+Device 0: b'Tesla V100-SXM2-32GB', Memory : (92.58% free): 34359738368(total), 31809536000 (free), 2550202368 (used)
+
+
+

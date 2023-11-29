@@ -1,0 +1,31 @@
+aa
+bb
+Combination: 1, 4
+A
+B
+C
+lh training
+gnn: 1
+layers: 4
+trainlh.sh model is a pialgnn
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+MSE
+Finish loading dataset. There are total 4 subjects.
+Training data length 3
+Validation data length 1
+scaling factor  0.1
+----------------------------
+Start loading model ...
+Model is CortexGNN
+NLayerGAT 4
+NLayerGAT 4
+Finish loading model
+----------------------------
+Start training 600 epochs ...
+D
+CC

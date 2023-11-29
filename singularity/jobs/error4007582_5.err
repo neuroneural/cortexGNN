@@ -1,0 +1,11 @@
+usage: train.py [-h] [--data_path DATA_PATH] [--hemisphere HEMISPHERE]
+                [--nc NC] [--K K] [--n_scale N_SCALE] [--n_smooth N_SMOOTH]
+                [--lambd LAMBD] [--train_data_ratio TRAIN_DATA_RATIO]
+                [--lr LR] [--n_epoch N_EPOCH]
+                [--ckpts_interval CKPTS_INTERVAL]
+                [--report_training_loss REPORT_TRAINING_LOSS]
+                [--save_model SAVE_MODEL] [--save_mesh_train SAVE_MESH_TRAIN]
+                [--save_mesh_eval SAVE_MESH_EVAL] [--n_test_pts N_TEST_PTS]
+                [--gnn_layers GNN_LAYERS] [--gnnVersion GNNVERSION]
+                [--cortexGNN CORTEXGNN] [--model_location MODEL_LOCATION]
+train.py: error: argument --gnn_layers: invalid int value: ''

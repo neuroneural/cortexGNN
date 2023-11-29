@@ -1,0 +1,11 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.00it/s] 50%|█████     | 2/4 [00:00<00:00,  3.16it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.19it/s]100%|██████████| 4/4 [00:01<00:00,  3.21it/s]100%|██████████| 4/4 [00:01<00:00,  3.18it/s]
+Traceback (most recent call last):
+  File "train.py", line 81, in <module>
+    model = CortexGNN(config.nc, config.K, config.n_scale,num_blocks,sf,config.gnn_layers,config.gnnVersion).to(device)#todo:revise num_blocks
+  File "/pialnn/model/cortexGNN.py", line 204, in __init__
+    self.blocks = DeformBlockGNN(nc, K, n_scale,sf,gnn_layers=gnn_layers,gnnVersion=gnnVersion)
+  File "/pialnn/model/cortexGNN.py", line 180, in __init__
+    self.gcn = NLayerGCN(nc*2, nc, 3,gnn_layers)  # Adjust dimensions as needed
+  File "/pialnn/model/cortexGNN.py", line 16, in __init__
+    assert num_layers > 1, "Number of layers should be greater than 1"
+AssertionError: Number of layers should be greater than 1

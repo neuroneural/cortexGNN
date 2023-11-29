@@ -1,0 +1,36 @@
+  0%|          | 0/4 [00:00<?, ?it/s]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/io/obj_io.py:534: UserWarning: Mtl file does not exist: /pialnn/resources/mods/lh_40k_mod.mtl
+  warnings.warn(f"Mtl file does not exist: {f}")
+ 25%|██▌       | 1/4 [00:01<00:04,  1.46s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+ 50%|█████     | 2/4 [00:02<00:02,  1.36s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+ 75%|███████▌  | 3/4 [00:04<00:01,  1.34s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+100%|██████████| 4/4 [00:05<00:00,  1.33s/it]100%|██████████| 4/4 [00:05<00:00,  1.34s/it]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:08<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 234, in <module>
+    if vertices is not None:
+NameError: name 'vertices' is not defined

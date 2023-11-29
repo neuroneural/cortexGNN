@@ -25,7 +25,10 @@ def load_config():
     # evaluation
     parser.add_argument('--save_mesh_eval', default=False, type=bool, help="if save mesh during evaluation")
     parser.add_argument('--n_test_pts', default=150000, type=int, help="num of points sampled for evaluation")
-
+    parser.add_argument('--gnn_layers', default=2, type=int, help="number of layers in the gnn")
+    parser.add_argument('--gnnVersion', default=1, type=int, help="0 for gcn, 1 for gat")
+    parser.add_argument('--cortexGNN', default=False, type=bool, help="Train with cortexGNN")
+    parser.add_argument('--model_location', default="na", type=str, help="location of model")
     config = parser.parse_args()
 
     return config

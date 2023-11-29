@@ -1,0 +1,6 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.01it/s] 50%|█████     | 2/4 [00:00<00:00,  3.17it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.21it/s]100%|██████████| 4/4 [00:01<00:00,  3.24it/s]100%|██████████| 4/4 [00:01<00:00,  3.21it/s]
+  0%|          | 0/601 [00:00<?, ?it/s]  0%|          | 0/601 [00:02<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 258, in <module>
+    assert False,"unsupported"
+AssertionError: unsupported

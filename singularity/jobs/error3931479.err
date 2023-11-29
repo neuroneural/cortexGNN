@@ -1,0 +1,6 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  1.86it/s] 50%|█████     | 2/4 [00:00<00:00,  2.16it/s] 75%|███████▌  | 3/4 [00:01<00:00,  2.27it/s]100%|██████████| 4/4 [00:01<00:00,  2.24it/s]100%|██████████| 4/4 [00:01<00:00,  2.20it/s]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:03<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 107, in <module>
+    assert v_in.device.type == 'cuda', "Tensor is not on GPU"
+AssertionError: Tensor is not on GPU

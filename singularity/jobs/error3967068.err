@@ -1,0 +1,21 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.19it/s] 50%|█████     | 2/4 [00:00<00:00,  3.35it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.43it/s]100%|██████████| 4/4 [00:01<00:00,  3.48it/s]100%|██████████| 4/4 [00:01<00:00,  3.43it/s]
+An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
+    handler.log_event()
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
+    del self._evt
+AttributeError: _evt
+/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/io/obj_io.py:530: UserWarning: No mtl file provided
+  warnings.warn("No mtl file provided")
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:06<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 222, in <module>
+    normal = compute_normal(v_out, f_in)
+  File "/pialnn/utils.py", line 123, in compute_normal
+    faces=list(f)).verts_normals_list()[0]
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/structures/meshes.py", line 345, in __init__
+    f[f.gt(-1).all(1)].to(torch.int64) if len(f) > 0 else f for f in faces
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/structures/meshes.py", line 345, in <listcomp>
+    f[f.gt(-1).all(1)].to(torch.int64) if len(f) > 0 else f for f in faces
+IndexError: Dimension out of range (expected to be in range of [-1, 0], but got 1)

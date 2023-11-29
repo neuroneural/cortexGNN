@@ -1,0 +1,45 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+----------------------------
+Start loading model ...
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+block1 torch.Size([1, 146978, 3])
+block2 torch.Size([1, 146978, 3])
+block3 torch.Size([1, 146978, 3])
+edge_list torch.Size([2, 881856])
+x torch.Size([1, 146978, 3])
+block1 torch.Size([1, 130879, 3])
+block2 torch.Size([1, 130879, 3])
+block3 torch.Size([1, 130879, 3])
+edge_list torch.Size([2, 785262])
+x torch.Size([1, 130879, 3])
+block1 torch.Size([1, 166737, 3])
+block2 torch.Size([1, 166737, 3])
+block3 torch.Size([1, 166737, 3])
+edge_list torch.Size([2, 1000410])
+x torch.Size([1, 166737, 3])
+Epoch:0, training loss:0.2616136719783147
+----------------------------
+Start validation ...
+block1 torch.Size([1, 151800, 3])
+block2 torch.Size([1, 151800, 3])
+block3 torch.Size([1, 151800, 3])
+edge_list torch.Size([2, 910788])
+x torch.Size([1, 151800, 3])
+Validation error:0.2616136719783147
+Finish validation.
+----------------------------
+D
+CC

@@ -1,0 +1,7 @@
+  0%|          | 0/107 [00:00<?, ?it/s]  0%|          | 0/107 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "eval.py", line 30, in <module>
+    hemisphere = config.hemisphere)
+  File "/pialnn/data/dataload.py", line 100, in load_data
+    subid = str(subid).replace('\\',"").replace(",","").replace("'")
+TypeError: replace() takes at least 2 arguments (1 given)

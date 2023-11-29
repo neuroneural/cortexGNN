@@ -1,0 +1,23 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+----------------------------
+Start loading model ...
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+edge_list torch.Size([2, 881856])
+edges torch.Size([440928, 2])
+edge_list torch.Size([2, 881856])
+edges torch.Size([440928, 2])
+D
+CC

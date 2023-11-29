@@ -1,0 +1,26 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+----------------------------
+Start loading model ...
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+coord torch.Size([1, 130879, 3])
+normal torch.Size([1, 130879, 3])
+pointFeatures torch.Size([1, 130879, 3])
+normalFeatures torch.Size([1, 130879, 3])
+cubes torch.Size([130879, 3, 5, 5, 5])
+x_local torch.Size([130879, 128, 1, 1, 1])
+x_local torch.Size([130879, 128, 1, 1, 1])
+D
+CC

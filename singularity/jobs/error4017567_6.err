@@ -1,0 +1,2 @@
+/opt/slurmnfs/slurmd/lhotse/job4017567/slurm_script: line 24: syntax error near unexpected token `('
+/opt/slurmnfs/slurmd/lhotse/job4017567/slurm_script: line 24: `gnn=   (0 0 0 0 0 0 -1)'

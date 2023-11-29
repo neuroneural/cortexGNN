@@ -1,0 +1,7 @@
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 40, in <module>
+    hemisphere=config.hemisphere,fsWIn=fsWIn)#Todo: make configurable
+  File "/pialnn/data/dataload.py", line 99, in load_data
+    if self.fsWIn:
+NameError: name 'self' is not defined

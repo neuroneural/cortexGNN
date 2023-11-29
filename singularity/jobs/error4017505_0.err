@@ -1,0 +1,11 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  2.62it/s] 50%|█████     | 2/4 [00:00<00:00,  2.73it/s] 75%|███████▌  | 3/4 [00:01<00:00,  2.79it/s]100%|██████████| 4/4 [00:01<00:00,  2.82it/s]100%|██████████| 4/4 [00:01<00:00,  2.79it/s]
+Traceback (most recent call last):
+  File "eval.py", line 69, in <module>
+    map_location=device))
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/serialization.py", line 581, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+IsADirectoryError: [Errno 21] Is a directory: '/data/users2/washbee/websurf/cortexGNN/ckpts/model/lh/'

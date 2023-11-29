@@ -1,0 +1,400 @@
+aa
+bb
+Combination: 1, 3
+A
+B
+C
+lh training
+gnn: 1
+layers: 3
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+MSE
+Finish loading dataset. There are total 4 subjects.
+Training data length 3
+Validation data length 1
+scaling factor  0.1
+----------------------------
+Start loading model ...
+Model is CortexGNN
+NLayerGAT 3
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+Epoch:0, training loss:1.053397536277771
+----------------------------
+Start validation ...
+Validation error:0.7511699795722961
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:1, training loss:0.5103196005026499
+Epoch:2, training loss:0.26043424010276794
+Epoch:3, training loss:0.1984250247478485
+Epoch:4, training loss:0.20262733101844788
+Epoch:5, training loss:0.15796734392642975
+Epoch:6, training loss:0.14974017441272736
+Epoch:7, training loss:0.14773054420948029
+Epoch:8, training loss:0.1370395968357722
+Epoch:9, training loss:0.1310883710781733
+Epoch:10, training loss:0.13065502047538757
+----------------------------
+Start validation ...
+Validation error:0.12811964750289917
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:11, training loss:0.1256872241695722
+Epoch:12, training loss:0.12458054224650066
+Epoch:13, training loss:0.1218522588411967
+Epoch:14, training loss:0.12070662031571071
+Epoch:15, training loss:0.12088631093502045
+Epoch:16, training loss:0.11891689896583557
+Epoch:17, training loss:0.11814981947342555
+Epoch:18, training loss:0.11627491066853206
+Epoch:19, training loss:0.11564752211173375
+Epoch:20, training loss:0.11731394877036412
+----------------------------
+Start validation ...
+Validation error:0.11939144134521484
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:21, training loss:0.11548029134670894
+Epoch:22, training loss:0.11443063616752625
+Epoch:23, training loss:0.11073997616767883
+Epoch:24, training loss:0.11356891691684723
+Epoch:25, training loss:0.1162308653195699
+Epoch:26, training loss:0.11261913925409317
+Epoch:27, training loss:0.1129508689045906
+Epoch:28, training loss:0.11560762673616409
+Epoch:29, training loss:0.11375198513269424
+Epoch:30, training loss:0.11264668901761372
+----------------------------
+Start validation ...
+Validation error:0.11192888021469116
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:31, training loss:0.11381986488898595
+Epoch:32, training loss:0.11337633430957794
+Epoch:33, training loss:0.11541055391232173
+Epoch:34, training loss:0.11519184708595276
+Epoch:35, training loss:0.12356997778018315
+Epoch:36, training loss:0.12212826559940974
+Epoch:37, training loss:0.12289263308048248
+Epoch:38, training loss:0.12921566516160965
+Epoch:39, training loss:0.1307687908411026
+Epoch:40, training loss:0.12504584342241287
+----------------------------
+Start validation ...
+Validation error:0.11540120840072632
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:41, training loss:0.12173393617073695
+Epoch:42, training loss:0.116389699280262
+Epoch:43, training loss:0.11879362165927887
+Epoch:44, training loss:0.11323994894822438
+Epoch:45, training loss:0.11407741904258728
+Epoch:46, training loss:0.1110736553867658
+Epoch:47, training loss:0.10967892160018285
+Epoch:48, training loss:0.11232330898443858
+Epoch:49, training loss:0.11078643550475438
+Epoch:50, training loss:0.11285494019587834
+----------------------------
+Start validation ...
+Validation error:0.11642024666070938
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:51, training loss:0.11393251518408458
+Epoch:52, training loss:0.11386086791753769
+Epoch:53, training loss:0.11019635200500488
+Epoch:54, training loss:0.1107639620701472
+Epoch:55, training loss:0.11225370317697525
+Epoch:56, training loss:0.11002082377672195
+Epoch:57, training loss:0.10705726593732834
+Epoch:58, training loss:0.11131599793831508
+Epoch:59, training loss:0.10977096855640411
+Epoch:60, training loss:0.11155720303455989
+----------------------------
+Start validation ...
+Validation error:0.10579995065927505
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:61, training loss:0.1064344048500061
+Epoch:62, training loss:0.11067014684279759
+Epoch:63, training loss:0.11033212393522263
+Epoch:64, training loss:0.10835736493269603
+Epoch:65, training loss:0.10646901031335194
+Epoch:66, training loss:0.10813040286302567
+Epoch:67, training loss:0.10838403056065242
+Epoch:68, training loss:0.105723241964976
+Epoch:69, training loss:0.10703193893035252
+Epoch:70, training loss:0.10828109333912532
+----------------------------
+Start validation ...
+Validation error:0.11045841127634048
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:71, training loss:0.10436449696620305
+Epoch:72, training loss:0.10782465587059657
+Epoch:73, training loss:0.10600114117066066
+Epoch:74, training loss:0.1065378487110138
+Epoch:75, training loss:0.1012130652864774
+Epoch:76, training loss:0.10646958649158478
+Epoch:77, training loss:0.10601554562648137
+Epoch:78, training loss:0.10420309255520503
+Epoch:79, training loss:0.10902419437964757
+Epoch:80, training loss:0.1054529349009196
+----------------------------
+Start validation ...
+Validation error:0.10650370270013809
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:81, training loss:0.10408972203731537
+Epoch:82, training loss:0.10235259930292766
+Epoch:83, training loss:0.10580142587423325
+Epoch:84, training loss:0.1078009158372879
+Epoch:85, training loss:0.1027029554049174
+Epoch:86, training loss:0.10159738113482793
+Epoch:87, training loss:0.10291939228773117
+Epoch:88, training loss:0.10650727401177089
+Epoch:89, training loss:0.10307723780473073
+Epoch:90, training loss:0.10314682126045227
+----------------------------
+Start validation ...
+Validation error:0.10381567478179932
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:91, training loss:0.10457303375005722
+Epoch:92, training loss:0.10398726910352707
+Epoch:93, training loss:0.10384116570154826
+Epoch:94, training loss:0.10239893198013306
+Epoch:95, training loss:0.10545062522093455
+Epoch:96, training loss:0.10395179688930511
+Epoch:97, training loss:0.10450076808532079
+Epoch:98, training loss:0.10237127045790355
+Epoch:99, training loss:0.1027544563015302
+Epoch:100, training loss:0.10225452731053035
+----------------------------
+Start validation ...
+Validation error:0.10308224707841873
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:101, training loss:0.10116892556349437
+Epoch:102, training loss:0.10489748915036519
+Epoch:103, training loss:0.10520632316668828
+Epoch:104, training loss:0.10525473703940709
+Epoch:105, training loss:0.09983638177315395
+Epoch:106, training loss:0.10234227279822032
+Epoch:107, training loss:0.10629026840130489
+Epoch:108, training loss:0.10407566527525584
+Epoch:109, training loss:0.10271966209014256
+Epoch:110, training loss:0.10165311396121979
+----------------------------
+Start validation ...
+Validation error:0.10271421819925308
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:111, training loss:0.10540731996297836
+Epoch:112, training loss:0.10070871561765671
+Epoch:113, training loss:0.10358410825332005
+Epoch:114, training loss:0.10258021205663681
+Epoch:115, training loss:0.10265568147102992
+Epoch:116, training loss:0.10380307336648305
+Epoch:117, training loss:0.10220372925202052
+Epoch:118, training loss:0.10129403819640477
+Epoch:119, training loss:0.10195813576380412
+Epoch:120, training loss:0.1017219473918279
+----------------------------
+Start validation ...
+Validation error:0.0995849072933197
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:121, training loss:0.09839877982934316
+Epoch:122, training loss:0.09906588246424992
+Epoch:123, training loss:0.09847480307022731
+Epoch:124, training loss:0.09940271576245625
+Epoch:125, training loss:0.09733469287554423
+Epoch:126, training loss:0.09762247900168101
+Epoch:127, training loss:0.10126295189062755
+Epoch:128, training loss:0.1011233776807785
+Epoch:129, training loss:0.09787771602471669
+Epoch:130, training loss:0.0964251880844434
+----------------------------
+Start validation ...
+Validation error:0.10116221755743027
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:131, training loss:0.09976644068956375
+Epoch:132, training loss:0.09824408839146297
+Epoch:133, training loss:0.09546802937984467
+Epoch:134, training loss:0.09720421582460403
+Epoch:135, training loss:0.09863832344611485
+Epoch:136, training loss:0.09775552401940028
+Epoch:137, training loss:0.09995511422554652
+Epoch:138, training loss:0.09677029897769292
+Epoch:139, training loss:0.09542235980431239
+Epoch:140, training loss:0.10013437767823537
+----------------------------
+Start validation ...
+Validation error:0.1024172380566597
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:141, training loss:0.09715148309866588
+Epoch:142, training loss:0.09689655651648839
+Epoch:143, training loss:0.09517804284890492
+Epoch:144, training loss:0.09908530116081238
+Epoch:145, training loss:0.09909324844678243
+Epoch:146, training loss:0.09621820102135341
+Epoch:147, training loss:0.09456830471754074
+Epoch:148, training loss:0.09821103016535442
+Epoch:149, training loss:0.09893354028463364
+Epoch:150, training loss:0.09647342811028163
+----------------------------
+Start validation ...
+Validation error:0.10327425599098206
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:151, training loss:0.1019777978459994
+Epoch:152, training loss:0.09968946874141693
+Epoch:153, training loss:0.09596675137678783
+Epoch:154, training loss:0.09900140265623729
+Epoch:155, training loss:0.10354305307070415
+Epoch:156, training loss:0.10044974088668823
+Epoch:157, training loss:0.10091779629389445
+Epoch:158, training loss:0.10036449134349823
+Epoch:159, training loss:0.10180330276489258
+Epoch:160, training loss:0.10372962802648544
+----------------------------
+Start validation ...
+Validation error:0.10266228020191193
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:161, training loss:0.098398357629776
+Epoch:162, training loss:0.10154509544372559
+Epoch:163, training loss:0.10295681655406952
+Epoch:164, training loss:0.105549655854702
+Epoch:165, training loss:0.10506040851275127
+Epoch:166, training loss:0.1010948121547699
+Epoch:167, training loss:0.1077489306529363
+Epoch:168, training loss:0.10222926239172618
+Epoch:169, training loss:0.10152038683493932
+Epoch:170, training loss:0.10024601469437282
+----------------------------
+Start validation ...
+Validation error:0.1085035651922226
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:171, training loss:0.10494133581717809
+Epoch:172, training loss:0.10137371718883514
+Epoch:173, training loss:0.10125443836053212
+Epoch:174, training loss:0.10130496819814046
+Epoch:175, training loss:0.10151006281375885
+Epoch:176, training loss:0.09940968205531438
+Epoch:177, training loss:0.10266086955865224
+Epoch:178, training loss:0.10209223379691441
+Epoch:179, training loss:0.0965263843536377
+Epoch:180, training loss:0.10118162135283153
+----------------------------
+Start validation ...
+Validation error:0.10840241611003876
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:181, training loss:0.1031967004140218
+Epoch:182, training loss:0.0990074947476387
+Epoch:183, training loss:0.09600829829772313
+Epoch:184, training loss:0.09913540879885356
+Epoch:185, training loss:0.09746383130550385
+Epoch:186, training loss:0.09704472124576569
+Epoch:187, training loss:0.09466544538736343
+Epoch:188, training loss:0.09808231641848882
+Epoch:189, training loss:0.09493383765220642
+Epoch:190, training loss:0.09871357679367065
+----------------------------
+Start validation ...
+Validation error:0.0978781059384346
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Epoch:191, training loss:0.0988462766011556
+Epoch:192, training loss:0.09571986397107442
+Epoch:193, training loss:0.09530273824930191
+Epoch:194, training loss:0.09584517280260722
+Epoch:195, training loss:0.09616652627786
+Epoch:196, training loss:0.09821122388044994
+Epoch:197, training loss:0.09620183209578197
+Epoch:198, training loss:0.09599072237809499
+Epoch:199, training loss:0.09528626253207524
+Epoch:200, training loss:0.09426635255416234
+----------------------------
+Start validation ...
+Validation error:0.09795339405536652
+Save model checkpoints ... 
+Save pial surface mesh ... 
+Maximum allocated GPU memory: 2.34 GiB
+Finish validation.
+----------------------------
+Finish training.
+----------------------------
+D
+CC

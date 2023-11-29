@@ -1,0 +1,14 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.32it/s] 50%|█████     | 2/4 [00:00<00:00,  3.57it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.61it/s]100%|██████████| 4/4 [00:01<00:00,  3.67it/s]100%|██████████| 4/4 [00:01<00:00,  3.62it/s]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 96, in <module>
+    n_smooth=config.n_smooth, lambd=config.lambd)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/pialnn.py", line 137, in forward
+    x = self.block1(v, f, volume)
+  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/pialnn/model/pialnn.py", line 57, in forward
+    features = torch.cat([pointFeatures,normalFeatures,x_local],dim=2)
+RuntimeError: Tensors must have same number of dimensions: got 5 and 3

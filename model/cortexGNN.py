@@ -9,16 +9,34 @@ from torch_geometric.utils import add_self_loops
 
 from torch_geometric.nn import GATConv
 
-#Two layer GCN using pyg
-class TwoLayerGCN(nn.Module):
-    def __init__(self, in_features, hidden_features, out_features):
-        super(TwoLayerGCN, self).__init__()
-        self.gcn1 = pyg_nn.GCNConv(in_features, hidden_features)
-        self.gcn2 = pyg_nn.GCNConv(hidden_features, out_features)
+#N layer GCN using pyg
+class NLayerGCN(nn.Module):
+    def __init__(self, in_features, hidden_features, out_features,num_layers):
+        super(NLayerGCN, self).__init__()
+        assert num_layers > 1, "Number of layers should be greater than 1"
+
+        # Initialize the GAT layers
+        self.layers = nn.ModuleList()
+        
+        # First layer
+        self.layers.append(pyg_nn.GCNConv(in_features, hidden_features))
+
+        # Hidden layers
+        for _ in range(num_layers - 2):
+            self.layers.append(pyg_nn.GCNConv(hidden_features, hidden_features))
+
+        # Output layer
+        self.layers.append(pyg_nn.GCNConv(hidden_features, out_features))
 
     def forward(self, x, edge_index):
-        x = F.relu(self.gcn1(x, edge_index))
-        x = torch.tanh(self.gcn2(x, edge_index))
+        x = x.squeeze()
+        assert x.dim() == 2, f"Input should be 2D, but got shape {x.shape}"
+
+        for layer in self.layers[:-1]:
+            x = F.relu(layer(x, edge_index))
+
+        x = torch.tanh(self.layers[-1](x, edge_index))
+
         return x
 
 
@@ -146,24 +164,27 @@ K: kernal size for local conv operation
 n_scale: num of layers of image pyramid
 """
 
-class DeformBlockGCN(nn.Module):
-    def __init__(self, nc=128, K=5, n_scale=3,sf=.1):
-        super(DeformBlockGCN, self).__init__()
+class DeformBlockGNN(nn.Module):
+    def __init__(self, nc=128, K=5, n_scale=3,sf=.1,gnn_layers=2,gnnVersion=1):
+        super(DeformBlockGNN, self).__init__()
         self.nodeFeatureNet = NodeFeatureNet(nc=nc,K=K,n_scale=n_scale)
         #chatgpt,declare a custom 2 layer gcn here that takes features from nodeFeatureNet to predict node features, use a tanh nonlinearity at the end instead of softmax. 
         self.n_scale = n_scale
         self.nc = nc
         self.K = K
         self.sf = sf
-        self.gcn = NLayerGAT(nc*2, nc, 3,2)  # Adjust dimensions as needed
-
+        if gnnVersion == 1:
+            self.gcn = NLayerGAT(nc*2, nc*2, 3,gnn_layers)  # Adjust dimensions as needed
+            print('NLayerGAT',gnn_layers)
+        else:
+            self.gcn = NLayerGCN(nc*2, nc*2, 3,gnn_layers)  # Adjust dimensions as needed
+            print('NLayerGCN',gnn_layers)
+            
     def forward(self, v, f, volume,start,end,edge_list):
         coord = v.clone()
         x = self.nodeFeatureNet(v,f,volume,start,end)
         x = self.gcn(x, edge_list)*self.sf #threshold the deformation like before
-
         coord[:,start:end,:] = coord[:,start:end,:] + x
-
         return coord    # v=v+dvreturn    # node features
     
     def initialize(self, L, W, H, device=None):
@@ -177,14 +198,14 @@ PialNN with 3 deformation blocks + 1 Laplacian smoothing layer
 """
 
 class CortexGNN(nn.Module):
-    def __init__(self, nc=128, K=5, n_scale=3, num_blocks=3,sf=.1):
+    def __init__(self, nc=128, K=5, n_scale=3, num_blocks=3,sf=.1,gnn_layers=2,gnnVersion=1):
         super(CortexGNN, self).__init__()
         
-        # self.blocks = nn.ModuleList([DeformBlockGCN(nc, K, n_scale) for i in range(num_blocks)])
-        self.blocks = DeformBlockGCN(nc, K, n_scale,sf)
+        self.block1 = DeformBlockGNN(nc, K, n_scale,sf,gnn_layers=gnn_layers,gnnVersion=gnnVersion)
+        self.block2 = DeformBlockGNN(nc, K, n_scale,sf,gnn_layers=gnn_layers,gnnVersion=gnnVersion)
         self.smooth = LaplacianSmooth(3, 3, aggr='mean')
 
-    def forward(self, v, f, volume, n_smooth=1, lambd=1.0,start = None, end = None,block=0):
+    def forward(self, v, f, volume, n_smooth=1, lambd=1.0,start = None, end = None):
         assert v.shape[0] == 1
         assert f.shape[0] == 1
         assert v.shape[1] != 1
@@ -194,9 +215,8 @@ class CortexGNN(nn.Module):
                                f[0,:,[2,0]]], dim=0).transpose(1,0)#moved from after x
         edge_index_with_loops = add_self_loops(edge_list)[0]
 
-        
-        # x = self.blocks[block](v, f, volume,start,end,edge_index_with_loops)
-        x = self.blocks(v, f, volume,start,end,edge_index_with_loops)
+        x = self.block1(v, f, volume,start,end,edge_index_with_loops)
+        x = self.block2(x, f, volume,start,end,edge_index_with_loops)
         
         for i in range(n_smooth):
             x = self.smooth(x, edge_list, lambd=lambd)
@@ -206,7 +226,8 @@ class CortexGNN(nn.Module):
     def initialize(self, L=256, W=256, H=256, device=None):
         # for i in range(len(self.blocks)):
         #     self.blocks[i].initialize(L,W,H,device)
-        self.blocks.initialize(L,W,H,device)
+        self.block1.initialize(L,W,H,device)
+        self.block2.initialize(L,W,H,device)
 
 
 """

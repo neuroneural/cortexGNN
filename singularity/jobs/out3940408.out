@@ -1,0 +1,369 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+----------------------------
+Start loading model ...
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+Epoch:0, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:1, training loss:nan
+Epoch:2, training loss:nan
+Epoch:3, training loss:nan
+Epoch:4, training loss:nan
+Epoch:5, training loss:nan
+Epoch:6, training loss:nan
+Epoch:7, training loss:nan
+Epoch:8, training loss:nan
+Epoch:9, training loss:nan
+Epoch:10, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:11, training loss:nan
+Epoch:12, training loss:nan
+Epoch:13, training loss:nan
+Epoch:14, training loss:nan
+Epoch:15, training loss:nan
+Epoch:16, training loss:nan
+Epoch:17, training loss:nan
+Epoch:18, training loss:nan
+Epoch:19, training loss:nan
+Epoch:20, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:21, training loss:nan
+Epoch:22, training loss:nan
+Epoch:23, training loss:nan
+Epoch:24, training loss:nan
+Epoch:25, training loss:nan
+Epoch:26, training loss:nan
+Epoch:27, training loss:nan
+Epoch:28, training loss:nan
+Epoch:29, training loss:nan
+Epoch:30, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:31, training loss:nan
+Epoch:32, training loss:nan
+Epoch:33, training loss:nan
+Epoch:34, training loss:nan
+Epoch:35, training loss:nan
+Epoch:36, training loss:nan
+Epoch:37, training loss:nan
+Epoch:38, training loss:nan
+Epoch:39, training loss:nan
+Epoch:40, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:41, training loss:nan
+Epoch:42, training loss:nan
+Epoch:43, training loss:nan
+Epoch:44, training loss:nan
+Epoch:45, training loss:nan
+Epoch:46, training loss:nan
+Epoch:47, training loss:nan
+Epoch:48, training loss:nan
+Epoch:49, training loss:nan
+Epoch:50, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:51, training loss:nan
+Epoch:52, training loss:nan
+Epoch:53, training loss:nan
+Epoch:54, training loss:nan
+Epoch:55, training loss:nan
+Epoch:56, training loss:nan
+Epoch:57, training loss:nan
+Epoch:58, training loss:nan
+Epoch:59, training loss:nan
+Epoch:60, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:61, training loss:nan
+Epoch:62, training loss:nan
+Epoch:63, training loss:nan
+Epoch:64, training loss:nan
+Epoch:65, training loss:nan
+Epoch:66, training loss:nan
+Epoch:67, training loss:nan
+Epoch:68, training loss:nan
+Epoch:69, training loss:nan
+Epoch:70, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:71, training loss:nan
+Epoch:72, training loss:nan
+Epoch:73, training loss:nan
+Epoch:74, training loss:nan
+Epoch:75, training loss:nan
+Epoch:76, training loss:nan
+Epoch:77, training loss:nan
+Epoch:78, training loss:nan
+Epoch:79, training loss:nan
+Epoch:80, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:81, training loss:nan
+Epoch:82, training loss:nan
+Epoch:83, training loss:nan
+Epoch:84, training loss:nan
+Epoch:85, training loss:nan
+Epoch:86, training loss:nan
+Epoch:87, training loss:nan
+Epoch:88, training loss:nan
+Epoch:89, training loss:nan
+Epoch:90, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:91, training loss:nan
+Epoch:92, training loss:nan
+Epoch:93, training loss:nan
+Epoch:94, training loss:nan
+Epoch:95, training loss:nan
+Epoch:96, training loss:nan
+Epoch:97, training loss:nan
+Epoch:98, training loss:nan
+Epoch:99, training loss:nan
+Epoch:100, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:101, training loss:nan
+Epoch:102, training loss:nan
+Epoch:103, training loss:nan
+Epoch:104, training loss:nan
+Epoch:105, training loss:nan
+Epoch:106, training loss:nan
+Epoch:107, training loss:nan
+Epoch:108, training loss:nan
+Epoch:109, training loss:nan
+Epoch:110, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:111, training loss:nan
+Epoch:112, training loss:nan
+Epoch:113, training loss:nan
+Epoch:114, training loss:nan
+Epoch:115, training loss:nan
+Epoch:116, training loss:nan
+Epoch:117, training loss:nan
+Epoch:118, training loss:nan
+Epoch:119, training loss:nan
+Epoch:120, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:121, training loss:nan
+Epoch:122, training loss:nan
+Epoch:123, training loss:nan
+Epoch:124, training loss:nan
+Epoch:125, training loss:nan
+Epoch:126, training loss:nan
+Epoch:127, training loss:nan
+Epoch:128, training loss:nan
+Epoch:129, training loss:nan
+Epoch:130, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:131, training loss:nan
+Epoch:132, training loss:nan
+Epoch:133, training loss:nan
+Epoch:134, training loss:nan
+Epoch:135, training loss:nan
+Epoch:136, training loss:nan
+Epoch:137, training loss:nan
+Epoch:138, training loss:nan
+Epoch:139, training loss:nan
+Epoch:140, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:141, training loss:nan
+Epoch:142, training loss:nan
+Epoch:143, training loss:nan
+Epoch:144, training loss:nan
+Epoch:145, training loss:nan
+Epoch:146, training loss:nan
+Epoch:147, training loss:nan
+Epoch:148, training loss:nan
+Epoch:149, training loss:nan
+Epoch:150, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:151, training loss:nan
+Epoch:152, training loss:nan
+Epoch:153, training loss:nan
+Epoch:154, training loss:nan
+Epoch:155, training loss:nan
+Epoch:156, training loss:nan
+Epoch:157, training loss:nan
+Epoch:158, training loss:nan
+Epoch:159, training loss:nan
+Epoch:160, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:161, training loss:nan
+Epoch:162, training loss:nan
+Epoch:163, training loss:nan
+Epoch:164, training loss:nan
+Epoch:165, training loss:nan
+Epoch:166, training loss:nan
+Epoch:167, training loss:nan
+Epoch:168, training loss:nan
+Epoch:169, training loss:nan
+Epoch:170, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:171, training loss:nan
+Epoch:172, training loss:nan
+Epoch:173, training loss:nan
+Epoch:174, training loss:nan
+Epoch:175, training loss:nan
+Epoch:176, training loss:nan
+Epoch:177, training loss:nan
+Epoch:178, training loss:nan
+Epoch:179, training loss:nan
+Epoch:180, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:181, training loss:nan
+Epoch:182, training loss:nan
+Epoch:183, training loss:nan
+Epoch:184, training loss:nan
+Epoch:185, training loss:nan
+Epoch:186, training loss:nan
+Epoch:187, training loss:nan
+Epoch:188, training loss:nan
+Epoch:189, training loss:nan
+Epoch:190, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Epoch:191, training loss:nan
+Epoch:192, training loss:nan
+Epoch:193, training loss:nan
+Epoch:194, training loss:nan
+Epoch:195, training loss:nan
+Epoch:196, training loss:nan
+Epoch:197, training loss:nan
+Epoch:198, training loss:nan
+Epoch:199, training loss:nan
+Epoch:200, training loss:nan
+----------------------------
+Start validation ...
+Validation error:nan
+Save model checkpoints ... 
+Maximum allocated GPU memory: 0.06 GiB
+Finish validation.
+----------------------------
+Finish training.
+----------------------------
+D
+CC

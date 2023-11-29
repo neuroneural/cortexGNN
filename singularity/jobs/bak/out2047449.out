@@ -1,0 +1,16 @@
+aa
+bb
+CC
+----------------------------
+Start loading dataset ...
+Finish loading dataset. There are total 1 subjects.
+----------------------------
+Start loading model ...
+Finish loading model
+----------------------------
+Start evaluation ...
+CD: Mean=0.5961036758890244, Std=0.0
+AD: Mean=0.4768805313304825, Std=0.0
+HD: Mean=1.0627519678242314, Std=0.0
+Finish evaluation.
+----------------------------

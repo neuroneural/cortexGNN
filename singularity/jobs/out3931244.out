@@ -1,0 +1,26 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+----------------------------
+Start loading model ...
+number of channels 128
+K value 5
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+i progress 0
+v gt shape torch.Size([1, 166737, 3])
+f gt shape torch.Size([1, 166737, 3])
+v start end 0 41684
+f start end 0 83367
+D
+CC

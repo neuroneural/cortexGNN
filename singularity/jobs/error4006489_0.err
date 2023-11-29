@@ -1,0 +1,6 @@
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.31it/s] 50%|█████     | 2/4 [00:00<00:00,  3.44it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.49it/s]100%|██████████| 4/4 [00:01<00:00,  3.54it/s]100%|██████████| 4/4 [00:01<00:00,  3.50it/s]
+0it [00:00, ?it/s]0it [00:48, ?it/s]
+Traceback (most recent call last):
+  File "eval.py", line 118, in <module>
+    +config.hemisphere+"_subject_"+str(sub_id.item())+"_gt.obj"
+AttributeError: 'Namespace' object has no attribute 'save_mesh_dir'

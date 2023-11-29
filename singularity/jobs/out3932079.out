@@ -1,0 +1,348 @@
+aa
+bb
+A
+B
+C
+----------------------------
+Start loading dataset ...
+numbers 100206
+numbers 100307
+numbers 100408
+numbers 100610
+Finish loading dataset. There are total 4 subjects.
+----------------------------
+Start loading model ...
+Finish loading model
+----------------------------
+Start training 200 epochs ...
+Epoch:0, training loss:0.31870009501775104
+----------------------------
+Start validation ...
+Validation error:0.31870009501775104
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:1, training loss:0.20738913118839264
+Epoch:2, training loss:0.1517348811030388
+Epoch:3, training loss:0.10408544043699901
+Epoch:4, training loss:0.09569269915421803
+Epoch:5, training loss:0.08778496831655502
+Epoch:6, training loss:0.08643624434868495
+Epoch:7, training loss:0.08769943068424861
+Epoch:8, training loss:0.08374971648057301
+Epoch:9, training loss:0.0827513833840688
+Epoch:10, training loss:0.07895266016324361
+----------------------------
+Start validation ...
+Validation error:0.07895266016324361
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:11, training loss:0.07716777175664902
+Epoch:12, training loss:0.07625877857208252
+Epoch:13, training loss:0.07532796015342076
+Epoch:14, training loss:0.07518296192089717
+Epoch:15, training loss:0.07428714881340663
+Epoch:16, training loss:0.07380105058352153
+Epoch:17, training loss:0.07297808676958084
+Epoch:18, training loss:0.07244902849197388
+Epoch:19, training loss:0.07207791010538737
+Epoch:20, training loss:0.07174632201592128
+----------------------------
+Start validation ...
+Validation error:0.07174632201592128
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:21, training loss:0.07139533758163452
+Epoch:22, training loss:0.07108867665131886
+Epoch:23, training loss:0.07067181666692098
+Epoch:24, training loss:0.07038190464178722
+Epoch:25, training loss:0.07013437896966934
+Epoch:26, training loss:0.06987765307227771
+Epoch:27, training loss:0.06959194565812747
+Epoch:28, training loss:0.06970496724049251
+Epoch:29, training loss:0.06946808968981107
+Epoch:30, training loss:0.06881903236111005
+----------------------------
+Start validation ...
+Validation error:0.06881903236111005
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:31, training loss:0.06874483327070872
+Epoch:32, training loss:0.06844166045387585
+Epoch:33, training loss:0.06832290813326836
+Epoch:34, training loss:0.06809546922643979
+Epoch:35, training loss:0.06790736814339955
+Epoch:36, training loss:0.06782545149326324
+Epoch:37, training loss:0.06771738454699516
+Epoch:38, training loss:0.06717956687013309
+Epoch:39, training loss:0.0673003060122331
+Epoch:40, training loss:0.0668881634871165
+----------------------------
+Start validation ...
+Validation error:0.0668881634871165
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:41, training loss:0.06705166026949883
+Epoch:42, training loss:0.06705873956282933
+Epoch:43, training loss:0.06638902425765991
+Epoch:44, training loss:0.0667981393635273
+Epoch:45, training loss:0.06601417064666748
+Epoch:46, training loss:0.06623814751704533
+Epoch:47, training loss:0.0658215122918288
+Epoch:48, training loss:0.06561006729801495
+Epoch:49, training loss:0.06537319719791412
+Epoch:50, training loss:0.06531462942560513
+----------------------------
+Start validation ...
+Validation error:0.06531462942560513
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:51, training loss:0.0650373175740242
+Epoch:52, training loss:0.06507552042603493
+Epoch:53, training loss:0.06561111782987912
+Epoch:54, training loss:0.06591056659817696
+Epoch:55, training loss:0.06637265036503474
+Epoch:56, training loss:0.06451358025272687
+Epoch:57, training loss:0.06466508532563846
+Epoch:58, training loss:0.06497289861241977
+Epoch:59, training loss:0.06404297550519307
+Epoch:60, training loss:0.06398083393772443
+----------------------------
+Start validation ...
+Validation error:0.06398083393772443
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:61, training loss:0.0639958456158638
+Epoch:62, training loss:0.0634743794798851
+Epoch:63, training loss:0.06366981441775958
+Epoch:64, training loss:0.06339235603809357
+Epoch:65, training loss:0.06346365933616956
+Epoch:66, training loss:0.06294326856732368
+Epoch:67, training loss:0.06303542107343674
+Epoch:68, training loss:0.06300906588633855
+Epoch:69, training loss:0.06286652386188507
+Epoch:70, training loss:0.06244175384442011
+----------------------------
+Start validation ...
+Validation error:0.06244175384442011
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:71, training loss:0.0625053346157074
+Epoch:72, training loss:0.06226930394768715
+Epoch:73, training loss:0.062178282688061394
+Epoch:74, training loss:0.06202992796897888
+Epoch:75, training loss:0.061953206857045494
+Epoch:76, training loss:0.06180856625239054
+Epoch:77, training loss:0.06180709476272265
+Epoch:78, training loss:0.06189418335755666
+Epoch:79, training loss:0.06176134447256724
+Epoch:80, training loss:0.061531804502010345
+----------------------------
+Start validation ...
+Validation error:0.061531804502010345
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:81, training loss:0.06109737356503805
+Epoch:82, training loss:0.06119498983025551
+Epoch:83, training loss:0.061409554133812584
+Epoch:84, training loss:0.060927197337150574
+Epoch:85, training loss:0.0611267996331056
+Epoch:86, training loss:0.0606187197069327
+Epoch:87, training loss:0.060606310764948525
+Epoch:88, training loss:0.06069234386086464
+Epoch:89, training loss:0.0603636788825194
+Epoch:90, training loss:0.060277036080757775
+----------------------------
+Start validation ...
+Validation error:0.060277036080757775
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:91, training loss:0.060215941319863
+Epoch:92, training loss:0.06004556020100912
+Epoch:93, training loss:0.06005099415779114
+Epoch:94, training loss:0.059845143308242164
+Epoch:95, training loss:0.0598783145348231
+Epoch:96, training loss:0.05969405919313431
+Epoch:97, training loss:0.05961698666214943
+Epoch:98, training loss:0.059555426239967346
+Epoch:99, training loss:0.05955572923024496
+Epoch:100, training loss:0.05931766082843145
+----------------------------
+Start validation ...
+Validation error:0.05931766082843145
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:101, training loss:0.059124977638324104
+Epoch:102, training loss:0.05914305647214254
+Epoch:103, training loss:0.059346795082092285
+Epoch:104, training loss:0.05900481094916662
+Epoch:105, training loss:0.059117729465166725
+Epoch:106, training loss:0.059269435703754425
+Epoch:107, training loss:0.05943962807456652
+Epoch:108, training loss:0.060061678290367126
+Epoch:109, training loss:0.06041008482376734
+Epoch:110, training loss:0.059821306417385735
+----------------------------
+Start validation ...
+Validation error:0.059821306417385735
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:111, training loss:0.05911892279982567
+Epoch:112, training loss:0.05870498592654864
+Epoch:113, training loss:0.0583188496530056
+Epoch:114, training loss:0.058471577862898506
+Epoch:115, training loss:0.05853086709976196
+Epoch:116, training loss:0.0581211323539416
+Epoch:117, training loss:0.057922045389811196
+Epoch:118, training loss:0.05797711511452993
+Epoch:119, training loss:0.05776862303415934
+Epoch:120, training loss:0.05768342440327009
+----------------------------
+Start validation ...
+Validation error:0.05768342440327009
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:121, training loss:0.0575692392885685
+Epoch:122, training loss:0.05783324067791303
+Epoch:123, training loss:0.05773378536105156
+Epoch:124, training loss:0.05773493026693662
+Epoch:125, training loss:0.05729775627454122
+Epoch:126, training loss:0.057482623805602394
+Epoch:127, training loss:0.057211898267269135
+Epoch:128, training loss:0.05730932950973511
+Epoch:129, training loss:0.05696882431705793
+Epoch:130, training loss:0.05712888886531194
+----------------------------
+Start validation ...
+Validation error:0.05712888886531194
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:131, training loss:0.05700549607475599
+Epoch:132, training loss:0.05681788052121798
+Epoch:133, training loss:0.056780719508727394
+Epoch:134, training loss:0.056826828668514885
+Epoch:135, training loss:0.056546758860349655
+Epoch:136, training loss:0.056750718504190445
+Epoch:137, training loss:0.0572133498887221
+Epoch:138, training loss:0.05667754511038462
+Epoch:139, training loss:0.0563681535422802
+Epoch:140, training loss:0.05641209830840429
+----------------------------
+Start validation ...
+Validation error:0.05641209830840429
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:141, training loss:0.05668989817301432
+Epoch:142, training loss:0.05695126329859098
+Epoch:143, training loss:0.05631688982248306
+Epoch:144, training loss:0.05614795163273811
+Epoch:145, training loss:0.05631056552131971
+Epoch:146, training loss:0.05663110688328743
+Epoch:147, training loss:0.056508069237073265
+Epoch:148, training loss:0.05691606178879738
+Epoch:149, training loss:0.05638256420691808
+Epoch:150, training loss:0.05577683821320534
+----------------------------
+Start validation ...
+Validation error:0.05577683821320534
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:151, training loss:0.05582534273465475
+Epoch:152, training loss:0.05577922612428665
+Epoch:153, training loss:0.055846059074004493
+Epoch:154, training loss:0.05567601198951403
+Epoch:155, training loss:0.0558125376701355
+Epoch:156, training loss:0.05539608374238014
+Epoch:157, training loss:0.0552388330300649
+Epoch:158, training loss:0.05531904101371765
+Epoch:159, training loss:0.05547988787293434
+Epoch:160, training loss:0.05503064145644506
+----------------------------
+Start validation ...
+Validation error:0.05503064145644506
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:161, training loss:0.055127414564291634
+Epoch:162, training loss:0.05515800043940544
+Epoch:163, training loss:0.05518906811873118
+Epoch:164, training loss:0.05536112685998281
+Epoch:165, training loss:0.05473259091377258
+Epoch:166, training loss:0.05480732892950376
+Epoch:167, training loss:0.055065397173166275
+Epoch:168, training loss:0.054730298618475594
+Epoch:169, training loss:0.05472072710593542
+Epoch:170, training loss:0.05474843208988508
+----------------------------
+Start validation ...
+Validation error:0.05474843208988508
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:171, training loss:0.05445935701330503
+Epoch:172, training loss:0.05492196977138519
+Epoch:173, training loss:0.05463980510830879
+Epoch:174, training loss:0.05452255407969157
+Epoch:175, training loss:0.05478829766313235
+Epoch:176, training loss:0.054642378042141594
+Epoch:177, training loss:0.05471405883630117
+Epoch:178, training loss:0.054622915883859
+Epoch:179, training loss:0.05442594364285469
+Epoch:180, training loss:0.05407389501730601
+----------------------------
+Start validation ...
+Validation error:0.05407389501730601
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:181, training loss:0.054291373739639916
+Epoch:182, training loss:0.05413460483153661
+Epoch:183, training loss:0.054194945842027664
+Epoch:184, training loss:0.0540191059311231
+Epoch:185, training loss:0.053903733690579735
+Epoch:186, training loss:0.05397597452004751
+Epoch:187, training loss:0.05380158002177874
+Epoch:188, training loss:0.054005653907855354
+Epoch:189, training loss:0.05389960731069247
+Epoch:190, training loss:0.05418178563316663
+----------------------------
+Start validation ...
+Validation error:0.05418178563316663
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Epoch:191, training loss:0.05466904739538828
+Epoch:192, training loss:0.05485469475388527
+Epoch:193, training loss:0.054650225987037025
+Epoch:194, training loss:0.054587877045075096
+Epoch:195, training loss:0.05387019366025925
+Epoch:196, training loss:0.053775765001773834
+Epoch:197, training loss:0.05363910893599192
+Epoch:198, training loss:0.053419653326272964
+Epoch:199, training loss:0.05351018408934275
+Epoch:200, training loss:0.05403244495391846
+----------------------------
+Start validation ...
+Validation error:0.05403244495391846
+Save model checkpoints ... 
+Finish validation.
+----------------------------
+Finish training.
+----------------------------
+D
+CC

@@ -20,6 +20,7 @@ source /usr/share/lmod/lmod/init/bash
 module use /application/ubuntumodules/localmodules
 module load singularity/3.10.2
 echo "bb"
+echo "/data/users2/washbee/websurf/pialnn_web_trsmall/"
 singularity exec --nv --bind /data:/data/,/data/users2/washbee/websurf/cortexGNN:/pialnn,/data/users2/washbee/speedrun/hcp-plis-subj-pialnn-rp:/subj /data/users2/washbee/containers/speedrun/pialnn_sr.sif /pialnn/singularity/predict.sh
 
 echo "CC"

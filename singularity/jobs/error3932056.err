@@ -1,0 +1,8 @@
+/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 803: system has unsupported display driver / cuda driver combination (Triggered internally at  /opt/conda/conda-bld/pytorch_1603729138878/work/c10/cuda/CUDAFunctions.cpp:100.)
+  return torch._C._cuda_getDeviceCount() > 0
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  2.74it/s] 50%|█████     | 2/4 [00:00<00:00,  3.08it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.14it/s]100%|██████████| 4/4 [00:01<00:00,  3.19it/s]100%|██████████| 4/4 [00:01<00:00,  3.13it/s]
+  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 70, in <module>
+    volume_in, v_gt, f_gt, v_in, f_in = data
+ValueError: too many values to unpack (expected 5)
