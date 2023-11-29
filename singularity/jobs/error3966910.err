@@ -1,15 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.22it/s] 50%|█████     | 2/4 [00:00<00:00,  3.33it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.39it/s]100%|██████████| 4/4 [00:01<00:00,  3.44it/s]100%|██████████| 4/4 [00:01<00:00,  3.40it/s]
-An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
-Traceback (most recent call last):
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
-    handler.log_event()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
-    del self._evt
-AttributeError: _evt
-/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/io/obj_io.py:530: UserWarning: No mtl file provided
-  warnings.warn("No mtl file provided")
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 115, in <module>
-    if vertices: # Clone the vertices and faces tensors
-RuntimeError: Boolean value of Tensor with more than one value is ambiguous

@@ -1,32 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
-Traceback (most recent call last):
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
-    handler.log_event()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
-    del self._evt
-AttributeError: _evt
-/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/io/obj_io.py:534: UserWarning: Mtl file does not exist: /pialnn/resources/mods/lh_white_smooth_140k_mod_pial.mtl
-  warnings.warn(f"Mtl file does not exist: {f}")
- 25%|██▌       | 1/4 [00:03<00:11,  3.80s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
-Traceback (most recent call last):
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
-    handler.log_event()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
-    del self._evt
-AttributeError: _evt
- 50%|█████     | 2/4 [00:07<00:07,  3.69s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
-Traceback (most recent call last):
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
-    handler.log_event()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
-    del self._evt
-AttributeError: _evt
- 75%|███████▌  | 3/4 [00:10<00:03,  3.64s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
-Traceback (most recent call last):
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
-    handler.log_event()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
-    del self._evt
-AttributeError: _evt
-100%|██████████| 4/4 [00:14<00:00,  3.65s/it]100%|██████████| 4/4 [00:14<00:00,  3.66s/it]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 1/201 [00:36<2:01:32, 36.46s/it]  1%|          | 2/201 [01:00<1:37:11, 29.30s/it]  1%|▏         | 3/201 [01:25<1:29:15, 27.05s/it]  2%|▏         | 4/201 [01:49<1:25:22, 26.00s/it]  2%|▏         | 5/201 [02:13<1:23:02, 25.42s/it]  3%|▎         | 6/201 [02:38<1:21:31, 25.08s/it]  3%|▎         | 7/201 [03:02<1:20:24, 24.87s/it]  4%|▍         | 8/201 [03:27<1:19:32, 24.73s/it]  4%|▍         | 9/201 [03:51<1:18:50, 24.64s/it]  5%|▍         | 10/201 [04:16<1:18:13, 24.57s/it]  5%|▌         | 11/201 [04:49<1:26:02, 27.17s/it]  6%|▌         | 12/201 [05:13<1:22:55, 26.33s/it]  6%|▋         | 13/201 [05:37<1:20:40, 25.75s/it]  7%|▋         | 14/201 [06:02<1:19:00, 25.35s/it]  7%|▋         | 15/201 [06:26<1:17:41, 25.06s/it]  8%|▊         | 16/201 [06:51<1:16:45, 24.90s/it]  8%|▊         | 17/201 [07:15<1:15:57, 24.77s/it]  9%|▉         | 18/201 [07:40<1:15:15, 24.67s/it]  9%|▉         | 19/201 [08:04<1:14:37, 24.60s/it] 10%|▉         | 20/201 [08:29<1:14:04, 24.55s/it] 10%|█         | 21/201 [09:02<1:21:18, 27.10s/it] 11%|█         | 22/201 [09:26<1:18:29, 26.31s/it] 11%|█▏        | 23/201 [09:50<1:16:21, 25.74s/it] 12%|█▏        | 24/201 [10:15<1:14:45, 25.34s/it] 12%|█▏        | 25/201 [10:39<1:13:31, 25.06s/it] 13%|█▎        | 26/201 [11:04<1:12:32, 24.87s/it] 13%|█▎        | 27/201 [11:28<1:11:44, 24.74s/it] 14%|█▍        | 28/201 [11:53<1:11:03, 24.64s/it] 14%|█▍        | 29/201 [12:17<1:10:26, 24.57s/it] 15%|█▍        | 30/201 [12:41<1:09:54, 24.53s/it] 15%|█▌        | 31/201 [13:14<1:16:43, 27.08s/it] 16%|█▌        | 32/201 [13:39<1:13:59, 26.27s/it] 16%|█▋        | 33/201 [14:03<1:11:57, 25.70s/it] 17%|█▋        | 34/201 [14:28<1:10:25, 25.30s/it] 17%|█▋        | 35/201 [14:52<1:09:14, 25.03s/it] 18%|█▊        | 36/201 [15:16<1:08:17, 24.83s/it] 18%|█▊        | 37/201 [15:41<1:07:31, 24.71s/it] 19%|█▉        | 38/201 [16:05<1:06:51, 24.61s/it] 19%|█▉        | 39/201 [16:30<1:06:16, 24.54s/it] 20%|█▉        | 40/201 [16:54<1:05:44, 24.50s/it] 20%|██        | 41/201 [17:27<1:12:09, 27.06s/it] 21%|██        | 42/201 [17:51<1:09:35, 26.26s/it] 21%|██▏       | 43/201 [18:16<1:07:41, 25.71s/it] 22%|██▏       | 44/201 [18:40<1:06:13, 25.31s/it] 22%|██▏       | 45/201 [19:05<1:05:06, 25.04s/it] 23%|██▎       | 46/201 [19:29<1:04:11, 24.85s/it]slurmstepd: error: *** JOB 3977708 ON arctrdagn009 CANCELLED AT 2023-11-23T00:13:23 ***

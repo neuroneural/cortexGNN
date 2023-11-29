@@ -1,6 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  2.95it/s] 50%|█████     | 2/4 [00:00<00:00,  3.10it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.15it/s]100%|██████████| 4/4 [00:01<00:00,  3.19it/s]100%|██████████| 4/4 [00:01<00:00,  3.15it/s]
-0it [00:00, ?it/s]1it [00:49, 49.65s/it]2it [01:36, 47.88s/it]3it [02:20, 46.26s/it]4it [03:06, 46.09s/it]4it [03:06, 46.61s/it]
-Traceback (most recent call last):
-  File "eval.py", line 144, in <module>
-    writer = csv.writer(file)
-NameError: name 'csv' is not defined

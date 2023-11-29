@@ -1,46 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
-Traceback (most recent call last):
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
-    handler.log_event()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
-    del self._evt
-AttributeError: _evt
-/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/io/obj_io.py:530: UserWarning: No mtl file provided
-  warnings.warn("No mtl file provided")
- 25%|██▌       | 1/4 [00:01<00:04,  1.42s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
-Traceback (most recent call last):
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
-    handler.log_event()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
-    del self._evt
-AttributeError: _evt
- 50%|█████     | 2/4 [00:02<00:02,  1.35s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
-Traceback (most recent call last):
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
-    handler.log_event()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
-    del self._evt
-AttributeError: _evt
- 75%|███████▌  | 3/4 [00:04<00:01,  1.34s/it]An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
-Traceback (most recent call last):
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
-    handler.log_event()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
-    del self._evt
-AttributeError: _evt
-100%|██████████| 4/4 [00:05<00:00,  1.32s/it]100%|██████████| 4/4 [00:05<00:00,  1.33s/it]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 134, in <module>
-    save_mesh_obj(v_in.cpu().numpy() * LWHmax/2  + [L/2,W/2,H/2], f_gm, n_gm, path_save_mesh)
-  File "/pialnn/utils.py", line 131, in save_mesh_obj
-    vertex_normals=n)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/trimesh/base.py", line 192, in __init__
-    merge_norm=merge_norm)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/trimesh/base.py", line 233, in process
-    merge_norm=merge_norm)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/trimesh/base.py", line 1099, in merge_vertices
-    digits_uv=digits_uv)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/trimesh/grouping.py", line 70, in merge_vertices
-    referenced[mesh.faces] = True
-IndexError: index 8719 is out of bounds for axis 0 with size 1

@@ -1,16 +1,0 @@
-/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 803: system has unsupported display driver / cuda driver combination (Triggered internally at  /opt/conda/conda-bld/pytorch_1603729138878/work/c10/cuda/CUDAFunctions.cpp:100.)
-  return torch._C._cuda_getDeviceCount() > 0
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  2.91it/s] 50%|█████     | 2/4 [00:00<00:00,  3.16it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.21it/s]100%|██████████| 4/4 [00:01<00:00,  3.22it/s]100%|██████████| 4/4 [00:01<00:00,  3.19it/s]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:01<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 79, in <module>
-    n_smooth=config.n_smooth, lambd=config.lambd)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/pialnn.py", line 123, in forward
-    x = self.block1(v, f, volume)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/pialnn.py", line 48, in forward
-    x_local = x_local + normal.repeat(1,1,self.nc//3)
-RuntimeError: The size of tensor a (128) must match the size of tensor b (126) at non-singleton dimension 2

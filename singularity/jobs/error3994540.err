@@ -1,4 +1,0 @@
-  File "train.py", line 232
-    elif config.gnnVersion==1 and config.cortexGNN::
-                                                   ^
-SyntaxError: invalid syntax

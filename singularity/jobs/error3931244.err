@@ -1,22 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.13it/s] 50%|█████     | 2/4 [00:00<00:00,  3.46it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.58it/s]100%|██████████| 4/4 [00:01<00:00,  3.66it/s]100%|██████████| 4/4 [00:01<00:00,  3.57it/s]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 112, in <module>
-    n_smooth=config.n_smooth, lambd=config.lambd)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/pialnn_mod.py", line 121, in forward
-    x = self.block1(v, f, volume)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/pialnn_mod.py", line 37, in forward
-    normal = compute_normal(v, f)    # compute normal
-  File "/pialnn/utils.py", line 12, in compute_normal
-    faces=list(f)).verts_normals_list()[0]
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/structures/meshes.py", line 771, in verts_normals_list
-    verts_normals_packed = self.verts_normals_packed()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/structures/meshes.py", line 757, in verts_normals_packed
-    self._compute_vertex_normals()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/structures/meshes.py", line 907, in _compute_vertex_normals
-    vertices_faces[:, 0] - vertices_faces[:, 2],
-RuntimeError: CUDA error: device-side assert triggered

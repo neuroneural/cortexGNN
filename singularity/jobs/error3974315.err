@@ -1,5 +1,0 @@
-  File "train.py", line 101
-    path_save_mesh = "./ckpts/mesh/template"+config.hemisphere.obj"
-                                                                  ^
-SyntaxError: EOL while scanning string literal
-slurmstepd: error: *** JOB 3974315 ON arctrdagn016 CANCELLED AT 2023-11-22T16:23:58 ***

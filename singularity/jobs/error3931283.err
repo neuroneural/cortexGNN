@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "train.py", line 13, in <module>
-    from utils import compute_normal, save_mesh_obj, extract_submesh
-ImportError: cannot import name 'extract_submesh' from 'utils' (/pialnn/utils.py)

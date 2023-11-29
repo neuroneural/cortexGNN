@@ -1,13 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  1.70it/s] 50%|█████     | 2/4 [00:00<00:00,  2.10it/s] 75%|███████▌  | 3/4 [00:01<00:00,  1.92it/s]100%|██████████| 4/4 [00:01<00:00,  2.07it/s]100%|██████████| 4/4 [00:01<00:00,  2.01it/s]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:07<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 151, in <module>
-    print("Validation error:{}".format(np.mean(error)))
-  File "<__array_function__ internals>", line 6, in mean
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/numpy/core/fromnumeric.py", line 3441, in mean
-    out=out, **kwargs)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/numpy/core/_methods.py", line 163, in _mean
-    arr = asanyarray(a)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/tensor.py", line 630, in __array__
-    return self.numpy()
-TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.

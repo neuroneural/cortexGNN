@@ -1,19 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.19it/s] 50%|█████     | 2/4 [00:00<00:00,  3.35it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.42it/s]100%|██████████| 4/4 [00:01<00:00,  3.47it/s]100%|██████████| 4/4 [00:01<00:00,  3.43it/s]
-An exception occurred in telemetry logging.Disabling telemetry to prevent further exceptions.
-Traceback (most recent call last):
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/file_io.py", line 946, in __log_tmetry_keys
-    handler.log_event()
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/iopath/common/event_logger.py", line 97, in log_event
-    del self._evt
-AttributeError: _evt
-/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/pytorch3d/io/obj_io.py:530: UserWarning: No mtl file provided
-  warnings.warn("No mtl file provided")
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 128, in <module>
-    start = segment_start,end = segment_end,block=bl)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/cortexGNN.py", line 185, in forward
-    edge_list = torch.cat([f[0,:,[0,1]],
-IndexError: too many indices for tensor of dimension 2

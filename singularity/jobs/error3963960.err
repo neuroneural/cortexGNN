@@ -1,4 +1,0 @@
-  File "train.py", line 105
-    start = segment_start,end = segment_end,bl)
-                                           ^
-SyntaxError: positional argument follows keyword argument

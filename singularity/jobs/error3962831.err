@@ -1,8 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  2.99it/s] 50%|█████     | 2/4 [00:00<00:00,  3.27it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.34it/s]100%|██████████| 4/4 [00:01<00:00,  3.40it/s]100%|██████████| 4/4 [00:01<00:00,  3.34it/s]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:04<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 106, in <module>
-    normLoss = normal_similarity_loss_batched(normals,edges)#Todo:episilon?
-  File "/pialnn/utils.py", line 62, in normal_similarity_loss_batched
-    normals_a = normals[b][edges[b][:, 0]]
-IndexError: too many indices for tensor of dimension 1

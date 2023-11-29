@@ -1,16 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:02,  1.37it/s] 50%|█████     | 2/4 [00:01<00:01,  1.30it/s] 75%|███████▌  | 3/4 [00:03<00:01,  1.24s/it]100%|██████████| 4/4 [00:04<00:00,  1.32s/it]100%|██████████| 4/4 [00:04<00:00,  1.19s/it]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:01<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 100, in <module>
-    n_smooth=config.n_smooth, lambd=config.lambd)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/pialnn.py", line 129, in forward
-    x = self.block1(v, f, volume)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/pialnn.py", line 45, in forward
-    cubes = self.cube_sampling(v, volume)    # extract K^3 cubes
-  File "/pialnn/model/pialnn.py", line 111, in cube_sampling
-    indices[:,0]+k]
-IndexError: index 3 is out of bounds for dimension 4 with size 3

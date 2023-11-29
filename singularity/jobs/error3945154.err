@@ -1,5 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  2.82it/s] 50%|█████     | 2/4 [00:00<00:00,  3.12it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.18it/s]100%|██████████| 4/4 [00:01<00:00,  3.23it/s]100%|██████████| 4/4 [00:01<00:00,  3.17it/s]
-Traceback (most recent call last):
-  File "train.py", line 58, in <module>
-    model = PialNN(config.nc, config.K, config.n_scale).to(device)
-NameError: name 'PialNN' is not defined

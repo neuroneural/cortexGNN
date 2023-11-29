@@ -1,6 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.28it/s] 50%|█████     | 2/4 [00:00<00:00,  3.52it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.57it/s]100%|██████████| 4/4 [00:01<00:00,  3.63it/s]100%|██████████| 4/4 [00:01<00:00,  3.58it/s]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 100, in <module>
-    v_in,f_in = extract_submesh(v_in,f_in,list(range(v_start_idx,v_end_idx)))
-NameError: name 'extract_submesh' is not defined

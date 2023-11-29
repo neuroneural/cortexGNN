@@ -1,20 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.17it/s] 50%|█████     | 2/4 [00:00<00:00,  3.48it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.57it/s]100%|██████████| 4/4 [00:01<00:00,  3.62it/s]100%|██████████| 4/4 [00:01<00:00,  3.56it/s]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:03<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 111, in <module>
-    n_smooth=config.n_smooth, lambd=config.lambd)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/pialnn_mod.py", line 121, in forward
-    x = self.block1(v, f, volume)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/pialnn_mod.py", line 41, in forward
-    x = F.leaky_relu(self.fc1(x), 0.15)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/linear.py", line 93, in forward
-    return F.linear(input, self.weight, self.bias)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/functional.py", line 1692, in linear
-    output = input.matmul(weight.t())
-RuntimeError: Tensor for 'out' is on CPU, Tensor for argument #1 'self' is on CPU, but expected them to be on GPU (while checking arguments for addmm)

@@ -1,2 +1,0 @@
-WARNING: skipping mount of /data/users2/washbee/speedrun/pialnn_web_trsmall: stat /data/users2/washbee/speedrun/pialnn_web_trsmall: no such file or directory
-FATAL:   container creation failed: mount /data/users2/washbee/speedrun/pialnn_web_trsmall->/subj error: while mounting /data/users2/washbee/speedrun/pialnn_web_trsmall: mount source /data/users2/washbee/speedrun/pialnn_web_trsmall doesn't exist

@@ -1,18 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.07it/s] 50%|█████     | 2/4 [00:00<00:00,  3.29it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.41it/s]100%|██████████| 4/4 [00:01<00:00,  3.48it/s]100%|██████████| 4/4 [00:01<00:00,  3.41it/s]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:05<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 105, in <module>
-    start = segment_start,end = segment_end)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/cortexGNN.py", line 177, in forward
-    x = self.smooth(x, edges, lambd=lambd)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/cortexGNN.py", line 232, in forward
-    size=size)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch_geometric/nn/conv/message_passing.py", line 328, in propagate
-    size = self.__check_input__(edge_index, size)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch_geometric/nn/conv/message_passing.py", line 193, in __check_input__
-    raise ValueError(f"Expected 'edge_index' to have size '2' in "
-ValueError: Expected 'edge_index' to have size '2' in the first dimension (got '440928')

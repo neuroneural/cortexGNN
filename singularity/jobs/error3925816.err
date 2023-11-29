@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "train.py", line 34, in <module>
-    hemisphere=config.hemisphere)
-  File "/pialnn/data/dataload.py", line 80, in load_data
-    subject_lists = sorted(os.listdir(data_path))
-FileNotFoundError: [Errno 2] No such file or directory: '/subj/train-val/'

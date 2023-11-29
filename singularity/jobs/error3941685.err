@@ -1,14 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:00,  3.07it/s] 50%|█████     | 2/4 [00:00<00:00,  3.36it/s] 75%|███████▌  | 3/4 [00:00<00:00,  3.44it/s]100%|██████████| 4/4 [00:01<00:00,  3.49it/s]100%|██████████| 4/4 [00:01<00:00,  3.43it/s]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 106, in <module>
-    start = segment_start,end = segment_end)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/pialnn.py", line 128, in forward
-    x = self.block1(v, f, volume,start,end)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/pialnn.py", line 39, in forward
-    print('normal',normal.shape)
-UnboundLocalError: local variable 'normal' referenced before assignment

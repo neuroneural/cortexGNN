@@ -1,10 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  1.77it/s] 50%|█████     | 2/4 [00:00<00:00,  2.13it/s] 75%|███████▌  | 3/4 [00:01<00:00,  2.25it/s]100%|██████████| 4/4 [00:01<00:00,  2.36it/s]100%|██████████| 4/4 [00:01<00:00,  2.25it/s]
-  0%|          | 0/201 [00:00<?, ?it/s]  0%|          | 0/201 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "train.py", line 101, in <module>
-    start = segment_start,end = segment_end)
-  File "/opt/miniconda3/envs/pialnn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/pialnn/model/cortexGNN.py", line 161, in forward
-    print('edge_list',edge_list.shape)    
-NameError: name 'edge_list' is not defined
