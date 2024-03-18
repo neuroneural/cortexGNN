@@ -13,5 +13,15 @@ layers="$2"
 echo "gnn: $gnn"
 echo "layers: $layers"
 
-python train.py --data_path=/subj/ --hemisphere=rh --save_mesh_train=True --gnn_layers=$layers --gnnVersion=$gnn --cortexGNN=True
+if [[ $gnn -eq -1 ]]; then
+    echo "trainrh.sh model is pialnn"
+    layers=0
+    python train.py --data_path=/subj/ --hemisphere=rh --save_mesh_train=True --gnn_layers=$layers --gnnVersion=$gnn --n_epoch=200
+
+else
+    echo "trainrh.sh model is a pialgnn"
+
+    python train.py --data_path=/subj/ --hemisphere=rh --save_mesh_train=True --gnn_layers=$layers --gnnVersion=$gnn --cortexGNN=True --n_epoch=200
+fi
+echo "D"
 echo "D"

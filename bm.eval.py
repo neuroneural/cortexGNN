@@ -1,5 +1,9 @@
 import numpy as np
 from tqdm import tqdm
+import os
+import csv
+
+
 
 import torch
 from torch.utils.data import DataLoader
@@ -7,245 +11,150 @@ from torch.utils.data import DataLoader
 from config import load_config
 from data.dataload import load_data, BrainDataset
 from model.pialnn import PialNN
-from utils import compute_normal, save_mesh_obj, compute_distance
+from model.cortexGNN import CortexGNN
 
-import datetime
-import nvidia_smi
-import time
-
-from csv import writer
-import socket
-import os
-
-nvidia_smi.nvmlInit()
-deviceCount = nvidia_smi.nvmlDeviceGetCount()
-
-hostname = socket.gethostname()
-
-def write_time2csv(model_name, t_sec=None, subj=None, loading=False, memory=False, percentUsed=None, total=None, free=None, used=None):
-    base_path = '/data/users2/washbee/speedrun/'
-
-    # Consolidate filename determination
-    if loading:
-        filename = 'bm.loading'
-    else:
-        filename = 'bm.events'
-        
-    if memory:
-        filename += '.memory'
-
-    filename += '.csv'
-    filename = base_path + filename
-
-    # Define initial list
-    List = [model_name, t_sec, hostname, subj]
-    
-    # If memory flag is true, append memory related info
-    if memory:
-        List = [model_name, percentUsed, total, free, used, hostname, subj]
-
-    if not os.path.exists(filename):
-        # Create the file
-        with open(filename, 'w') as file:
-            # Perform any initial operations on the file, if needed
-            print("File created.")
-
-    with open(filename, 'a') as f_object:
-        writer_object = writer(f_object)
-        writer_object.writerow(List)
-
-def printSpaceUsage(info_flag = False):
-    msgs = ""
-    for i in range(deviceCount):
-        nvidia_smi.nvmlInit()
-        handle = nvidia_smi.nvmlDeviceGetHandleByIndex(i)
-        info = nvidia_smi.nvmlDeviceGetMemoryInfo(handle)
-        if info_flag:
-            return (100*info.free/info.total), info.total, info.free, info.used
-        
-        msgs += '\n'
-        msgs += "Device {}: {}, Memory : ({:.2f}% free): {}(total), {} (free), {} (used)".format(i, nvidia_smi.nvmlDeviceGetName(handle), 100*info.free/info.total, info.total, info.free, info.used)
-        nvidia_smi.nvmlShutdown()
-
-    msgs+="\nMax Memory occupied by tensors: "+ str(torch.cuda.max_memory_allocated(device=None))
-    msgs+="\nMax Memory Cached: "+ str(torch.cuda.max_memory_cached(device=None))
-    msgs+="\nCurrent Memory occupied by tensors: "+ str(torch.cuda.memory_allocated(device=None))
-    msgs+="\nCurrent Memory cached occupied by tensors: "+str(torch.cuda.memory_cached(device=None))
-    msgs+="\n"
-    return str(msgs)
-
-# Helper Function
-def printModelSize(model):
-    # print(dir(model))
-    param_size = 0
-    for param in model.parameters():
-        param_size += param.nelement() * param.element_size()
-    buffer_size = 0
-    for buffer in model.buffers():
-        buffer_size += buffer.nelement() * buffer.element_size()
-    size_all_mb = (param_size + buffer_size) / 1024**2
-    print('\n\n\n\n')
-    print('model size: {:.3f}MB'.format(size_all_mb))
-    print('\n\n\n\n')
+from utils import compute_normal, save_mesh_obj, compute_distance, compute_hausdorff
+torch.backends.cudnn.benchmark = False
 
 
 if __name__ == '__main__':
-    a = datetime.datetime.now()
-
-    # log for GPU utilization
     
-    GPU_msgs = []
-
-    ### Set Stage
-    stage = '0 - set device'
-    msgs = printSpaceUsage()
-    GPU_msgs.append(stage + msgs + '\n\n\n')
-
-
     """set device"""
+    device_name = None
     if torch.cuda.is_available():
         device_name = "cuda:0"
     else:
         device_name = "cpu"
     device = torch.device(device_name)
-
-    ### Set Stage
-    stage = '0 - load configuration'
-    msgs = printSpaceUsage()
-    GPU_msgs.append(stage + msgs + '\n\n\n')
-
+    print('device',device_name)
 
     """load configuration"""
     config = load_config()
 
-
-    ### Set Stage
-    stage = '0 - load dataset'
-    msgs = printSpaceUsage()
-    GPU_msgs.append(stage + msgs + '\n\n\n')
-
-
     """load dataset"""
     print("----------------------------")
     print("Start loading dataset ...")
+    allocated = []
+
     test_data = load_data(data_path = config.data_path,
                           hemisphere = config.hemisphere)
+    allocated.append(torch.cuda.memory_allocated())
     n_data = len(test_data)
     L,W,H = test_data[0].volume[0].shape  # shape of MRI
     LWHmax = max([L,W,H])
-
+    allocated.append(torch.cuda.memory_allocated())
     test_set = BrainDataset(test_data)
     testloader = DataLoader(test_set, batch_size=1, shuffle=True)
     print("Finish loading dataset. There are total {} subjects.".format(n_data))
     print("----------------------------")
-
-
-    ### Set Stage
-    stage = '0 - load model'
-    msgs = printSpaceUsage()
-    GPU_msgs.append(stage + msgs + '\n\n\n')
-    
+    allocated.append(torch.cuda.memory_allocated())
     """load model"""
     print("Start loading model ...")
     
-    torch.cuda.empty_cache()
-
-    print(printSpaceUsage())
+    model = None
+    num_blocks = None
+    sf = .1
+    model_name = 'your_model_name'
+    if config.cortexGNN and config.gnn_layers>1:
+        num_blocks = 1
+        model = CortexGNN(config.nc, config.K, config.n_scale,num_blocks,sf,config.gnn_layers,config.gnnVersion).to(device)#todo:revise num_blocks
+        allocated.append(torch.cuda.memory_allocated())
     
-    model = PialNN(config.nc, config.K, config.n_scale).to(device)
-    model.load_state_dict(torch.load("./ckpts/model/pialnn_model_lh_200epochs.pt", map_location=device))
+        if config.gnnVersion==0:
+            model_name = "PialGCN"
+        elif config.gnnVersion==1:
+            model_name = "PialGAT"
+        
+    else:
+        num_blocks = 1    
+        model_name ='PialNN'
+        model = PialNN(config.nc, config.K, config.n_scale).to(device)#todo:revise 7
+        allocated.append(torch.cuda.memory_allocated())
+    
+    allocated.append(torch.cuda.memory_allocated())
+    print("Model is ", model_name)
+    print('config.model_location',config.model_location)
+    # model.load_state_dict(torch.load(f"{config.model_location}",
+    #                                  map_location=device))
+    allocated.append(torch.cuda.memory_allocated())
+
     model.initialize(L, W, H, device)
+    model.eval()
     print("Finish loading model")
-    print(printSpaceUsage())
     print("----------------------------")
     
-    print('pial model')
-    printModelSize(model)
-    ### Set Stage
-    stage = '0 - evaluation'
-    msgs = printSpaceUsage()
-    GPU_msgs.append(stage + msgs + '\n\n\n')
-
-    for msg in GPU_msgs:
-        print(msg)
-
-
+    
     """evaluation"""
     print("Start evaluation ...")
-    print(printSpaceUsage())
-    
-    b = datetime.datetime.now()
-    write_time2csv('PialNN', t_sec = (b-a).total_seconds(), loading=True)
-    percentUsed,total,free,used = printSpaceUsage(info_flag=True)
-    write_time2csv('PialNN',percentUsed=percentUsed, total=total, free=free, used=used,loading=True,memory=True)    
-    
-    with torch.no_grad():
-        CD = []
-        AD = []
-        HD = []
-        for idx, data in tqdm(enumerate(testloader)):
-            a = datetime.datetime.now()
-            volume_in, v_gt, f_gt, v_in, f_in = data
+    n = 1
+    CD = []
+    AD = []
+    HD = []
+    for idx, data in tqdm(enumerate(testloader)):
+        torch.cuda.empty_cache()
 
-            volume_in = volume_in.to(device)
-            v_gt = v_gt.to(device)
-            f_gt = f_gt.to(device)
-            v_in = v_in.to(device)
-            f_in = f_in.to(device)
-            
+        for i in range(n):
             torch.cuda.empty_cache()
-            print('before v_pred = model(...)\n',printSpaceUsage())
-            # set n_smooth > 1 if the mesh quality is not good
-            v_pred = model(v=v_in, f=f_in, volume=volume_in,
-                           n_smooth=config.n_smooth, lambd=config.lambd)
-            print('after v_pred = model(...)\n',printSpaceUsage())
-            
-            v_pred_eval = v_pred[0].cpu().numpy() * LWHmax/2 + [L/2,W/2,H/2]
-            f_pred_eval = f_in[0].cpu().numpy()
-            #v_gt_eval = v_gt[0].cpu().numpy() * LWHmax/2 + [L/2,W/2,H/2]
-            #f_gt_eval = f_gt[0].cpu().numpy()
+            with torch.no_grad():
+                volume_in = None
+                v_gt = None
+                f_gt = None
+                v_in = None
+                f_in = None
+                _subj= None
+                volume_in, v_gt, f_gt, v_in, f_in,_subj = data
+                allocated.append(torch.cuda.memory_allocated())
+                # Calculate the size of each segment
+                print(v_in.shape)
+                segment_size = v_in.shape[1] // n
+                segment_start = i * segment_size
+                segment_end = segment_start + segment_size
 
-            #compute distance-based metrics
-            #cd, assd, hd = compute_distance(v_pred_eval, v_gt_eval,
-            #                                f_pred_eval, f_gt_eval, config.n_test_pts)
-            #CD.append(cd)
-            #AD.append(assd)
-            #HD.append(hd)
-
-            if config.save_mesh_eval:
-                path_save_mesh = "./ckpts/bm/pialnn_mesh_eval_"\
-                        +config.hemisphere+"_subject"+str(idx)+".obj"
-
-                normal = compute_normal(v_pred, f_in)
-                n_pred_eval = normal[0].cpu().numpy()
-                save_mesh_obj(v_pred_eval, f_pred_eval, n_pred_eval, path_save_mesh)
+                volume_in = volume_in.to(device)
+                allocated.append(torch.cuda.memory_allocated())
+                v_gt = v_gt[:,segment_start:segment_end,:].to(device)
                 
-                #path_save_mesh = "./ckpts/eval/pialnn_mesh_eval_"\
-                #        +config.hemisphere+"_subject"+str(idx)+"_gt.obj"
+                v_in = v_in.to(device)
+                f_in = f_in.to(device)
 
-                #normal = compute_normal(v_gt, f_gt)
-                #n_pred_eval = normal[0].cpu().numpy()
-                #save_mesh_obj(v_gt_eval, f_gt_eval, n_pred_eval, path_save_mesh)
+                allocated.append(torch.cuda.memory_allocated())
 
-            b = datetime.datetime.now()
-            write_time2csv('PialNN', t_sec = (b-a).total_seconds())
-            percentUsed,total,free,used = printSpaceUsage(info_flag=True)
-            write_time2csv('PialNN',memory=True, percentUsed=percentUsed,total=total,free=free,used=used)
-            
-            
-            ### Set Stage
-            stage = '0 - END'
-            msgs = printSpaceUsage()
-            GPU_msgs.append(stage + msgs + '\n\n\n')
-             
-            for msg in GPU_msgs:
-                print(msg)
+                v_out = None
+                if config.cortexGNN:
+                    v_out = model(v=v_in, f=f_in, volume=volume_in,
+                                n_smooth=config.n_smooth, lambd=config.lambd,
+                                start = segment_start,end = segment_end)
+                else:
+                    v_out = model(v=v_in, f=f_in, volume=volume_in,
+                                n_smooth=config.n_smooth, lambd=config.lambd)
+                
+                allocated.append(torch.cuda.memory_allocated())
 
-            #exit()
+                # Slicing the segment of interest from v_out
+                v_out_segment = v_out[:, segment_start:segment_end, :]
 
-    #print("CD: Mean={}, Std={}".format(np.mean(CD), np.std(CD)))
-    #print("AD: Mean={}, Std={}".format(np.mean(AD), np.std(AD)))
-    #print("HD: Mean={}, Std={}".format(np.mean(HD), np.std(HD)))
-    #print("Finish evaluation.")
-    #print("----------------------------")
+                allocated.append(torch.cuda.memory_allocated())
 
+                
+    allocated.append(torch.cuda.memory_allocated())
+    max_memory_usage = max(allocated)/ (1024 ** 3)#GiB
+    print("max memory usage",max_memory_usage)
+    data = [model_name, config.gnn_layers, max_memory_usage]
+    
+    # File path for the CSV
+    csv_file_path = '/pialnn/memory_stats.csv'
+
+    # Check if file exists, if not create, if yes append
+    if not os.path.isfile(csv_file_path):
+        # Writing headers and data to CSV
+        with open(csv_file_path, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(['Model', 'Layers', 'max_memory_usage_GiB'])
+            writer.writerow(data)
+    else:
+        # Appending data to CSV without header
+        with open(csv_file_path, mode='a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(data)
+    print("Finish evaluation.")
+    print("----------------------------")

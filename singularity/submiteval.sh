@@ -33,23 +33,24 @@ layers=${layers[$SLURM_ARRAY_TASK_ID]}
 # Now use value1 and value2 as needed
 echo "Combination: $gnn, $layers"
 # Add your code here that uses value1 and value2
-base="/data/users2/washbee/websurf/cortexGNN/ckpts/model/lh/"
+#base="/data/users2/washbee/websurf/cortexGNN/ckpts/model/lh/"
+base="/data/users2/washbee/websurf/cortexGNN/ckpts/model/rh/"
 model=""
 
 if [[ $gnn -eq 0 && $layers -eq 2 ]]; then
-    model="PialGCN_GNNlayers2_mse_whitein_full_model_lh_best.pt"
+    model="PialGCN_GNNlayers2_mse_whitein_full_model_rh_best.pt"
 elif [[ $gnn -eq 0 && $layers -eq 3 ]]; then
-    model="PialGCN_GNNlayers3_mse_whitein_full_model_lh_best.pt"
+    model="PialGCN_GNNlayers3_mse_whitein_full_model_rh_best.pt"
 elif [[ $gnn -eq 0 && $layers -eq 4 ]]; then
-    model="PialGCN_GNNlayers4_mse_whitein_full_model_lh_best.pt"
+    model="PialGCN_GNNlayers4_mse_whitein_full_model_rh_best.pt"
 elif [[ $gnn -eq 0 && $layers -eq 5 ]]; then
-    model="PialGCN_GNNlayers5_mse_whitein_full_model_lh_best.pt"
+    model="PialGCN_GNNlayers5_mse_whitein_full_model_rh_best.pt"
 elif [[ $gnn -eq 0 && $layers -eq 6 ]]; then
-    model="PialGCN_GNNlayers6_mse_whitein_full_model_lh_best.pt"
+    model="PialGCN_GNNlayers6_mse_whitein_full_model_rh_best.pt"
 elif [[ $gnn -eq 0 && $layers -eq 7 ]]; then
-    model="PialGCN_GNNlayers7_mse_whitein_full_model_lh_best.pt"
+    model="PialGCN_GNNlayers7_mse_whitein_full_model_rh_best.pt"
 elif [[ $gnn -eq -1 ]]; then
-    model="pialnn_model_lh_200epochs.pt"
+    model="pialnn_model_rh_200epochs.pt"
 fi
 
 model_location="${base}${model}"

@@ -105,8 +105,6 @@ def display_models(subject_id, files_directory):
     plotter.screenshot('brains.png')
     plotter.close()
 
-
-
 # Example Usage
 files_directory = '/home/william/websurf/test/'
 subject_id = '100206'

@@ -17,17 +17,17 @@ df["Model_Layers"] = df["Model"] + ", " + df["Layers"].astype(str)
 
 # Extract layers as a separate numeric column for sorting
 df['Layers_num'] = df['Layers']
-
+print('a')
 # Pivot the DataFrame for mean values
 pivot_mean_df = df.pivot_table(index="Model_Layers", columns="Hemisphere", values="HD_Mean", aggfunc='mean').reset_index()
-
+print('b')
 # Pivot the DataFrame for standard deviation values
 pivot_std_df = df.pivot_table(index="Model_Layers", columns="Hemisphere", values="HD_Std", aggfunc='mean').reset_index()
-
+print('c')
 # Melt the DataFrames
 melted_mean_df = pivot_mean_df.melt(id_vars="Model_Layers", var_name="Hemisphere", value_name="HD_Mean")
 melted_std_df = pivot_std_df.melt(id_vars="Model_Layers", var_name="Hemisphere", value_name="HD_Std")
-
+print('d')
 # Adding a 'Layers' column to the melted DataFrames
 melted_mean_df['Layers'] = melted_mean_df['Model_Layers'].str.extract('(\d+)', expand=False).astype(int)
 melted_std_df['Layers'] = melted_std_df['Model_Layers'].str.extract('(\d+)', expand=False).astype(int)
@@ -56,10 +56,11 @@ for i in range(len(sorted_mean_df)):
     mean_row = sorted_mean_df.iloc[i]
     std_row = sorted_std_df[(sorted_std_df['Model_Layers'] == mean_row['Model_Layers']) & (sorted_std_df['Hemisphere'] == mean_row['Hemisphere'])].iloc[0]
     #print(std_row)
-    if i%2 == 0:
-        x_pos = i/2.0-0.203125
-    else:
-        x_pos = i/2.0-0.303125
+    # if i%2 == 0:
+    #     x_pos = i/2.0-0.203125
+    # else:
+    #     x_pos = i/2.0-0.303125
+    x_pos = i # single column
     ax.errorbar(x=x_pos, y=mean_row['HD_Mean'], yerr=std_row['HD_Std'], fmt='none', c='black', capsize=5)
 
 arrowprops = dict(arrowstyle="->", color="green")
@@ -81,4 +82,6 @@ plt.title("Quality of Mesh predictions on Test set (Hausdorff Distance)", fontsi
 plt.legend(fontsize=legend_font_size)
 plt.ylim(0.5, .9)  # Setting y-axis limits
 plt.tight_layout()
+print('saving')
+plt.savefig('evalplot.svg')
 plt.savefig('evalplot.png')
